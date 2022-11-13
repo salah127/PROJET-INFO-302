@@ -15,7 +15,7 @@ function ajouterUser($user,$email,$mdp) {
             /*= $_POST['user'];
             = $_POST['mdp'];
             = $_POST['email'];*/
-            $sql = "INSERT INTO `users` (`id`, `pseudo`, `mdp`, `role`, `email`) VALUES (NULL, '$pseudo', '$mdp', '', '$email');";
+            $sql = "INSERT INTO `users` (`id`, `pseudo`, `mdp`, `role`, `email`) VALUES (NULL, '$pseudo', '$mdp', 'internaute', '$email');";
             mysqli_query($c, $sql);
 
             //var_dump($sql);
@@ -23,6 +23,29 @@ function ajouterUser($user,$email,$mdp) {
 
 
 }
+
+function inscription_pro($user,$email,$mdp,$entreprise,$adresse,$num) {
+    global $c;
+    //if (isset($_POST["action"])) {
+
+        //---------------------------------------------
+        //if ($_POST["action"] == "add") {
+
+            $pseudo = mysqli_real_escape_string($c, $user);
+            $mdp = mysqli_real_escape_string($c, $mdp);
+            $email = mysqli_real_escape_string($c, $email);
+            /*= $_POST['user'];
+            = $_POST['mdp'];
+            = $_POST['email'];*/
+            $sql = "INSERT INTO `users` (`id`, `pseudo`, `mdp`, `role`, `email`, `entreprise`, `adresse`, `numero`) VALUES (NULL, '$pseudo', '$mdp', 'Pro', '$email', '$entreprise', '$adresse', '$num');";
+            mysqli_query($c, $sql);
+
+            //var_dump($sql);
+
+
+
+}
+
 function connexion($pseudo,$mdp) {
     global $c;
     //$sql = "SELECT * FROM `users` WHERE `pseudo` = '" . $pseudo . "' and `mdp`= '". $mdp ."'" ;

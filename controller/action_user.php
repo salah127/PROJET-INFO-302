@@ -36,6 +36,23 @@ if (isset($_POST["action"])) {
         }
     }
 }
+
+//formulaire de création de compte profesinnel
+if (isset($_POST["action"])) {
+    if ($_POST["action"] == "add") {
+        if (isset($_POST['use']) && isset($_POST['ema']) && isset($_POST['mdpp'])&& isset($_POST['entr'])&& isset($_POST['adr'])&& isset($_POST['num'])) {
+            if ($_POST['mdpp'] != "" && $_POST['use'] != "" && $_POST['ema'] != "" && $_POST['entr'] != "" && $_POST['adr'] != "" && $_POST['num'] != "") {
+                inscription_pro($_POST["use"], $_POST["ema"], $_POST["mdpp"], $_POST["entr"], $_POST["adr"], $_POST["num"]);
+                //echo 'ok';
+                header("Location: ./?page=connexion");
+            } else {
+                echo 'incorect';
+            }
+
+        }
+    }
+}
+
 //formulaire de connexion
 if (isset($_POST["action"])) {
     if ($_POST["action"] == "connexion") {

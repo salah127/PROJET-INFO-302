@@ -27,8 +27,8 @@
                 </a>
             </h1>
         </td>
-        <td class="td-search">
-            <form action = "." method = "post" class="zonerch">
+        <td>
+            <form action = "." method = "post" class="menu">
                 <!-- <input type="hidden" name="action" value="rech"> -->
                 <!-- <input type="seach" name="valrecherche" placeholder="rechercher un media ..." class="cnx-control" id="barrech"> 
                 <button class="rch-sub"><i class="fas fa-search"></i></button> -->
@@ -40,17 +40,36 @@
 
                 if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
                 //var_dump($_SESSION["connecte"]);
-                echo '<li ><a class="button" href ="index.php?page=modifier">modifier</a></li>';
-                echo '<li ><a class="button" href ="index.php?connecte=false">Deconnexion</a></li>';
-                echo '<li ><a class="button" href ="index.php?page=supprimer">supprimer</a></li>';
+                echo '<li ><a class="button2" href ="index.php?page=modifier">modifier</a></li>';
+                echo '<li ><a class="button2" href ="index.php?connecte=false">Deconnexion</a></li>';
+                echo '<li ><a class="button2" href ="index.php?page=supprimer">supprimer</a></li>';
                 // header("location:index.php?page=home");
 
                 }
                 else  {
                 if (isset($_SESSION["connecte"])) var_dump($_SESSION["connecte"]);
+
+                echo
+                '
+                <ul id="menu-accordeon">
+                    <li><a href="#" class="button3">Inscription</a>
+                        <ul>
+                            <li><a href ="index.php?page=inscription">Internaute</a></li>
+                            <li><a href="index.php?page=pro-insc">Proffesionnel</a></li>
+                        </ul>
+                    </li>
+                </ul>'
+                ;
+
                 
-                echo'<li ><a class="insc" href ="index.php?page=inscription">Inscription</a></li>';
-                echo'<li ><a class="cnx" href =" index.php?page=connexion">Connexion</a></li> ';
+                // echo'
+                // <li id="accordeon"><a class="button" href ="index.php?page=inscription">Inscription</a>
+                // <ul>
+                //             <li><a href="#" >normle</a></li>
+                // </ul>
+                // </li>
+                // ';
+                echo'<li ><a class="button3" href =" index.php?page=connexion">Connexion</a></li> ';
                 
                     }
                 ?>

@@ -11,5 +11,6 @@
     <input type = "submit" class="cnx-sub" value = "connexion">
 </form>
 </fieldset>
-<a class="btn-inscription" href="?page=inscription" role="button">creer un compte</a>
-
+<a href="?page=inscription" role="button">creer un compte internaute</a>
+<br>
+<a href="?page=pro-insc" role="button">creer un compte Proffesionnel</a>
