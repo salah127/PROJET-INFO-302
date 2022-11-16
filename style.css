@@ -1,40 +1,46 @@
 html{ height : 100%; }
 body{
-    background-color: #ffffff;
-    height : 100%;
-    margin:0px;
+    background-color: #FFD700;
+    height : auto;
+    /*! margin:0px; */
+    width: auto;
 }
 header{
-    background:linear-gradient(65deg,#fff,rgb(0, 0, 0));
+    background:#FFD700;
     
 
 }
 header table{
-    width: 100%;
-    border:solid 5px;
+    width: max-content;
     
+    display: flex;
+    margin: 5px;
 }
 .menu{
-    margin-left: 45%;
-    /* margin-left: 700px; */
-    margin-top: 0px;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo{
-    margin-top: 0px;
-    margin-left: 0px;
-    width:120px;
+    width:100%;
     padding: 5px;
-    background-color:rgb(255, 255, 255);
-    margin-bottom: 0px;
-    border-top-right-radius: 12px;
-    border: 2px rgb(14, 14, 14) solid;
-    border-right: 2px rgb(0, 0, 0) solid;
+    background-color:#FFD700;
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
 }
 .logo:hover{
-    background-color: rgb(121, 205, 198);
-    color:blue;
+     background-color: black;
+      border: solid 3px #FFD700;
+      color: #FFD700;
+      text-align: center;      
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    border-radius: 15px
 }
 
 
@@ -45,115 +51,180 @@ ul {
 }
 
 li {
-    display: inline-block;
-    margin:10px;
-    padding:10px;    /*   agrabdir limage entiere  */
+    padding:0px;    /*   agrabdir limage entiere  */
 
 }
 
 .button {
-
-    text-decoration: none; /*enleve les liens*/
-    color: #ffffff ;
-    padding-bottom: 0px;
-    font-size: 20px;
-    
+    background-color: #FFD700;
+      border: solid 3px black;
+      color: black;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    border-radius: 15px
+        
 }
 .button:hover{
-    background-color: rgb(121, 205, 198);
-    color:blue;
+    background-color: black;
+      border: solid 3px #FFD700;
+      color: #FFD700;
+      text-align: center;      
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    border-radius: 15px
 }
 
 .but {
-
     text-decoration: none; /*enleve les liens*/
     color: #ffffff ;
     padding-bottom: 0px;
     font-size: 10px;
 }
 
-
-
-
-
-
-
 #menu-accordeon {
-    padding:0;
-    margin:0;
     list-style:none;
-    width:0px;
   }
   #menu-accordeon ul {
-    padding:0;
-    margin:0;
-    /* list-style:none;  */
+    list-style:none;
     text-align: center;
+    display: block;
+    background-color: #FFD700;
   }
 
   #menu-accordeon li li {
      max-height:0;
      overflow: hidden;
      transition: all .5s;
-     border-radius:0;
-     background: #444;
+     border-radius:15px;
+     background: #FFD700;
      box-shadow: none;
      border:none;
 
   }
   #menu-accordeon a {
-    display:block;
-    text-decoration: none;
-    color: #fff;
-    padding: 8px 0;
-    font-size: 20px;
+    display:table;
+    background-color: #FFD700;
+      border: solid 3px black;
+      color: black;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    border-radius: 15px
   }
 
 
   #menu-accordeon ul li a, #menu-accordeon li:hover li a {
     font-size:1em;
-
+    background-color: #FFD700
   }
  
   #menu-accordeon li li:hover {
-     background: #999;
-     
+       background-color: black;
+      border: solid 3px #FFD700;
+      color: #FFD700;
+      text-align: center;      
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    border-radius: 15px
   }
   #menu-accordeon ul li:hover {
-     border-radius: 6px 6px  6px 6px;
-     border:none;
+     background-color: black;
+      border: solid 3px #FFD700;
+      color: #FFD700;
+      text-align: center;      
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    border-radius: 15px
   }
   #menu-accordeon li:hover li {
     max-height: 15em;
-    
+    background-color: #FFD700
   }
 
 
 
   
   .button1 {
-    text-decoration: none;
-    color: #000000;
+    background-color: #FFD700;
+      border: solid 3px black;
+      color: black;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    border-radius: 15px
 }
 
 
 .button2 {
-    text-decoration: none; /*enleve les liens*/
-    color: #ffffff ;
-    padding-bottom: 0px;
-    font-size: 20px;
+    background-color: #FFD700;
+      border: solid 3px black;
+      color: black;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    border-radius: 15px
 }
 
 .button3 {
-    margin-left: 20px;
-    text-decoration: none; /*enleve les liens*/
-    color: #ffffff ;
-    padding-bottom: 0px;
-    font-size: 20px;
+    background-color: #FFD700;
+      border: solid 3px black;
+      color: black;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    border-radius: 15px
 }
 .button3:hover{
-    background-color: rgb(121, 205, 198);
-    color:blue;
+      background-color: black;
+      border: solid 3px #FFD700;
+      color: #FFD700;
+      text-align: center;      
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    border-radius: 15px
 }
 
 
@@ -167,3 +238,37 @@ footer{
     color: rgb(0, 0, 0);
     
     }
+
+@media (max-width: 1024px) {
+    body{
+        display: flex;
+    } 
+ }
+
+.BigListe{
+    display: flex;
+    align-items: center;
+    width: -moz-available;
+}
+
+.CreRank{
+    display: flex;
+    width: 50%;
+}
+.ModCnxSup{
+    display: flex;
+}
+.MenuInscrp{
+    display: flex;
+}
+.AllOfIt{
+    border:solid 3px #000000;
+    width: -moz-available;
+    border-radius: 15px;
+}
+.account{
+    display: flex;
+    margin-right: 5px;
+    margin-left: 250px;
+    width: 50%;
+}
