@@ -39,7 +39,7 @@
                                         echo ' 
                                         <ul class="account" id="menu-accordeon">
                                         
-                                            <li><a  href="#" class="button3">Inscription</a>
+                                            <li><a href="#" >Inscription</a>
                                                 <ul class ="MenuInscrp">
                                                     <li><a href ="index.php?page=inscription">Internaute</a></li>
                                                     <li><a href="index.php?page=pro-insc">Proffesionnel</a></li>
@@ -49,7 +49,7 @@
                                             
                                         </ul>
                                         <ul >
-                                        <li><a class="button3" href ="index.php?page=connexion">Connexion</a></li>
+                                        <li><a class="button" href ="index.php?page=connexion">Connexion</a></li>
                                         </ul>
                                        ';
                                     }
@@ -59,6 +59,9 @@
                     </td>
                 </tr>
             </table>
+
+
+            
         </header>
     </body>
 
