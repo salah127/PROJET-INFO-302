@@ -68,7 +68,8 @@ li {
       display: inline-block;
       text-decoration: none;
       cursor: pointer;
-    border-radius: 15px
+    border-radius: 15px;
+    width: 80px;
         
 }
 .button:hover{
@@ -212,7 +213,8 @@ li {
       display: inline-block;
       text-decoration: none;
       cursor: pointer;
-    border-radius: 15px
+    border-radius: 15px;
+    width: 80px;
 }
 .button3:hover{
       background-color: black;

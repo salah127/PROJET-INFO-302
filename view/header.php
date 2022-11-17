@@ -22,7 +22,7 @@
                     <li class='BigListe'>
                         <form action = "." method = "post" class="menu">
                                 <ul class="CreRank">
-                                    <li ><a class="button" href ="index.php?page=creer">Créer post</a></li>
+                                    <li ><a class="button" href ="index.php?page=creer">ajout</a></li>
                                     <li ><a class="button" href ="index.php?page=ranking">Ranking</a></li>
                                 </ul>
                                 <?php
@@ -38,14 +38,20 @@
                                         if (isset($_SESSION["connecte"])) var_dump($_SESSION["connecte"]);
                                         echo ' 
                                         <ul class="account" id="menu-accordeon">
-                                        <li><a class="button3" href =" index.php?page=connexion">Connexion</a></li>
-                                            <li><a href="#" class="button3">Inscription</a>
+                                        
+                                            <li><a  href="#" class="button3">Inscription</a>
                                                 <ul class ="MenuInscrp">
                                                     <li><a href ="index.php?page=inscription">Internaute</a></li>
                                                     <li><a href="index.php?page=pro-insc">Proffesionnel</a></li>
                                                 </ul>
+                                                
                                             </li>
-                                        </ul>';
+                                            
+                                        </ul>
+                                        <ul >
+                                        <li><a class="button3" href ="index.php?page=connexion">Connexion</a></li>
+                                        </ul>
+                                       ';
                                     }
                                 ?>
                         </form>
