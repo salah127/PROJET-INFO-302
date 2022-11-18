@@ -2,7 +2,7 @@
 
 
 
-function ajouterUser($user,$email,$mdp) {
+function inscription($user,$email,$mdp) {
     global $c;
     //if (isset($_POST["action"])) {
 
@@ -15,7 +15,7 @@ function ajouterUser($user,$email,$mdp) {
             /*= $_POST['user'];
             = $_POST['mdp'];
             = $_POST['email'];*/
-            $sql = "INSERT INTO `users` (`id`, `pseudo`, `mdp`, `role`, `email`) VALUES (NULL, '$pseudo', '$mdp', 'internaute', '$email');";
+            $sql = "INSERT INTO `users` (`id`, `pseudo`, `mdp`, `role`, `email`, `point`) VALUES (NULL, '$pseudo', '$mdp', 'internaute', '$email', 10);";
             mysqli_query($c, $sql);
 
             //var_dump($sql);
@@ -65,39 +65,6 @@ function connexion($pseudo,$mdp) {
 
 
 
-function delete_user_db() {
-    //global $c
-    //if ($_GET["action"] == "delete") {
-
-    // requête DELETE
-    // Check connection
-
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
-
-    if (isset($_GET["id"])) {
-        $id = $_GET['id']; // $id is now defined
-        //echo $id;
-        $sql = "DELETE FROM users WHERE id='".$id."'";
-        //echo $sql;
-        mysqli_query($c,$sql);
-        //mysqli_close($c);
-        session_destroy();
-        echo "votre compte a été supprimé.";
-    };
-// or assuming your column is indeed an int
-// $id = (int)$_GET['id'];
-
-
-
-    //}
-    //}
-
-}
-
-
-
 function recup_role($pseu){
     global $c;
     $sql = "select pseudo, role FROM `users`";
@@ -111,14 +78,50 @@ function recup_role($pseu){
     return $role;
 }
 
+function recup_id($pseu){
+    global $c;
+    $sql = "select pseudo, id FROM `users`";
+    $resultat = mysqli_query($c,$sql);
+    $role = "";
+    while ($row = mysqli_fetch_assoc($resultat)){
+        if ($pseu == $row['pseudo']){
+            $id = $row["id"];
+        }
+    }
+    return $id;
+}
+
+function recup_pts($pseu){
+    global $c;
+    $sql = "select pseudo, point FROM `users`";
+    $resultat = mysqli_query($c,$sql);
+    $role = "";
+    while ($row = mysqli_fetch_assoc($resultat)){
+        if ($pseu == $row['pseudo']){
+            $point = $row["point"];
+        }
+    }
+    return $point;
+}
+
+
+
+
 function modification_compte ($id, $pseudo, $password, $mail){
     global $c;
-    $sql = "UPDATE `users` SET `mdp` = '".$password."', `email` = '".$mail."', `pseudo` = '".$pseudo."' WHERE `users`.`id` = '".$id."'";
+    $sql ="UPDATE `users` SET`pseudo`='.$pseudo.',`mdp`='.$password.',`role`=NULL,`email`='.$mail.',`entreprise`=NULL,`adresse`=NULL,`numero`=NULL,`point`=NULL WHERE users.id = '.$id.'";
+    // $sql = "UPDATE users SET mdp = '.$password.', email = '.$mail.', pseudo = '.$pseudo.' WHERE users.id = '.$id.'";
+
     //echo $sql;
     mysqli_query($c,$sql);
+
+
 }
+
+
 function suppression ($id){
-    $sql = "DELETE FROM users WHERE id='".$id."'";
+    global $c;
+    $sql = "DELETE * FROM users WHERE id='.$id.'";
     mysqli_query($c,$sql);
 }
 
@@ -134,4 +137,7 @@ function suppression ($id){
     echo "Le topic a été supprimé.";
 }
 }*/
+
+
+
 

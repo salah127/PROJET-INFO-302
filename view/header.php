@@ -22,22 +22,65 @@
                     <li class='BigListe'>
                         <form action = "." method = "post" class="menu">
                                 <ul class="CreRank">
-                                    <li ><a class="button" href ="index.php?page=creer">ajout</a></li>
+                                    <li ><a class="button" href ="index.php?page=creer">Recherche</a></li>
                                     <li ><a class="button" href ="index.php?page=ranking">Ranking</a></li>
                                 </ul>
                                 <?php
                                     if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
                                         echo '
-                                        <ul class="ModCnxSup">
-                                            <li ><a class="button2" href ="index.php?page=modifier">modifier</a></li>
-                                            <li ><a class="button2" href ="index.php?connecte=false">Deconnexion</a></li>
-                                            <li ><a class="button2" href ="index.php?page=supprimer">supprimer</a></li>
+                                        <ul class="account" id="menu-inscrp">
+                                        
+                                            <li><a href="#" >Parametre</a>
+                                                <ul class ="MenuInscrp">
+                                                    <li ><a class="button" href ="index.php?page=profil">Profil</a></li>
+                                                    <li ><a class="button" href ="index.php?page=aide">Aide</a></li>
+                                                    <li ><a class="button" href ="index.php?connecte=false">Deconnexion</a></li>
+                                                </ul>
+                                                
+                                            </li>
+                                            
                                         </ul>';
+                                        if ($_SESSION["role"]=='internaute'){
+                                            echo '
+                                            <ul class="service" id="menu-inscrp">
+                                            <li><a href="#" >Service</a>
+                                                <ul>
+                                                    <li ><a class="button" href ="">Reservation</a></li>
+                                                    <li ><a class="button" href ="">Devenir-Pro</a></li>
+                                                    <li ><a class="button" href ="">Favoris</a></li>
+                                                </ul>
+                                                
+                                            </li>
+                                            </ul>
+                            
+                                            <ul>
+                                                <li><a class="prof" href ="index.php?page=profil"><nav>'. $_SESSION['username'][0] . '</nav></a><nav class = "nav">'. $_SESSION['role'] . ':'. $_SESSION['point'] . '</nav></li>
+                                            </ul>';
+                                        }
+                                        else{
+                                            echo '
+                                            <ul class="service" id="menu-inscrp">
+                                            <li><a href="#" >Service</a>
+                                                <ul>
+                                                    <li ><a class="button" href ="">Ajouter</a></li>
+                                                    <li ><a class="button" href ="">Mes-Ajout</a></li>
+                                                    <li ><a class="button" href ="">Favoris</a></li>
+                                                </ul>
+                                                
+                                            </li>
+                                            </ul>
+                            
+                                            <ul>
+                            
+                                                <ul >
+                                                    <li ><a class="prof" href ="index.php?page=profil"><nav>'. $_SESSION['username'][0] . '</nav></a><nav class = "nav">' . $_SESSION['role'] . '</nav></li>
+                                                </ul>';
+                                        }
                                     }
                                     else{
                                         if (isset($_SESSION["connecte"])) var_dump($_SESSION["connecte"]);
                                         echo ' 
-                                        <ul class="account" id="menu-accordeon">
+                                        <ul class="account" id="menu-inscrp">
                                         
                                             <li><a href="#" >Inscription</a>
                                                 <ul class ="MenuInscrp">
@@ -49,7 +92,7 @@
                                             
                                         </ul>
                                         <ul >
-                                        <li><a class="button" href ="index.php?page=connexion">Connexion</a></li>
+                                        <li ><a class="button" href ="index.php?page=connexion">Connexion</a></li>
                                         </ul>
                                        ';
                                     }
@@ -61,7 +104,7 @@
             </table>
 
 
-            
+
         </header>
     </body>
 

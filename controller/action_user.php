@@ -26,7 +26,7 @@ if (isset($_POST["action"])) {
     if ($_POST["action"] == "add") {
         if (isset($_POST['user']) && isset($_POST['email']) && isset($_POST['mdp'])) {
             if ($_POST['mdp'] != "" && $_POST['user'] != "" && $_POST['email'] != "") {
-                ajouterUser($_POST["user"], $_POST["email"], $_POST["mdp"]);
+                inscription($_POST["user"], $_POST["email"], $_POST["mdp"]);
                 //echo 'ok';
                 header("Location: ./?page=connexion");
             } else {
@@ -63,9 +63,12 @@ if (isset($_POST["action"])) {
                     $_SESSION['username'] = $_POST['pseudo'];
                     $_SESSION['connecte'] = true;
                     $_SESSION['role'] = recup_role($_POST['pseudo']);
+                    // $_SESSION['id'] = recup_id($_POST['pseudo']);
+                    $_SESSION['point'] = recup_pts($_POST['pseudo']);
 
                     if (isset($_SESSION['username'])) {
-                        // echo "<p>Bienvenu " . $_SESSION['username'] . "</p>";
+                        // echo "<p>Bienvenu " . $_SESSION['id'][0].  "</p>";
+                        // echo "<p>Bienvenu " . $_SESSION['id'] . "</p>";
                     }
                 } else {
                     echo "err1 erreur sur le mot de passe ou pseudo";
@@ -87,21 +90,22 @@ if (isset($_POST["action"])) {
 
 if (isset($_POST["action"])) {
     if ($_POST["action"] == "modifier") {
-if (isset($_SESSION["id"][0] )) {
-    $id = $_SESSION['id'][0]; // $id is now defined
-    $password = $_POST['mdp'];
-    $mail = $_POST['email'];
-    $pseudo =  $_POST['user'];
-    modification_compte($id, $pseudo, $password, $mail); 
-    echo "votre compte a été modifié.";
-}
+        if (isset($_SESSION['id'][0])) {
+            $id = $_SESSION['id'][0]; // $id is now defined
+            echo''.$id.'';
+            $password = $_POST['mdp'];
+            echo''.$password.'';
+            $mail = $_POST['email'];
+            echo''.$mail.'';
+            $pseudo =  $_POST['user'];
+            echo''.$pseudo.'';
+            modification_compte($id, $pseudo, $password, $mail); 
+            // header("Location: ./?connecte=false");
+            echo "votre compte a été modifié.";
+        }
     }
 }
 
-$page = 'home';
-if (isset($_GET['page'])) {
-    $page = $_GET['page'];
-}
 
 //formulaire de suppression de compte
 
@@ -112,4 +116,5 @@ if (isset($_GET["id"])) {
     //mysqli_close($c);
     //session_destroy();
     echo "<p>votre compte a été supprimé.</p>";
+    header("Location: ./?connecte=false");
 }

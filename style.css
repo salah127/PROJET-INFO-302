@@ -1,4 +1,5 @@
-html{ height : 100%; }
+html{ height : 100%; 
+scroll-behavior:smooth;}
 body{
     background-color: white;
     height : auto;
@@ -12,9 +13,8 @@ header{
 }
 header table{
     width: max-content;
-    
     display: flex;
-    margin: 5px;
+    margin: 0px;
 }
 .menu{
     display: flex;
@@ -23,26 +23,46 @@ header table{
 }
 
 .logo{
+    /* background-color: #FFD700; */
+    order: solid 3px black;
+    color: black;
+    font-size: 16px;
+    margin: 4px 2px;
+    /* opacity: 0.6; */
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
     width:100%;
-    padding: 5px;
-    background-color:#FFD700;
+    /* padding: 5px; */
     border-radius: 15px;
     position: relative;
     text-align: center;
 }
 .logo:hover{
-     background-color: black;
-      border: solid 3px #FFD700;
-      color: #FFD700;
-      text-align: center;      
-      opacity: 0.6;
-      transition: 0.3s;
-      display: inline-block;
-      text-decoration: none;
-      cursor: pointer;
-    border-radius: 15px
+    background-color: #c800ff;
+    display: inline-block;
+    text-align: center;      
+    transition: 0.3s;
+    text-decoration: none;
+    cursor: pointer;
 }
 
+.button1 {
+    /* background-color: #FFD700; */
+    border: solid 3px black;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px
+}
 
 
 ul {
@@ -57,19 +77,19 @@ li {
 
 .button {
     background-color: white;
-      border: solid 3px black;
-      color: black;
-      padding: 16px 32px;
-      text-align: center;
-      font-size: 16px;
-      margin: 4px 2px;
-      opacity: 0.6;
-      transition: 0.3s;
-      display: inline-block;
-      text-decoration: none;
-      cursor: pointer;
+    border: solid 3px black;
+    color: black;
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 20px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
     border-radius: 15px;
-    width: 80px;
+    width: 70px;
         
 }
 .button:hover{
@@ -85,30 +105,33 @@ li {
     border-radius: 15px
 }
 
-.but {
-    text-decoration: none; /*enleve les liens*/
+/* .but {
+    text-decoration: none; 
     color: #ffffff ;
     padding-bottom: 0px;
     font-size: 10px;
-}
+} */
 
-#menu-accordeon {
+
+#menu-inscrp {
     list-style:none;
+    /* margin: 0px 0px 0px 0px; */
   }
 
 
-  #menu-accordeon ul {     
+#menu-inscrp ul {    
+     
     list-style:none;
     text-align: center;
     display: block;
     position: absolute;
-    left: 510px;
+    /* left: 765px; */
     width: inherit;
-  }
+    
+}
 
-  
 
-  #menu-accordeon li li {
+  #menu-inscrp li li {
      max-height:0;
      overflow: hidden;
      transition: all .5s;
@@ -118,12 +141,12 @@ li {
      border:none;
 
   }
-  #menu-accordeon a {
+  #menu-inscrp a {
     display:table;
     background-color: #ffffff;
     border: solid 3px black;
     color: black;
-    padding: 16px 32px;
+    padding: 5px 15px;
     text-align: center;
     font-size: 16px;
     margin: 0px 0px;
@@ -133,18 +156,18 @@ li {
     text-decoration: none;
     cursor: pointer;
     border-radius: 15px;
-    width: 80px;
+    width: 70px;
   }
 
 
-  #menu-accordeon ul li a, #menu-accordeon li:hover li a {
+  #menu-inscrp ul li a, #menu-inscrp li:hover li a {
     font-size:1em;
     background-color: #ffffff;
     
   }
  
 
-  #menu-accordeon ul li:hover {
+  #menu-inscrp ul li:hover {
      background-color: black;
       border: solid 3px #FFD700;
       color: #FFD700;
@@ -156,32 +179,18 @@ li {
       cursor: pointer;
     border-radius: 15px
   }
-  #menu-accordeon li:hover li {
+  #menu-inscrp li:hover li {
     max-height: 15em;
-    background-color: #FFD700
+    background-color: #FFD700;
   }
 
 
 
-  
-  .button1 {
-    background-color: #FFD700;
-      border: solid 3px black;
-      color: black;
-      padding: 16px 32px;
-      text-align: center;
-      font-size: 16px;
-      margin: 4px 2px;
-      opacity: 0.6;
-      transition: 0.3s;
-      display: inline-block;
-      text-decoration: none;
-      cursor: pointer;
-    border-radius: 15px
-}
 
 
-.button2 {
+
+
+/* .button2 {
     background-color: #ffffff;
       border: solid 3px black;
       color: black;
@@ -195,36 +204,33 @@ li {
       text-decoration: none;
       cursor: pointer;
     border-radius: 15px
+} */
+
+.prof {
+    background-color: #000000;
+    border: solid 3px #c800ff;
+    color: rgb(255, 255, 255);
+    padding: 0px 5px 5px 5px;
+    text-align: center;
+    font-size: 20px;
+    /* margin: 4px 2px; */
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 180px;
+    width: 17px;
+    margin-left: 22px;
+
 }
 
-.button3 {
-    background-color: #ffffff;
-      border: solid 3px black;
-      color: black;
-      padding: 16px 32px;
-      text-align: center;
-      font-size: 16px;
-      margin: 4px 2px;
-      opacity: 0.6;
-      transition: 0.3s;
-      display: inline-block;
-      text-decoration: none;
-      cursor: pointer;
-    border-radius: 15px;
-    width: 80px;
+ul li .nav{
+    margin-left: 30px;
+    font-size: 0px;
+    
 }
-.button3:hover{
-      background-color: black;
-      border: solid 3px #FFD700;
-      color: #FFD700;
-      text-align: center;      
-      opacity: 0.6;
-      transition: 0.3s;
-      display: inline-block;
-      text-decoration: none;
-      cursor: pointer;
-    border-radius: 15px
-}
+
 
 
 footer{
@@ -239,7 +245,7 @@ footer{
     }
 
 @media (max-width: 1024px) {
-    body{
+    header{
         display: flex;
     } 
  }
@@ -267,7 +273,16 @@ footer{
 }
 .account{
     display: flex;
-    margin-right: 5px;
+    /* margin-right: 5px; */
     nav-right: 250px;
     width: 50%;
+    margin-inline-start:200px;
+}
+
+.service{
+    display: flex;
+    /* margin-right: 5px; */
+    nav-right: 250px;
+    width: 50%;
+    /* margin-inline-start:350px; */
 }
