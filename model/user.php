@@ -109,11 +109,15 @@ function recup_pts($pseu){
 
 function modification_compte ($id, $pseudo, $password, $mail){
     global $c;
-    $sql ="UPDATE `users` SET`pseudo`='.$pseudo.',`mdp`='.$password.',`role`=NULL,`email`='.$mail.',`entreprise`=NULL,`adresse`=NULL,`numero`=NULL,`point`=NULL WHERE users.id = '.$id.'";
-    // $sql = "UPDATE users SET mdp = '.$password.', email = '.$mail.', pseudo = '.$pseudo.' WHERE users.id = '.$id.'";
+    // $sql ="UPDATE `users` SET`pseudo`='.$pseudo.',`mdp`='.$password.',`role`=NULL,`email`='.$mail.',`entreprise`=NULL,`adresse`=NULL,`numero`=NULL,`point`=NULL WHERE users.id = '.$id.'";
+    $sql = "UPDATE users SET mdp = '$password', email = '$mail', pseudo = '$pseudo' WHERE users.id = $id";
 
     //echo $sql;
+    var_dump($sql);
     mysqli_query($c,$sql);
+    // var_dump($sql);
+    // var_dump(mysqli_error($c));
+    // exit;
 
 
 }
@@ -121,7 +125,7 @@ function modification_compte ($id, $pseudo, $password, $mail){
 
 function suppression ($id){
     global $c;
-    $sql = "DELETE * FROM users WHERE id='.$id.'";
+    $sql = "DELETE FROM users WHERE id=$id";
     mysqli_query($c,$sql);
 }
 

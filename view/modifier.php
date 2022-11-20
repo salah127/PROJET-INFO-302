@@ -13,3 +13,4 @@
     <br>
     <input type = "submit" class="cnx-sub" value = "modifier">
 </form>
+</fieldset>

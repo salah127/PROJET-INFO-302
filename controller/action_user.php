@@ -92,16 +92,12 @@ if (isset($_POST["action"])) {
     if ($_POST["action"] == "modifier") {
         if (isset($_SESSION['id'][0])) {
             $id = $_SESSION['id'][0]; // $id is now defined
-            echo''.$id.'';
             $password = $_POST['mdp'];
-            echo''.$password.'';
             $mail = $_POST['email'];
-            echo''.$mail.'';
             $pseudo =  $_POST['user'];
-            echo''.$pseudo.'';
-            modification_compte($id, $pseudo, $password, $mail); 
-            // header("Location: ./?connecte=false");
+            modification_compte ($id, $pseudo, $password, $mail); 
             echo "votre compte a été modifié.";
+            header("Location: ./?connecte=false");
         }
     }
 }
