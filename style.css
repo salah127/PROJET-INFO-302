@@ -286,3 +286,11 @@ footer{
     width: 50%;
     /* margin-inline-start:350px; */
 }
+
+
+
+.tab{
+    border: solid 1px black;
+    list-style:none;
+
+}

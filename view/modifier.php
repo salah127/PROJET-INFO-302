@@ -11,6 +11,6 @@
     <p>Mot de passe :</p>
     <input type = "password" name="mdp" placeholder="Changer votre mdp">
     <br>
-    <input type = "submit" class="cnx-sub" value = "modifier">
+    <input type = "submit" class="cnx-sub" value = "Modifier">
 </form>
 </fieldset>

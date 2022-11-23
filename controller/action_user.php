@@ -86,7 +86,7 @@ if (isset($_POST["action"])) {
 }
 
 
-//formulaire de modification de compte
+//formulaire de modification de compte int
 
 if (isset($_POST["action"])) {
     if ($_POST["action"] == "modifier") {
@@ -97,10 +97,34 @@ if (isset($_POST["action"])) {
             $pseudo =  $_POST['user'];
             modification_compte ($id, $pseudo, $password, $mail); 
             echo "votre compte a été modifié.";
-            header("Location: ./?connecte=false");
+            // header("Location: ./?connecte=false");
         }
     }
 }
+
+
+
+
+//formulaire de modification de compte pro
+
+if (isset($_POST["action"])) {
+    if ($_POST["action"] == "modifier-pro") {
+        if (isset($_SESSION['id'][0])) {
+            $id = $_SESSION['id'][0]; // $id is now defined
+            $password = $_POST['mdp'];
+            $mail = $_POST['email'];
+            $pseudo =  $_POST['user'];
+            $entreprise = $_POST['entreprise'];
+            $adresse = $_POST['adresse'];
+            $num =  $_POST['numero'];
+            modification_pro ($id, $pseudo, $mail, $entreprise , $adresse, $num, $password);
+            echo "votre compte a été modifié.";
+            // header("Location: ./?connecte=false");
+        }
+    }
+}
+
+
 
 
 //formulaire de suppression de compte

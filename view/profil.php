@@ -1,44 +1,7 @@
-<form action = "." method = "post" class="menu">
-                                <ul class="CreRank">
+<form action = "." method = "post" class="menu">                                <ul class="CreRank">
                                     <li ><a class="button" href ="index.php?page=supprimer">Supprimer</a></li>
-                                    <li ><a class="button" href ="index.php?page=modifier">Modifer</a></li>
+                                    <li ><a class="button" <?php if ($_SESSION["role"]=='internaute'){ echo'href="index.php?page=modifier"' ;} else{echo'href ="index.php?page=pro-modif"';}  ?>>Modifer</a></li>
                                 </ul>
 </form>
 
 
-
-<!-- <main>
-    <form method="post" action=".">
-        <input type="hidden" name="action" value="categorie">
-        <label for="triselect">Trier par :</label>
-        <select id="triselect" name="selcath" class="tri-select">
-            <option value="0">toutes catégories</option>
-            <option value="1">culture</option>
-            <option value="2">Art</option>
-            <option value="3">Sport</option>
-            <option value="4">Cuisine</option>
-            <option value="5">Education</option>
-            <option value="6">Science</option>
-            <option value="7">Autre</option>
-        </select>
-        <button class="tri-sub">valider</button>
-    </form>
-    <form action="test.php" method="get">
-
-    <select name="optin" id="optin">
-    <option value="oui">Je choisis oui</option>
-    <option value="non">Je choisis non</option>
-    </select>
-    <input type="submit" onclick="return valideselect()" />  
-  
-    </form>
-    <?php
-        // if(isset($_GET["catego"])){
-        //     $categorie = $_GET["catego"];
-        // }
-        // else{
-        //     $categorie = 0;
-        // }
-        // afficher_topic($categorie);
-    ?>
-</main> -->

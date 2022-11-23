@@ -113,7 +113,7 @@ function modification_compte ($id, $pseudo, $password, $mail){
     $sql = "UPDATE users SET mdp = '$password', email = '$mail', pseudo = '$pseudo' WHERE users.id = $id";
 
     //echo $sql;
-    var_dump($sql);
+    // var_dump($sql);
     mysqli_query($c,$sql);
     // var_dump($sql);
     // var_dump(mysqli_error($c));
@@ -121,6 +121,18 @@ function modification_compte ($id, $pseudo, $password, $mail){
 
 
 }
+
+
+
+function modification_pro ($id, $pseudo, $mail, $entreprise , $adresse, $num, $password){
+    global $c;
+    // $sql ="UPDATE `users` SET`pseudo`='.$pseudo.',`mdp`='.$password.',`role`=NULL,`email`='.$mail.',`entreprise`=NULL,`adresse`=NULL,`numero`=NULL,`point`=NULL WHERE users.id = '.$id.'";
+    $sql = "UPDATE users SET mdp = '$password', email = '$mail', pseudo = '$pseudo', entreprise = '$entreprise', adresse = '$adresse', numero = '$num' WHERE users.id = $id";
+
+    mysqli_query($c,$sql);
+
+}
+
 
 
 function suppression ($id){

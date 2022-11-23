@@ -14,7 +14,7 @@
                     <td>
                         <h1 class="logo">
                             <a class="button1" href ="index.php?page=home">
-                                LeLocal
+                                LeBonChoix
                             </a>
                         </h1>
                     </td>
@@ -22,7 +22,7 @@
                     <li class='BigListe'>
                         <form action = "." method = "post" class="menu">
                                 <ul class="CreRank">
-                                    <li ><a class="button" href ="index.php?page=creer">Recherche</a></li>
+                                    <li ><a class="button" href ="index.php?page=">Recherche</a></li>
                                     <li ><a class="button" href ="index.php?page=ranking">Ranking</a></li>
                                 </ul>
                                 <?php
@@ -62,7 +62,7 @@
                                             <ul class="service" id="menu-inscrp">
                                             <li><a href="#" >Service</a>
                                                 <ul>
-                                                    <li ><a class="button" href ="">Ajouter</a></li>
+                                                    <li ><a class="button" href ="index.php?page=liste-bat">Ajouter</a></li>
                                                     <li ><a class="button" href ="">Mes-Ajout</a></li>
                                                     <li ><a class="button" href ="">Favoris</a></li>
                                                 </ul>
