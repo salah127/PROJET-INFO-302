@@ -16,7 +16,7 @@
                 <td>
                     <h1 class="logo">
                         <a class="button1" href="index.php?page=home">
-                            <img  src="logo.png" type="image/png"></img> 
+                            <img src="logo.png" type="image/png"></img>
                         </a>
                     </h1>
                 </td>
