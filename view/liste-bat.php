@@ -5,7 +5,7 @@
 
 <?php 
 
-Afficher_bat( $_SESSION['id'][0] );
+Afficher_bat($_SESSION['id'][0]);
 
 ?>
 <br>

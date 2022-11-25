@@ -27,12 +27,13 @@ function creer_bat($nom, $adresse, $nb_salle, $id_pro){
 }
 
 
-function Afficher_bat($id){
+function ex_bat($id){
 	global $c;
 	$sql = " SELECT Nom, adresse, nb_salle FROM batiment WHERE id_pro = ' $id '  ";
 	$resultat = mysqli_query($c, $sql);
 
 	// var_dump($resultat);
+	
 	echo'
 	<table class=tab>
 		<tr>
@@ -53,6 +54,7 @@ function Afficher_bat($id){
 			</td>
 		</tr>';
 	while( $row = mysqli_fetch_assoc($resultat)){
+		
 		echo'
 			<tr>
 
@@ -67,7 +69,7 @@ function Afficher_bat($id){
 			    </td>
 				<td class=tab>
 					<li>
-						<a class="button" href ="index.php?page=profil"> Afficher </a>
+						<a class="button" href ="index.php?page=liste-salles"> Afficher </a>
 					</li> 
 			    </td>
 
@@ -81,6 +83,19 @@ function Afficher_bat($id){
 	</table>';
 	
 	return $row;
+}
+
+
+function afficher_bat($id){
+	global $c;
+	$sql = " SELECT Nom, adresse, nb_salle FROM batiment WHERE id_pro = '$id'  ";
+	$resultat = mysqli_query($c, $sql);
+	$row = mysqli_fetch_assoc($resultat);
+	if ($row == NULL){
+		echo ' Il ya aucun batiment';
+	} else{
+		ex_bat($id);
+	}
 }
 
 
