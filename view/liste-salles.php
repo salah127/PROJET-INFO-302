@@ -3,7 +3,7 @@
 <form action = "." method = "post">
 <!-- <input type="hidden" name="action" value="ajouter-bat"> -->
 
-<a class="button" href ="index.php?page=ajout-bat">+</a>
+<a class="button" href ="index.php?page=ajout-salle">Ajouter</a>
 <!-- <input type = "submit" value = "+" class="button">  -->
 </form>
 </fieldset>

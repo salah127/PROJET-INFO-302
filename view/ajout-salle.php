@@ -1,6 +1,6 @@
 <fieldset class='batima'>
     <legend>
-        <h2>Batiment <?php  echo '<nav>'. $_SESSION['Nom'] . '</nav>';?> </h2>
+        <h2>Ajout Salle</h2>
     </legend>
     <form action="." method="post">
         <div class="batdiv">
@@ -16,7 +16,7 @@
             </div>
             <br>
             <div class="batsghir">
-                <label for="idinsuser">Photos :</label>
+                <label for="idinsuser">Images :</label>
                 <input type="file" name="Photo" class="cnx-control" id="ins-entr" placeholder="Photos..."><br>
             </div>
             <br>
