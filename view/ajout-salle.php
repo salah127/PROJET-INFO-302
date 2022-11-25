@@ -1,6 +1,11 @@
 <fieldset class='batima'>
+<<<<<<< HEAD:view/ajout_salle.php
     <legend class='titleliste' >
         <h2> Ajout Salle </h2>
+=======
+    <legend>
+        <h2>Ajout Salle</h2>
+>>>>>>> 0e6df55186d0b65345b8140acb02191f184a3208:view/ajout-salle.php
     </legend>
     <form action="." method="post">
         <div class="batdiv">
@@ -26,6 +31,7 @@
             </div>
             <br>
             <div class="batsghir">
+<<<<<<< HEAD:view/ajout_salle.php
                 <div class="salasghira">
                     <label for="idinsuser">Photos :</label>
                 </div>
@@ -33,6 +39,10 @@
                     <input class='inputtype cnx-control btnajoutsalle2' type="file" name="Photo" id="ins-entr" placeholder="Photos...">
                 </div>
                 <br>
+=======
+                <label for="idinsuser">Images :</label>
+                <input type="file" name="Photo" class="cnx-control" id="ins-entr" placeholder="Photos..."><br>
+>>>>>>> 0e6df55186d0b65345b8140acb02191f184a3208:view/ajout-salle.php
             </div>
             <br>
             <div class="batsghir">

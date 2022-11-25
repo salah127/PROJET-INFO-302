@@ -7,11 +7,19 @@ if (isset($_POST["action"]) && $_POST["action"] == "ajouter-bat") {
       // if (isset($_SESSION['id'][0])) {
       //    $id = $_SESSION['id'][0];
       // }
+<<<<<<< HEAD
 
       if (!existe_bat($_POST['Nom'])) {
          $_SESSION['Nom'] = $_POST['Nom'];
          creer_bat($_POST['Nom'], $_POST['adresse'], $_POST['nb_salle'], $id);
 
+=======
+   
+      if (!existe_bat($_POST['Nom'])) {
+         $_SESSION['Nom'] = $_POST['Nom'];
+         creer_bat($_POST['Nom'], $_POST['adresse'], $_POST['nb_salle'], $id);
+      
+>>>>>>> 0e6df55186d0b65345b8140acb02191f184a3208
          $nb=$_POST['nb_salle'];
          if ($nb>0){
             while ($nb != 0) {
@@ -29,7 +37,11 @@ if (isset($_POST["action"]) && $_POST["action"] == "ajouter-bat") {
          echo "info incorrect";
          // header("Location: ./?page=ajout-bat");
       }
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> 0e6df55186d0b65345b8140acb02191f184a3208
    }
 
 
