@@ -276,6 +276,7 @@ footer{
     /* margin-right: 5px; */
     nav-right: 250px;
     width: 50%;
+    
     margin-inline-start:200px;
 }
 
@@ -294,3 +295,5 @@ footer{
     list-style:none;
 
 }
+
+
