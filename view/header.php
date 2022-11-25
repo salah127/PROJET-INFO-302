@@ -8,7 +8,7 @@
         <link rel="shortcut icon" href="icon-lieu.png" type="image/png">
     </head>
     <body>
-        <header class = "AllOfIt">  
+        <header>  
             <table>
                 <tr>
                     <td>

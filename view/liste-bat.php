@@ -1,5 +1,5 @@
-<fieldset>
-    <legend><h2>Mes batiments</h2></legend>
+<fieldset class='batima'>
+    <legend class='titleliste'><h2>Mes batiments</h2></legend>
 <form action = "." method = "post">
 <!-- <input type="hidden" name="action" value="ajouter-bat"> -->
 
