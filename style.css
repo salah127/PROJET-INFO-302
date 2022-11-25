@@ -1,12 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html{
     font-family: "Lucida Console", "Courier New", Monospace; height : 100%; 
-scroll-behavior:smooth;}
+scroll-behavior:smooth;
+position: relative;
+}
 body{
     font-family: "Lucida Console", "Courier New", Monospace;
     background-color: white;
     height : auto;
-    /*! margin:0px; */
-    width: auto;
 }
 header{
     font-family: "Lucida Console", "Courier New", Monospace;
@@ -15,15 +19,13 @@ header{
     width: 100%;
     border-radius: 16px;
     position: relative;
-    display: flex;
 }
 header table{
     font-family: "Lucida Console", "Courier New", Monospace;
     width: 100%;
     display: flex;
-    margin: 1%;
     position: relative;
-    gap: 7%;
+    text-align: center;
 }
 .menu{
     font-family: "Lucida Console", "Courier New", Monospace;
@@ -31,40 +33,36 @@ header table{
     position: relative;
     justify-content: center;
     align-items: center;
+    margin-left :25%;
+    margin-right:25%;
 }
 
 .logo{
+    border: solid 2px teal;
     font-family: "Lucida Console", "Courier New", Monospace;
-    /* background-color: #FFD700; */
     order: solid 3px teal;
-    color: teal;
-    font-size: 16px;
-    margin: 4px 2px;
-    /* opacity: 0.6; */
+    color: white;
     transition: 0.3s;
-    display: inline-block;
+    display: flex;
     text-decoration: none;
     cursor: pointer;
     width: 100%;
-    /* padding: 5px; */
-    border-radius: 15px;
+    border-radius: 16px;
     position: relative;
     text-align: center;
+    margin :25%;
+    background-color: teal;
 }
 .logo:hover{
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #c800ff;
     display: inline-block;
     text-align: center;      
     transition: 0.3s;
     text-decoration: none;
     cursor: pointer;
 }
-
 .button1 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    /* background-color: #FFD700; */
-    border: solid 3px teal;
     color: teal;
     padding: 16px 32px;
     width: 50%;
@@ -75,113 +73,99 @@ header table{
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
-    margin:1%;
 }
-
-
 ul {
     font-family: "Lucida Console", "Courier New", Monospace;
     list-style-type: none;
-    /* background-color: grey; */
 }
-
 li {
     font-family: "Lucida Console", "Courier New", Monospace;
-    padding:0px;    /*   agrabdir limage entiere  */
-
+    padding:0px;
 }
-
 .button {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: white;
-    border: solid 3px teal;
+    /*! background-color: white; */
+    /*! border: solid 2px teal; */
     color: teal;
-    padding: 5px 15px;
     text-align: center;
+    padding : 10px;
     font-size: 16px;
     opacity: 0.6;
     transition: 0.3s;
-    display: inline-block;
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
     width: 50%;
-    margin:1%;        
+    margin : 10px;
 }
 .button:hover{
     font-family: "Lucida Console", "Courier New", Monospace;
     background-color: teal;
-      border: solid 3px teal;
-      color: white;
-      text-align: center;      
-      opacity: 0.6;
-      transition: 0.3s;
-      display: inline-block;
-      text-decoration: none;
-      cursor: pointer;
-    border-radius: 16px
+    border: solid 2px teal;
+    color: white;
+    text-align: center;
+    padding : 10px;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 16px;
+    width: 50%;
+    margin : 10px;
 }
 #menu-inscrp {
     font-family: "Lucida Console", "Courier New", Monospace;
     list-style:none;
     width: 50%;
-    /* margin: 0px 0px 0px 0px; */
   }
-
-
 #menu-inscrp ul {
     font-family: "Lucida Console", "Courier New", Monospace;    
-     
     list-style:none;
-    text-align: center;
+    text-align: left;
     display: block;
     position: absolute;
-    /* left: 765px; */
-    width: inherit;
-    margin:1%;
+    width: 150px;
+    margin-left: -59px;
+    height: 150px;
 }
-
-
-  #menu-inscrp li li {
+#menu-inscrp li li {
     font-family: "Lucida Console", "Courier New", Monospace;
      max-height:0;
      overflow: hidden;
      transition: all .5s;
-     border-radius:15px;
-     /* background: #FFD700; */
-     box-shadow: none;
-     border:none;
+     border-radius:16px;
     margin:1%;
+    background-color: white;
   }
   #menu-inscrp a {
     font-family: "Lucida Console", "Courier New", Monospace;
     display:table;
     background-color: white;
-    border: solid 3px teal;
+    /* border: solid 2px teal; */
     color: teal;
-    padding: 5px 15px;
     text-align: center;
+    padding : 10px;
+    font-size: 16px;
     opacity: 0.6;
     transition: 0.3s;
-    display: inline-block;
     text-decoration: none;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 16px;
     width: 50%;
+    margin-left: -15px;
   }
-
-
   #menu-inscrp ul li a, #menu-inscrp li:hover li a {
     font-family: "Lucida Console", "Courier New", Monospace;
     background-color: #ffffff;
     margin:1%;
-  }
- 
-
+    width: 82%;
+    border: solid 3px teal;
+    border-radius: 16px;
+}
   #menu-inscrp ul li:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
      background-color: teal;
-      border: solid 3px teal;
       color: white;
       text-align: center;      
       opacity: 0.6;
@@ -189,22 +173,21 @@ li {
       display: inline-block;
       text-decoration:none;
       cursor: pointer;
-    border-radius: 16px
+    border-radius: 16px;
   }
   #menu-inscrp li:hover li {
     font-family: "Lucida Console", "Courier New", Monospace;
     max-height: 100%;
-    background-color: white;
-  }
+    width: 100%;
+}
 .prof {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #000000;
-    border: solid 3px #c800ff;
-    color: rgb(255, 255, 255);
+    background-color: white;
+    border: solid 3px teal;
+    color: teal;
     padding: 0px 5px 5px 5px;
     text-align: center;
     font-size: 20px;
-    /* margin: 4px 2px; */
     opacity: 0.6;
     transition: 0.3s;
     display: inline-block;
@@ -212,10 +195,8 @@ li {
     cursor: pointer;
     border-radius: 180px;
     width: 17px;
-    margin-left: 22px;
-
+    margin-left: 275px;
 }
-
 ul li .nav{
     font-family: "Lucida Console", "Courier New", Monospace;
     margin-left: 30px;
@@ -232,22 +213,12 @@ footer{
     color: rgb(0, 0, 0);
     margin: 1%;
     }
-
-@media (max-width: 1024px) {
-    font-family: "Lucida Console", "Courier New", Monospace;
-    header{
-        font-family: "Lucida Console", "Courier New", Monospace;
-        display: flex;
-    } 
- }
-
 .BigListe{
     font-family: "Lucida Console", "Courier New", Monospace;
     display: flex;
     align-items: center;
     width: -moz-available;
 }
-
 .CreRank{
     font-family: "Lucida Console", "Courier New", Monospace;
     display: flex;
@@ -264,27 +235,23 @@ footer{
 .account{
     font-family: "Lucida Console", "Courier New", Monospace;
     display: flex;
-    /* margin-right: 5px; */
     nav-right: 250px;
     width: 50%;
     
     margin-inline-start:200px;
 }
-
 .service{
     font-family: "Lucida Console", "Courier New", Monospace;
     display: flex;
-    /* margin-right: 5px; */
     nav-right: 250px;
     width: 50%;
-    /* margin-inline-start:350px; */
 }
-
 .tab{
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 1px black;
     list-style:none;
     position: relative;
+    border-radius: 16px; 
+    width: 100%;
 }
 .batima{
     font-family: "Lucida Console", "Courier New", Monospace;
@@ -329,9 +296,8 @@ footer{
    border: solid 3px teal;
     color: white;
     font-weight: bold;
-    width: 50%;
     position: relative;
-    padding: 1%;
+    padding:1% 25%;
     text-align: center;
     border-radius: 16px;
     background-color: teal; 
@@ -359,4 +325,33 @@ footer{
     font-family: "Lucida Console", "Courier New", Monospace;
     color: teal;
     font-weight: bold;
+    width: 100%;
+}
+.batima2{
+    font-family: "Lucida Console", "Courier New", Monospace;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    width: 75%;
+    border-radius: 16px;
+    border: solid 3px teal;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    padding-bottom: 3%;
+}
+
+html body fieldset.batima2 form table.tab tbody tr td.tab{
+    width:25%;
+    height: 50px;
+    border:solid 2px teal;
+    border-radius: 16px;
+    text-align: center;
+}
+.salasghira2{
+    font-family: "Lucida Console", "Courier New", Monospace;
+    color: teal;
+    font-weight: bold;
+    width: 100%;
+    position: relative;
+    text-align: center;
 }

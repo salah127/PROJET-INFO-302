@@ -3,7 +3,7 @@
 //formulaire d'ajout de batiment
 
 if (isset($_POST["action"]) && $_POST["action"] == "ajouter-bat") {
-   if ((isset($_POST['Nom']) && $_POST['Nom'] != "")  (isset($_POST['adresse']) && $_POST['adresse'] != "")  (isset($_POST['nb_salle']) && $_POST['nb_salle'] != "")) {
+   if ((isset($_POST['Nom']) && $_POST['Nom'] != "") || (isset($_POST['adresse']) && $_POST['adresse'] != "") || (isset($_POST['nb_salle']) && $_POST['nb_salle'] != "")) {
       // if (isset($_SESSION['id'][0])) {
       //    $id = $_SESSION['id'][0];
       // }
