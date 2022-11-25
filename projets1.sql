@@ -32,7 +32,8 @@ CREATE TABLE `batiment` (
   `Nom` varchar(15) COLLATE utf8_bin NOT NULL,
   `adresse` varchar(25) COLLATE utf8_bin NOT NULL,
   `nb_salle` int(11) NOT NULL,
-  `id_pro` int(11) NOT NULL
+  `id_pro` int(11) NOT NULL,
+  FOREIGN KEY ('id_pro') REFERENCES users ('id')
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --

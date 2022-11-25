@@ -8,8 +8,9 @@ body{
 }
 header{
     background:#FFD700;
-    
-
+    border:solid 3px #000000;
+    width: -moz-available;
+    border-radius: 15px;
 }
 header table{
     width: max-content;
@@ -266,11 +267,6 @@ footer{
 .MenuInscrp{
     display: flex;
 }
-.AllOfIt{
-    border:solid 3px #000000;
-    width: -moz-available;
-    border-radius: 15px;
-}
 .account{
     display: flex;
     /* margin-right: 5px; */
@@ -295,5 +291,14 @@ footer{
     list-style:none;
 
 }
-
-
+.batima{
+    border:solid 3px #000000;
+    width: -moz-available;
+    border-radius: 15px;
+}
+.batdiv{
+    border: solid 3px rgb(72, 255, 0);
+}
+.batsghir{
+    border: solid 3px rgb(255, 0, 0);
+}
