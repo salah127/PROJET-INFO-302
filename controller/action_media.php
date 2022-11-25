@@ -22,7 +22,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "ajouter-bat") {
 
          for ($x = 0; $x < $_POST['nb_salle']; $x++) {
             header("Location: ./?page=ajout_salle");
-          }
+         }
          
       }else{
          header("Location: ./?page=liste-bat");
@@ -59,4 +59,3 @@ if (isset($_POST["action"]) && $_POST["action"] == "ajouter-bat") {
 //          echo "info incorrect";
 //          // header("Location: ./?page=ajout-bat");
 //       }
-
