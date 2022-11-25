@@ -29,11 +29,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "ajouter-bat") {
          echo "info incorrect";
          // header("Location: ./?page=ajout-bat");
       }
-<<<<<<< HEAD
-
-=======
    
->>>>>>> 0e6df55186d0b65345b8140acb02191f184a3208
    }
 
 
