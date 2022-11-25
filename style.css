@@ -38,7 +38,6 @@ header table{
 }
 
 .logo{
-    border: solid 2px teal;
     font-family: "Lucida Console", "Courier New", Monospace;
     order: solid 3px teal;
     color: white;
@@ -46,16 +45,24 @@ header table{
     display: flex;
     text-decoration: none;
     cursor: pointer;
-    width: 100%;
-    border-radius: 16px;
     position: relative;
     text-align: center;
-    margin :25%;
-    background-color: teal;
+    height: 75px;
+    width: 100px;
+}
+
+html body header table tbody tr td h1.logo a.button1 img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: solid 2px teal;
+    border-radius: 16px;
+    left: 25%;
+    top: 0%;
 }
 .logo:hover{
     font-family: "Lucida Console", "Courier New", Monospace;
-    display: inline-block;
+    display: flex;
     text-align: center;      
     transition: 0.3s;
     text-decoration: none;
@@ -84,8 +91,8 @@ li {
 }
 .button {
     font-family: "Lucida Console", "Courier New", Monospace;
-    /*! background-color: white; */
-    /*! border: solid 2px teal; */
+    background-color: white;
+    border: solid 2px white;
     color: teal;
     text-align: center;
     padding : 10px;
@@ -111,7 +118,6 @@ li {
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
-    width: 50%;
     margin : 10px;
 }
 #menu-inscrp {
@@ -255,8 +261,8 @@ footer{
 }
 .batima{
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: white;
-    color: black;
+    background-color: teal;
+    color: white;
     font-weight: bold;
     width: 50%;
     border-radius: 16px;
@@ -284,16 +290,51 @@ footer{
 }
 .btnajoutsalle{
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: teal;
+    color: white;
     font-weight: bold;
     width: 100%;
     position: relative;
     margin: 0;
-    text-align: center;
+    text-align: left; 
 }
 .cnx-sub{
     font-family: "Lucida Console", "Courier New", Monospace;
    border: solid 3px teal;
+    color: teal;
+    font-weight: bold;
+    position: relative;
+    padding:1% 25%;
+    text-align: center;
+    border-radius: 16px;
+    background-color: white;
+}
+.cnx-sub2{
+    font-family: "Lucida Console", "Courier New", Monospace;
+   border: solid 3px teal;
+    color: teal;
+    font-weight: bold;
+    position: relative;
+    padding:1% 25%;
+    text-align: center;
+    border-radius: 16px;
+    background-color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.cnx-sub:hover{
+    font-family: "Lucida Console", "Courier New", Monospace;
+   border: solid 3px white;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    padding:1% 25%;
+    text-align: center;
+    border-radius: 16px;
+    background-color: teal; 
+}
+.cnx-sub2:hover{
+    font-family: "Lucida Console", "Courier New", Monospace;
+   border: solid 3px white;
     color: white;
     font-weight: bold;
     position: relative;
@@ -320,6 +361,7 @@ footer{
     margin: 3%;
     text-align: center;
     border-radius: 16px;
+    background-color: white;
 }
 .btnajoutsalle2{
     font-family: "Lucida Console", "Courier New", Monospace;
@@ -329,7 +371,7 @@ footer{
 }
 .batima2{
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: white;
+    background-color: teal;
     color: black;
     font-weight: bold;
     width: 75%;
@@ -346,6 +388,7 @@ html body fieldset.batima2 form table.tab tbody tr td.tab{
     border:solid 2px teal;
     border-radius: 16px;
     text-align: center;
+    background-color: white;
 }
 .salasghira2{
     font-family: "Lucida Console", "Courier New", Monospace;
@@ -355,3 +398,5 @@ html body fieldset.batima2 form table.tab tbody tr td.tab{
     position: relative;
     text-align: center;
 }
+
+

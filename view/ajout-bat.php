@@ -31,7 +31,7 @@
             </div>
             <div class="batsghir">
                 <div class="salasghira btnajoutsalle">
-                    <input type="submit" value="Ajouter" class="button">
+                    <input type="submit" value="Ajouter" class="cnx-sub2">
                 </div>
             </div>
         </div>
