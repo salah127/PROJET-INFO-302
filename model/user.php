@@ -109,8 +109,15 @@ function recup_pts($pseu){
 
 function modification_compte ($id, $pseudo, $password, $mail){
     global $c;
+
+
+    $pseudo = mysqli_real_escape_string($c, $pseudo);
+	$password = mysqli_real_escape_string($c, $password);
+	$mail = mysqli_real_escape_string($c, $mail);
+
+
     // $sql ="UPDATE `users` SET`pseudo`='.$pseudo.',`mdp`='.$password.',`role`=NULL,`email`='.$mail.',`entreprise`=NULL,`adresse`=NULL,`numero`=NULL,`point`=NULL WHERE users.id = '.$id.'";
-    $sql = "UPDATE users SET mdp = '$password', email = '$mail', pseudo = '$pseudo' WHERE users.id = $id";
+    $sql = "UPDATE users SET mdp = '$password', email = '$mail', pseudo = '$pseudo' WHERE users.id = '$id'";
 
     //echo $sql;
     // var_dump($sql);
@@ -126,8 +133,15 @@ function modification_compte ($id, $pseudo, $password, $mail){
 
 function modification_pro ($id, $pseudo, $mail, $entreprise , $adresse, $num, $password){
     global $c;
-    // $sql ="UPDATE `users` SET`pseudo`='.$pseudo.',`mdp`='.$password.',`role`=NULL,`email`='.$mail.',`entreprise`=NULL,`adresse`=NULL,`numero`=NULL,`point`=NULL WHERE users.id = '.$id.'";
-    $sql = "UPDATE users SET mdp = '$password', email = '$mail', pseudo = '$pseudo', entreprise = '$entreprise', adresse = '$adresse', numero = '$num' WHERE users.id = $id";
+
+    $pseudo = mysqli_real_escape_string($c, $pseudo);
+	$mail = mysqli_real_escape_string($c, $mail);
+	$entreprise = mysqli_real_escape_string($c, $entreprise);
+    $adresse = mysqli_real_escape_string($c, $adresse);
+	$num = mysqli_real_escape_string($c, $num);
+	$password = mysqli_real_escape_string($c, $password);
+
+    $sql = "UPDATE users SET mdp = '$password', email = '$mail', pseudo = '$pseudo', entreprise = '$entreprise', adresse = '$adresse', numero = '$num' WHERE users.id = '$id'";
 
     mysqli_query($c,$sql);
 
@@ -137,9 +151,14 @@ function modification_pro ($id, $pseudo, $mail, $entreprise , $adresse, $num, $p
 
 function suppression ($id){
     global $c;
-    $sql = "DELETE FROM users WHERE id=$id";
+    $sql1 = "DELETE FROM batiment WHERE id_pro='$id'";
+    $sql = "DELETE FROM users WHERE id='$id'";
+    mysqli_query($c,$sql1);
     mysqli_query($c,$sql);
 }
+
+
+
 
 /*function delete_topic()
 {

@@ -23,7 +23,7 @@
             </div>
             <div class="batsghir">
                 <div class="salasghira btnajoutsalle">
-                    <label>Nembre de salle :</label>
+                    <label>Nombre de salle :</label>
                 </div>
                 <div class="salasghira btnajoutsalle">
                     <input type="number" name="nb_salle" class="cnx-control">

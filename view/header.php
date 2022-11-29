@@ -59,7 +59,7 @@
                                 box-shadow: inset 20px 20px 20px #0000008c;
                             }
 
-                            div {
+                            action {
                                 width: 200px;
                                 height: 80px;
                                 box-shadow: 16px 14px 20px #0000008c;
@@ -72,7 +72,7 @@
                                 font-size: 16px;
                             }
 
-                            div::before {
+                            action::before {
                                 content: "";
                                 background-image: conic-gradient(#ff0052 20deg,
                                         transparent 120deg);
@@ -83,8 +83,8 @@
                                 animation: rotate 2s linear infinite;
                             }
 
-                            div::after {
-                                content: 'Le Bon Choix';
+                            action::after {
+                                content: 'LeBonChoix';
                                 width: 190px;
                                 height: 70px;
                                 background: #101010;
@@ -109,7 +109,7 @@
                                 }
                             }
                             </style>
-                            <div></div>
+                            <action></action>
                         </a>
                     </h1>
                 </td>

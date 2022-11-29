@@ -1,3 +1,9 @@
+
+<?php 
+        // Afficher_bat($_SESSION['id'][0]);
+?>
+
+
 <fieldset class='batima'>
     <legend>
         <h2>Ajout Salle</h2>
@@ -5,7 +11,7 @@
     <form action="." method="post">
         <div class="batdiv">
             <div class="batsghir">
-                <input class='inputtype cnx-control' type="hidden" name="action" value="add">
+                <input class='inputtype cnx-control' type="hidden" name="action" value="Ajout_salle">
                 <div class="salasghira">
                     <label for="idinsuser">Numero de la salle:</label>
                 </div>
@@ -15,15 +21,7 @@
                 <br>
             </div>
             <br>
-            <div class="batsghir">
-                <div class="salasghira">
-                    <label for="idinsuser">Description :</label>
-                </div>
-                <div class="salasghira">
-                    <input class='inputtype cnx-control' type="" name="Description" id="ins-email" placeholder="Description...">
-                </div>
-                <br>
-            </div>
+            
             <br>
             <div class="batsghir">
                 <div class="salasghira">
@@ -32,9 +30,6 @@
                 <div class="salasghira">
                     <input class='inputtype cnx-control btnajoutsalle2' type="file" name="Photo" id="ins-entr" placeholder="Photos...">
                 </div>
-                <br>
-                <label for="idinsuser">Images :</label>
-                <input type="file" name="Photo" class="cnx-control" id="ins-entr" placeholder="Photos..."><br>
             </div>
             <br>
             <div class="batsghir">
@@ -53,19 +48,39 @@
                 </div>
                 <div class="salasghira">
                     <input class='inputtype cnx-control' type="text" name="Ressources" id="ins-num"
-                        placeholder="Numero de l'entreprise...">
+                        placeholder="Ressources">
                 </div>
                 <br>
             </div>
             <br>
             <div class="batsghir">
                 <div class="salasghira">
-                    <label for="ins-mp">Disponibilité :</label>
+                    <label for="ins-mp">Niveau requis :</label>
                 </div>
                 <div class="salasghira">
-                    <input class='inputtype cnx-control' type="datetime-local" name="Disponibilité" id="ins-mp"
-                        placeholder="Disponibilité...">
+                    <input class='inputtype cnx-control' type="RANGE" name="niveau" id="ins-mp"
+                        placeholder="Niveau..." min="0" max="400" step="100" list="nv">
+                        <datalist id="nv">
+                            <option label="0%">0</option>
+                            <option >100</option>
+                            <option  >200</option>
+                            <option >300</option>
+                            <option >400</option>
+                        </datalist>
                 </div><br><br><br>
+            </div>
+            <style>
+                
+            </style>
+            <br>
+            <div class="batsghir">
+                <div class="salasghira">
+                    <label for="idinsuser">Description :</label>
+                </div>
+                <div class="salasghira">
+                    <input class='inputtype cnx-control' type="" name="Description" id="ins-email" placeholder="Description...">
+                </div>
+                <br>
             </div>
             <br>
             <div class="batsghir">
@@ -73,7 +88,7 @@
                     <label>Nembre d'organisateurs :</label>
                 </div>
                 <div class="salasghira">
-                    <input class='inputtype cnx-control' type="number" name="nb_salle">
+                    <input class='inputtype cnx-control' type="number" name="nb_org">
                 </div>
                 <br><br>
             </div>
@@ -84,5 +99,6 @@
                 </div>
             </div>
         </div>
+
     </form>
 </fieldset>

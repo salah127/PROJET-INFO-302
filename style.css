@@ -282,7 +282,7 @@ footer {
 
 .batima {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #181818;
+    background-color: #ffffff;
     color: white;
     font-weight: bold;
     width: 50%;
@@ -295,6 +295,7 @@ footer {
 .batdiv {
     font-family: "Lucida Console", "Courier New", Monospace;
     position: relative;
+    /* background-color: white; */
 }
 
 .batsghir {
@@ -431,4 +432,16 @@ html body fieldset.batima2 form table.tab tbody tr td.tab {
     width: 100%;
     position: relative;
     text-align: center;
+}
+
+
+
+h2 {
+    color: black;
+
+}
+
+label{
+    color: black;
+
 }

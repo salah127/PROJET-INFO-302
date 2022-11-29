@@ -3,8 +3,6 @@ if (isset($_GET["connecte"]) && $_GET["connecte"] == "false") {
 
     var_dump($_SESSION);
 
-    //var_dump($_SESSION);
-
     unset($_SESSION['username']);
     unset($_SESSION['connecte']);
     unset($_SESSION['role']);
@@ -131,10 +129,7 @@ if (isset($_POST["action"])) {
 
 if (isset($_GET["id"])) {
     $id = $_GET['id']; // $id is now defined
-    //echo $id;
     suppression($id);
-    //mysqli_close($c);
-    //session_destroy();
     echo "<p>votre compte a été supprimé.</p>";
     header("Location: ./?connecte=false");
 }
