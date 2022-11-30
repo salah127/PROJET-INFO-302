@@ -32,26 +32,6 @@ function batt($id){
 	$sql = " SELECT Nom, adresse, nb_salle FROM batiment WHERE id_pro = ' $id '  ";
 	$resultat = mysqli_query($c, $sql);
 
-
-	echo'
-	<table class=tab>
-		<tr>
-            <td class=tab>
-				<li > 
-					<strong>Nom</strong>
-				</li>
-			</td>
-			<td class=tab>
-			<li > 
-			<strong>Adresse</strong>
-		</li>
-			</td>
-			<td class=tab>
-			<li > 
-			<strong>Nembre de salle</strong>
-		</li>
-			</td>
-		</tr>';
 	while( $row = mysqli_fetch_assoc($resultat)){
 		
 		echo'
@@ -77,13 +57,7 @@ function batt($id){
 
 			<tr>
 			';
-
-
-		// echo "<strong>".$row["Nom"]."</strong>"."<br>";
-		// echo $row["Nom"]."<br>";
 	}
-	echo'
-	</table>';
 
 }
 
