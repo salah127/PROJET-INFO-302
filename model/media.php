@@ -33,11 +33,8 @@ function batt($id){
 	$resultat = mysqli_query($c, $sql);
 
 	while( $row = mysqli_fetch_assoc($resultat)){
-		
 		echo'
-		
 			<tr>
-
 				<td class=tab> 
 					<li>' . $row["Nom"] . ' </li> 
 				</td>
@@ -50,11 +47,8 @@ function batt($id){
 				<td class=tab>
 					<li>
 						<a class="button" href ="index.php?page=liste-salles&Nom='.$row["Nom"].'"> Afficher </a>
-
-						
 					</li> 
 			    </td>
-
 			<tr>
 			';
 	}
@@ -122,25 +116,7 @@ function salles($nom){
 	global $c;
 	$sql = " SELECT numero, Capacité, niveau FROM salle WHERE nom_bat = '$nom'  ";
 	$resultat = mysqli_query($c, $sql);
-	echo'
-	<table class=tab>
-		<tr>
-            <td class=tab>
-				<li > 
-					<strong>Numero</strong>
-				</li>
-			</td>
-			<td class=tab>
-				<li> 
-					<strong>Capacite</strong>
-				</li>
-			</td>
-			<td class=tab>
-				<li> 
-					<strong>Niveau requis</strong>
-				</li>
-			</td>
-		</tr>';
+
 	while( $row = mysqli_fetch_assoc($resultat)){
 		echo'
 			<tr>
@@ -162,8 +138,7 @@ function salles($nom){
 			<tr>
 			';
 	}
-	echo'
-	</table>';
+
 }
 function supp_bat ($nom){
     global $c;

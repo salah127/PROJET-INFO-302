@@ -6,9 +6,28 @@
         <h2>batiment <?php echo '<nav>'. $_GET['Nom'] . '</nav> '; ?></h2>
     </legend>
     <form action="." method="post">
+	<table class=tab>
+		<tr>
+            <td class=tab>
+				<li > 
+					<strong>Numero</strong>
+				</li>
+			</td>
+			<td class=tab>
+				<li> 
+					<strong>Capacite</strong>
+				</li>
+			</td>
+			<td class=tab>
+				<li> 
+					<strong>Niveau requis</strong>
+				</li>
+			</td>
+		</tr>
         <?php 
             afficher_salles($_GET['Nom']);
         ?>
+        </table>
         <input type="hidden" name="action" value="supp">
         <br>
         <div class="salasghira2 btnajoutsalle2">
