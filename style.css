@@ -68,7 +68,7 @@ html body header table tbody tr td h1.logo a.button1 img {
 .button1 {
     font-family: "Lucida Console", "Courier New", Monospace;
     text-align: center;
-    color: #ff0052;
+    color: blue;
     padding: 10px;
     font-size: 12px;
     text-decoration: none;
@@ -92,7 +92,7 @@ li {
 .button {
     font-family: "Lucida Console", "Courier New", Monospace;
     text-align: center;
-    color: #ff0052;
+    color: blue;
     padding: 10px;
     font-size: 12px;
     text-decoration: none;
@@ -104,8 +104,9 @@ li {
 
 .button:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #ff0052;
-    color: #181818;
+    background-color: #181818;
+    color: red;
+    border: solid 0.1rem red;
     text-align: center;
     font-size: 12px;
     opacity: 0.6;
@@ -143,7 +144,7 @@ li {
 #menu-inscrp a {
     font-family: "Lucida Console", "Courier New", Monospace;
     text-align: center;
-    color: #ff0052;
+    color: red;
     display: table;
     font-size: 12px;
     text-decoration: none;
@@ -156,14 +157,14 @@ li {
     background-color: #181818;
     margin: 1%;
     width: 84%;
-    color: #ff0052;
+    color: blue;
     border-radius: 16px;
 }
 
 #menu-inscrp ul li:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #ff0052;
-    color: #181818;
+    background-color: #181818;
+    color: red;
     text-align: center;
     font-size: 12px;
     opacity: 0.6;
@@ -176,6 +177,7 @@ li {
     font-family: "Lucida Console", "Courier New", Monospace;
     max-height: 100%;
     width: 100%;
+    background-color: #181818;
 }
 
 @keyframes rotate {
@@ -332,7 +334,7 @@ footer {
 .batima2 {
     font-family: "Lucida Console", "Courier New", Monospace;
     background-color: #181818;
-    color: #ff0052;
+    color: white;
     font-weight: bold;
     border-radius: 16px;
     padding-bottom: 3%;
@@ -340,12 +342,13 @@ footer {
 
 html body fieldset.batima2 form table.tab tbody tr td.tab {
     position: relative;
-    height: 150px;
+    height: 50px;
     width: 150px;
     justify-content: center;
     align-items: center;
     border-radius: 16px;
     text-align: center;
+    border: solid 1px white;
 }
 
 .salasghira2 {
@@ -358,7 +361,14 @@ html body fieldset.batima2 form table.tab tbody tr td.tab {
 }
 
 h2 {
-    color: #181818;
+  background-image: linear-gradient(45deg,red, blue);
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+    text-transform: uppercase;
 }
 
 label {
@@ -366,80 +376,34 @@ label {
 }
 
 strong {
-    margin-left: auto;
-    margin-right: auto;
-    table-layout: fixed;
-    border-collapse: collapse;
-    z-index: 10;
-    position: relative;
-    color: #181818;
+    background-image: linear-gradient(45deg,red, blue);
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+    text-transform: uppercase;
 }
-
-.card {
-    position: relative;
-    height: 150px;
-    width: 100%;
-    background: #181818;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 16px;
-    text-align: center;
-}
-
-.card::before {
-    content: "";
-    color: #181818;
-    height: 275px;
-    width: 275px;
-    background: linear-gradient(90deg, #181818, #ff0052);
-    position: absolute;
-    z-index: 2;
-    animation: rotate 3s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotateZ(0deg);
-    }
-
-    to {
-        transform: rotateZ(360deg);
-    }
-}
-
-.card::after {
-    content: "";
-    color: #181818;
-    height: 140px;
-    width: 200px;
-    background: black;
-    position: absolute;
-    z-index: 2;
-    border-radius: 16px;
-}
-
 .prof {
     font-family: "Lucida Console", "Courier New", Monospace;
     width: 35px;
     height: 35px;
-    box-shadow: 1px 1px 20px #ff0052;
+    box-shadow: 1px 1px 20px red;
     border-radius: 180px;
     position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ff0052;
+    color: blue;
     text-decoration: none;
     text-transform: uppercase;
     left: 225%;
 }
 
 .prof::before {
-    background-image: conic-gradient(#ff0052 20deg,
+    background-image: conic-gradient(white 20deg,
             transparent 120deg);
     width: 150%;
     height: 150%;
@@ -456,107 +420,10 @@ strong {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ff0052;
+    color: white;
     font-size: larger;
     letter-spacing: 5px;
 }
-
-.card2 {
-    position: relative;
-    height: 150px;
-    background: #181818;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 16px;
-    text-align: center;
-}
-
-.card2::before {
-    content: "";
-    color: #181818;
-    height: 200px;
-    width: 350px;
-    background: linear-gradient(90deg, #181818, #ff0052);
-    position: absolute;
-    z-index: 2;
-    animation: rotate 3s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotateZ(0deg);
-    }
-
-    to {
-        transform: rotateZ(360deg);
-    }
-}
-
-.card2::after {
-    content: "";
-    color: #181818;
-    height: 140px;
-    width: 310px;
-    background: black;
-    position: absolute;
-    z-index: 2;
-    border-radius: 16px;
-}
-
-.card3 {
-    position: relative;
-    height: 150px;
-    background: #181818;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 16px;
-    text-align: center;
-}
-
-.card3::before {
-    content: "";
-    color: #181818;
-    height: 200px;
-    width: 350px;
-    background: linear-gradient(90deg, #181818, #ff0052);
-    position: absolute;
-    z-index: 2;
-    animation: rotate 3s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotateZ(0deg);
-    }
-
-    to {
-        transform: rotateZ(360deg);
-    }
-}
-
-.card3::after {
-    content: "";
-    color: #181818;
-    height: 140px;
-    width: 310px;
-    background: black;
-    position: absolute;
-    z-index: 2;
-    border-radius: 16px;
-}
-
-@media only screen and (max-width: 768px) {
-    header, html, body {
-        width: 100%;
-    }
-}
-
 action {
     width: 100px;
     height: 50px;
@@ -572,8 +439,8 @@ action {
 
 action::before {
     content: "";
-    background-image: conic-gradient(#ff0052 20deg,
-            transparent 120deg);
+    background-image: conic-gradient(red 180deg,
+            blue 180deg);
     width: 250%;
     height: 250%;
     position: absolute;
@@ -591,7 +458,7 @@ action::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ff0052;
+    color: white;
     font-size: larger;
     box-shadow: inset 20px 20px 20px #0000008c;
     text-transform: uppercase;
