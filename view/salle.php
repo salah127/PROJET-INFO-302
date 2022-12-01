@@ -80,7 +80,7 @@
                     echo '  <br>
                             <br>
                                 <div class="salasghira2 btnajoutsalle2">
-                                    <a class="cnx-sub" href="index.php?page=connexion">Reserver</a>
+                                    <a class="cnx-sub" href="index.php?page=connexion">Se connecter pour reserver</a>
                                 </div>
                                 <br>
                             ';

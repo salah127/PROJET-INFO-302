@@ -297,6 +297,22 @@ function afficher_home(){
 
 
 
+function reserver(){
+	global $c;
+	$sql = "INSERT INTO `reservation` (`numero`, `Photo`, `Capacité`, `Ressources`, `niveau`, `Description`, `nb_org`, `nom_bat`, `time_ajout` ) VALUES ('$num', '$Photo', '$Capacité', '$Ressources', '$niveau', '$Description',' $nb_org', '$nom_bat', current_timestamp() );";
+	$result = mysqli_query($c, $sql);
+	$row = mysqli_fetch_assoc($resultat);
+	if ($row == NULL){
+		echo 'Il ya aucunne salle';
+	} else{
+		salles($nom);
+	}
+}
+
+
+
+
+
 // function recup_nom($id){
 //     global $c;
 // 	$sql =  "select Nom, id_pro FROM `batiment`";
