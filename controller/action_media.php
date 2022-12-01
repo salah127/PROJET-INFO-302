@@ -47,7 +47,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "supp") {
 //formulaire d'ajout de salles
 
 if (isset($_POST["action"]) && $_POST["action"] == "Ajout_salle") {
-   if ((isset($_POST['num']) && $_POST['num'] != "") ||  (isset($_POST['Photo']) && $_POST['Photo'] != "") || (isset($_POST['Capacité']) && $_POST['Capacité'] != "") || (isset($_POST['Ressources']) && $_POST['Ressources'] != "") || (isset($_POST['niveau']) && $_POST['niveau'] != "") || (isset($_POST['Description']) && $_POST['Description'] != "") || (isset($_POST['nb_org']) && $_POST['nb_org'] != "")) {
+   // if ((isset($_POST['num']) && $_POST['num'] != "") &&  (isset($_POST['Photo']) && $_POST['Photo'] != "") && (isset($_POST['Capacité']) && $_POST['Capacité'] != "") && (isset($_POST['Ressources']) && $_POST['Ressources'] != "") && (isset($_POST['niveau']) && $_POST['niveau'] != "") && (isset($_POST['Description']) && $_POST['Description'] != "")) {
       // if (isset($_SESSION['id'][0])) {
       //    $id = $_SESSION['id'][0];
       // }
@@ -69,10 +69,10 @@ if (isset($_POST["action"]) && $_POST["action"] == "Ajout_salle") {
       // }else{
       //    echo 'Salle existe deja';
       //    } 
-   }else {
-         echo "info incorrect";
+   // }else {
+         // echo "info incorrect";
          // header("Location: ./?page=ajout-bat");
-      }
+      // }
    
    }
 

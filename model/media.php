@@ -131,7 +131,7 @@ function salles($nom){
 			    </td>
 				<td class=tab>
 					<li>
-						<a class="button" href ="index.php?page=salle&numero='.$row["numero"].'"> Afficher </a>
+						<a class="button" href ="index.php?page=salle-pro&numero='.$row["numero"].'"> Afficher </a>
 					</li> 
 			    </td>
 
@@ -171,30 +171,6 @@ function salle($num){
 	$sql = " SELECT numero, Capacité, niveau, photo, nom_bat FROM salle WHERE numero = '$num'  ";
 	$resultat = mysqli_query($c, $sql);
 	
-	echo'
-	<table class=tab>
-		<tr>
-            <td class=tab>
-				<li > 
-					<strong>Numero</strong>
-				</li>
-			</td>
-			<td class=tab>
-				<li > 
-					<strong>photo</strong>
-				</li>
-			</td>
-			<td class=tab>
-				<li> 
-					<strong>Capacite</strong>
-				</li>
-			</td>
-			<td class=tab>
-				<li> 
-					<strong>Niveau requis</strong>
-				</li>
-			</td>
-		</tr>';
 	while( $row = mysqli_fetch_assoc($resultat)){
 		
 		echo'
@@ -261,7 +237,49 @@ function rec_nom($nom){
 
 
 
+function home(){
+	global $c;
+	$sql = " SELECT * FROM salle ORDER BY time_ajout ";
+	$resultat = mysqli_query($c, $sql);
+	
+	while( $row = mysqli_fetch_assoc($resultat)){
+		
+		echo'
+			<tr>
 
+				<td class=tab> 
+					<li>' . $row["numero"] . ' </li> 
+				</td>
+				<td class=tab> 
+					<li><img src = "data:image/jpg;base64,' . base64_encode($row['photo']) . '" width = "50px" height = "50px"/></li>
+				</td>
+				<td class=tab>
+					<li> '. $row["Capacité"] . ' </li> 
+				</td>
+				<td class=tab>
+					<li>'. $row["niveau"] .'</li> 
+			    </td>
+
+			<tr>
+			';
+	}
+	echo'
+	</table>';
+
+}
+
+
+function afficher_salle($num){
+	global $c;
+	$sql = "SELECT numero, Capacité, niveau, photo, nom_bat FROM salle WHERE numero = '$num'";
+	$resultat = mysqli_query($c, $sql);
+	$row = mysqli_fetch_assoc($resultat);
+	if ($row == NULL){
+		echo 'Il ya aucunne salle';
+	} else{
+		salle($num);
+	}
+}
 
 
 
