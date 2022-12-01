@@ -1,10 +1,14 @@
+<?php
+    $_SESSION['id_salle'] = $_GET['id_salle'];
+?>
+
 <fieldset class='batima2'>
     <legend class='titleliste'>
         <h2> Batiment <?php echo '<nav>'. $_SESSION['Nom']. '</nav> '; ?> <strong> > </strong> Salle
-            <?php echo '<nav>'. $_GET['numero']. '</nav> '; ?></h2>
+            <?php echo '<nav>'. $_GET['id_salle']. '</nav> '; ?></h2>
     </legend>
     <form action="." method="post">
-
+    <input type="hidden" name="action" value="reserver">
         <table class=tab>
             <tr>
                 <td class=tab>
@@ -29,8 +33,8 @@
                 </td>
             </tr>
             <?php
-                $_SESSION['numero'] = $_GET['numero'];
-                afficher_salle($_GET['numero']);
+                // $_SESSION['id_pro'] = $_GET['id_salle'];
+                afficher_salle($_GET['id_salle']);
 
 
                 if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
@@ -69,6 +73,7 @@
                     <br>
                     <div class="salasghira2 btnajoutsalle2">
                         <a class="cnx-sub" href="index.php?page=calendar">Reserver</a>
+                        <input type = "submit" class="cnx-sub" value = "resever">
                     </div>
                     <br>
                     ';

@@ -76,9 +76,9 @@ function afficher_bat($id){
 
 
 
-function existe_salle($num){
+function existe_salle($num, $nom){
 	global $c;
-	$sql = "select numero FROM `salle`";
+	$sql = "SELECT numero FROM `salle` WHERE nom_bat = $nom";
 	$resultat = mysqli_query($c,$sql);
     $meme_bat = false;
     while ($row = mysqli_fetch_assoc($resultat)){
@@ -109,12 +109,12 @@ function creer_salle($num, $Photo, $Capacité, $Ressources, $niveau, $Descriptio
 	$nb_org = mysqli_real_escape_string($c, $nb_org);
 	$nom_bat = mysqli_real_escape_string($c, $nom_bat);
 
-	$sql = "INSERT INTO `salle` (`numero`, `Photo`, `Capacité`, `Ressources`, `niveau`, `Description`, `nb_org`, `nom_bat`, `time_ajout` ) VALUES ('$num', '$Photo', '$Capacité', '$Ressources', '$niveau', '$Description',' $nb_org', '$nom_bat', current_timestamp() );";
+	$sql = "INSERT INTO `salle` (`id_salle`, `numero`,`Photo`, `Capacité`, `Ressources`, `niveau`, `Description`, `nb_org`, `nom_bat`, `time_ajout` ) VALUES (NULL ,'$num', '$Photo', '$Capacité', '$Ressources', '$niveau', '$Description',' $nb_org', '$nom_bat', current_timestamp() );";
 	mysqli_query($c, $sql);
 }
 function salles($nom){
 	global $c;
-	$sql = " SELECT numero, Capacité, niveau FROM salle WHERE nom_bat = '$nom'  ";
+	$sql = " SELECT * FROM salle WHERE nom_bat = '$nom'  ";
 	$resultat = mysqli_query($c, $sql);
 
 	while( $row = mysqli_fetch_assoc($resultat)){
@@ -131,7 +131,7 @@ function salles($nom){
 			    </td>
 				<td class=tab>
 					<li>
-						<a class="button" href ="index.php?page=salle&numero='.$row["numero"].'"> Afficher </a>
+						<a class="button" href ="index.php?page=salle&id_salle='.$row["id_salle"].'"> Afficher </a>
 					</li> 
 			    </td>
 
@@ -150,7 +150,7 @@ function supp_bat ($nom){
 
 function afficher_salles($nom){
 	global $c;
-	$sql = "SELECT numero, Capacité, niveau FROM salle WHERE nom_bat = '$nom'";
+	$sql = "SELECT * FROM salle WHERE nom_bat = '$nom'";
 	$resultat = mysqli_query($c, $sql);
 	$row = mysqli_fetch_assoc($resultat);
 	if ($row == NULL){
@@ -166,9 +166,9 @@ function afficher_salles($nom){
 
 
 
-function salle($num){
+function salle($id){
 	global $c;
-	$sql = " SELECT numero, Capacité, niveau, photo, nom_bat FROM salle WHERE numero = '$num'  ";
+	$sql = " SELECT * FROM salle WHERE id_salle = '$id'  ";
 	$resultat = mysqli_query($c, $sql);
 	
 	while( $row = mysqli_fetch_assoc($resultat)){
@@ -198,15 +198,15 @@ function salle($num){
 }
 
 
-function afficher_salle($num){
+function afficher_salle($id){
 	global $c;
-	$sql = "SELECT numero, Capacité, niveau, photo, nom_bat FROM salle WHERE numero = '$num'";
+	$sql = "SELECT * FROM salle WHERE id_salle = '$id'";
 	$resultat = mysqli_query($c, $sql);
 	$row = mysqli_fetch_assoc($resultat);
 	if ($row == NULL){
 		echo 'Il ya aucunne salle';
 	} else{
-		salle($num);
+		salle($id);
 	}
 }
 
@@ -227,6 +227,7 @@ function rec_nom($nom){
 		salles($nom);
 	}
 }
+
 
 
 
@@ -266,7 +267,7 @@ function home(){
 			    </td>
 				<td class=tab>
 					<li>
-						<a class="button" href ="index.php?page=salle&numero='.$row["numero"].'"> Afficher </a>
+						<a class="button" href ="index.php?page=salle&id_salle='.$row["id_salle"].'"> Afficher </a>
 					</li> 
 			    </td>
 
@@ -297,16 +298,10 @@ function afficher_home(){
 
 
 
-function reserver(){
+function reserver( $id_salle, $id_user ){
 	global $c;
-	$sql = "INSERT INTO `reservation` (`numero`, `Photo`, `Capacité`, `Ressources`, `niveau`, `Description`, `nb_org`, `nom_bat`, `time_ajout` ) VALUES ('$num', '$Photo', '$Capacité', '$Ressources', '$niveau', '$Description',' $nb_org', '$nom_bat', current_timestamp() );";
+	$sql = "INSERT INTO `reservation` (`id_res`, `id_salle`, `id_user`, `date_reservation` ) VALUES (NULL, '$id_salle', '$id_user', current_timestamp() );";
 	$result = mysqli_query($c, $sql);
-	$row = mysqli_fetch_assoc($resultat);
-	if ($row == NULL){
-		echo 'Il ya aucunne salle';
-	} else{
-		salles($nom);
-	}
 }
 
 
