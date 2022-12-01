@@ -626,7 +626,7 @@ action::before {
     height: 250%;
     position: absolute;
     /* -webkit-animation: rotate 2s linear infinite; */
-    animation: rotate 2s linear infinite;
+    animation: rotate 1s linear infinite;
 }
 
 action::after {
