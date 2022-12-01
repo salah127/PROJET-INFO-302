@@ -17,9 +17,6 @@
                     <h1 class="logo">
                         <a class="button1" href="index.php?page=home">
                             <!-- <img src="logo.png" type="image/png"></img> -->
-                            <style>
-                            
-                            </style>
                             <action></action>
                         </a>
                     </h1>
@@ -27,14 +24,12 @@
                 <td>
                     <li class='BigListe'>
                         <form action="." method="post" class="menu">
-                            <ul class="CreRank">
-                                <li><a class="button" href="index.php?page=">Recherche</a></li>
-                                <li><a class="button" href="index.php?page=ranking">Ranking</a></li>
-                            </ul>
-                            <?php
+                    <li><a class="button" href="index.php?page=">Recherche</a></li>
+                    <li><a class="button" href="index.php?page=ranking">Ranking</a></li>
+                    <?php
                                     if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
                                         echo '
-                                        <ul class="account" id="menu-inscrp">
+                                        <ul id="menu-inscrp">
                                             <li><a href="#" >Parametre</a>
                                                 <ul class ="MenuInscrp">
                                                     <li ><a class="button" href ="index.php?page=profil">Profil</a></li>
@@ -46,7 +41,7 @@
                                         ';
                                         if ($_SESSION["role"]=='internaute'){
                                             echo '
-                                            <ul class="service" id="menu-inscrp">
+                                            <ul id="menu-inscrp">
                                             <li><a href="#" >Service</a>
                                                 <ul>
                                                     <li ><a class="button" href ="">Reservation</a></li>
@@ -59,7 +54,7 @@
                                         }
                                         else{
                                             echo '
-                                            <ul class="service" id="menu-inscrp">
+                                            <ul id="menu-inscrp">
                                             <li><a href="#" >Service</a>
                                                 <ul>
                                                     <li ><a class="button" href ="index.php?page=liste-bat">Ajouter</a></li>
@@ -74,8 +69,7 @@
                                     else{
                                         if (isset($_SESSION["connecte"])) var_dump($_SESSION["connecte"]);
                                         echo ' 
-                                        <ul class="account" id="menu-inscrp">
-                                        
+                                        <ul  id="menu-inscrp">
                                             <li><a href="#" >Inscription</a>
                                                 <ul class ="MenuInscrp">
                                                     <li><a href ="index.php?page=inscription">Internaute</a></li>
@@ -88,7 +82,7 @@
                                         </ul>';
                                     }
                                 ?>
-                        </form>
+                    </form>
                     </li>
                 </td>
             </tr>
