@@ -34,17 +34,7 @@
 
 
 
-                if ($_SESSION["role"]=='internaute'){
-                    echo '
-                    <br>
-            <br>
-            <div class="salasghira2 btnajoutsalle2">
-                <a class="cnx-sub" href="index.php?page=">Reserver</a>
-            </div>
-            <br>
-                    ';
-                }
-                else{
+                if ($_SESSION["role"]=='pro'){
                     echo '
                     <br>
                     <br>
@@ -57,6 +47,17 @@
                         <a class="cnx-sub" href="index.php?page=">Supprimer</a>
                     </div>
 ';
+                    
+                }
+                else{
+                    echo '<br>
+                    <br>
+                    <div class="salasghira2 btnajoutsalle2">
+                        <a class="cnx-sub" href="index.php?page=">Reserver</a>
+                    </div>
+                    <br>
+                            ';
+                    
                 }
             ?>
     </form>
