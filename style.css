@@ -4,12 +4,12 @@ body {
     height: 100%;
     scroll-behavior: smooth;
     position: relative;
-    background-color: white;
+    background-color: #181818;
 }
 
 header {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background: white;
+    background: #181818;
     border-radius: 16px;
     position: relative;
     height: 15%;
@@ -35,8 +35,8 @@ header table {
 
 .logo {
     font-family: "Lucida Console", "Courier New", Monospace;
-    order: solid 3px white;
-    color: white;
+    order: solid 3px #181818;
+    color: #181818;
     transition: 0.3s;
     display: flex;
     text-decoration: none;
@@ -54,7 +54,7 @@ html body header table tbody tr td h1.logo a.button1 img {
     height: 100%;
     width: 100%;
     position: absolute;
-    border: solid 2px white;
+    border: solid 2px #181818;
     border-radius: 16px;
     left: 5%;
     top: -18.25px;
@@ -108,7 +108,7 @@ li {
 .button:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
     background-color: #ff0052;
-    color: white;
+    color: #181818;
     text-align: center;
     font-size: 12px;
     opacity: 0.6;
@@ -160,7 +160,7 @@ li {
 #menu-inscrp ul li a,
 #menu-inscrp li:hover li a {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: white;
+    background-color: #181818;
     margin: 1%;
     width: 84%;
     color: #ff0052;
@@ -170,7 +170,7 @@ li {
 #menu-inscrp ul li:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
     background-color: #ff0052;
-    color: white;
+    color: #181818;
     text-align: center;
     font-size: 12px;
     opacity: 0.6;
@@ -207,7 +207,7 @@ footer {
     top: 150%;
     text-align: center;
     padding-top: 3px;
-    border-top: 3px solid white;
+    border-top: 3px solid #181818;
     color: rgb(0, 0, 0);
     margin: 1%;
     height: 5%;
@@ -261,12 +261,12 @@ footer {
 
 .batima {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: white;
-    color: white;
+    background-color: #181818;
+    color: #181818;
     font-weight: bold;
     width: 50%;
     border-radius: 16px;
-    border: solid 3px white;
+    border: solid 3px #181818;
     margin-left: 25%;
     margin-right: 25%;
 }
@@ -284,7 +284,7 @@ footer {
 
 .salasghira {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: white;
+    color: #181818;
     font-weight: bold;
     width: 50%;
     position: relative;
@@ -294,7 +294,7 @@ footer {
 
 .btnajoutsalle {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: white;
+    color: #181818;
     font-weight: bold;
     width: 100%;
     position: relative;
@@ -304,8 +304,8 @@ footer {
 
 .cnx-sub {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px white;
-    color: white;
+    border: solid 3px #181818;
+    color: #181818;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
@@ -315,46 +315,46 @@ footer {
 
 .cnx-sub2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px white;
-    color: white;
+    border: solid 3px #181818;
+    color: #181818;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: white;
+    background-color: #181818;
     margin-left: 15%;
     margin-right: 15%;
 }
 
 .cnx-sub:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px white;
-    color: white;
+    border: solid 3px #181818;
+    color: #181818;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: white;
+    background-color: #181818;
 }
 
 .cnx-sub2:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px white;
-    color: white;
+    border: solid 3px #181818;
+    color: #181818;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: white;
+    background-color: #181818;
 }
 
 .inputtype {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: white;
-    border: solid 2px white;
+    color: #181818;
+    border: solid 2px #181818;
     border-radius: 16px;
     text-align: center;
 }
@@ -367,19 +367,19 @@ footer {
     margin: 3%;
     text-align: center;
     border-radius: 16px;
-    background-color: white;
-    border:solid 2px white;
+    background-color: #181818;
+    border:solid 2px #181818;
 }
 
 .btnajoutsalle2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: white;
+    color: #181818;
     font-weight: bold;
 }
 
 .batima2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: white;
+    background-color: #181818;
     color: #ff0052;
     font-weight: bold;
     border-radius: 16px;
@@ -398,7 +398,7 @@ html body fieldset.batima2 form table.tab tbody tr td.tab {
 
 .salasghira2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: white;
+    color: #181818;
     font-weight: bold;
     width: 100%;
     position: relative;
@@ -406,11 +406,11 @@ html body fieldset.batima2 form table.tab tbody tr td.tab {
 }
 
 h2 {
-    color: white;
+    color: #181818;
 }
 
 label {
-    color: white;
+    color: #181818;
 }
 
 strong {
@@ -420,14 +420,14 @@ strong {
     border-collapse: collapse;
     z-index: 10;
     position: relative;
-    color: white;
+    color: #181818;
 }
 
 .card {
     position: relative;
     height: 150px;
     width: 100%;
-    background: white;
+    background: #181818;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -439,10 +439,10 @@ strong {
 
 .card::before {
     content: "";
-    color: white;
+    color: #181818;
     height: 275px;
     width: 275px;
-    background: linear-gradient(90deg, white, #ff0052);
+    background: linear-gradient(90deg, #181818, #ff0052);
     position: absolute;
     z-index: 2;
     animation: rotate 3s linear infinite;
@@ -460,7 +460,7 @@ strong {
 
 .card::after {
     content: "";
-    color: white;
+    color: #181818;
     height: 140px;
     width: 200px;
     background: black;
@@ -512,7 +512,7 @@ strong {
 .card2 {
     position: relative;
     height: 150px;
-    background: white;
+    background: #181818;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -524,10 +524,10 @@ strong {
 
 .card2::before {
     content: "";
-    color: white;
+    color: #181818;
     height: 200px;
     width: 350px;
-    background: linear-gradient(90deg, white, #ff0052);
+    background: linear-gradient(90deg, #181818, #ff0052);
     position: absolute;
     z-index: 2;
     animation: rotate 3s linear infinite;
@@ -545,7 +545,7 @@ strong {
 
 .card2::after {
     content: "";
-    color: white;
+    color: #181818;
     height: 140px;
     width: 310px;
     background: black;
@@ -557,7 +557,7 @@ strong {
 .card3 {
     position: relative;
     height: 150px;
-    background: white;
+    background: #181818;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -569,10 +569,10 @@ strong {
 
 .card3::before {
     content: "";
-    color: white;
+    color: #181818;
     height: 200px;
     width: 350px;
-    background: linear-gradient(90deg, white, #ff0052);
+    background: linear-gradient(90deg, #181818, #ff0052);
     position: absolute;
     z-index: 2;
     animation: rotate 3s linear infinite;
@@ -590,7 +590,7 @@ strong {
 
 .card3::after {
     content: "";
-    color: white;
+    color: #181818;
     height: 140px;
     width: 310px;
     background: black;
@@ -615,7 +615,7 @@ action {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 action::before {
@@ -630,7 +630,7 @@ action::before {
 }
 
 action::after {
-    content: 'Le Bon Choix';
+    content: 'LeBonChoix';
     width: 90px;
     height: 42px;
     background: #101010;

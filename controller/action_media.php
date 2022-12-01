@@ -37,6 +37,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "ajouter-bat") {
 if (isset($_POST["action"]) && $_POST["action"] == "supp") {
 
    $nom = $_SESSION['Nom']; // $id is now defined
+   // var_dump($_SESSION['Nom']);
    supp_bat($nom);
    // echo "<p>votre bat a été supprimé.</p>";s
 }
@@ -52,7 +53,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "Ajout_salle") {
       //    $id = $_SESSION['id'][0];
       // }
 
-      // if (!existe_salle($_POST['num'])) {
+      // if (!existe_salle($_POST['num']), $_GET['nom_bat'])) {
          creer_salle($_POST['num'],$_POST['Photo'] ,$_POST['Capacité'] ,$_POST['Ressources'] ,$_POST['niveau'] ,$_POST['Description'] ,$_POST['nb_org'] ,$_SESSION['Nom']);
          ajout_nb_salle($_SESSION['Nom']);
          // var_dump($_SESSION['nb_salle']);
@@ -63,7 +64,8 @@ if (isset($_POST["action"]) && $_POST["action"] == "Ajout_salle") {
                // var_dump($_SESSION['nb_salle']);
             // }
          // }else{
-            $_SESSION['numero'] = $_POST['numero'];
+            $_SESSION['id_salle'] = $_GET['id_salle'];
+            // $_SESSION['id_salle'] = $_GET['id_salle'];
             header("Location: ./?page=liste-bat");
          // }
       // }else{
@@ -77,3 +79,12 @@ if (isset($_POST["action"]) && $_POST["action"] == "Ajout_salle") {
    }
 
 
+//formulaire de reservation de salle
+
+if (isset($_POST["action"]) && $_POST["action"] == "reserver") {
+
+   // var_dump($_SESSION['id_salle']);
+   // var_dump($_SESSION['id'][0]);
+   reserver( $_SESSION['id_salle'], $_SESSION['id'][0] );
+   // echo "<p>votre bat a été supprimé.</p>";s
+}
