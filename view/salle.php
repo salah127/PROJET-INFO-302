@@ -36,6 +36,9 @@
                 if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
 
                     if ($_SESSION["role"]=='Pro'){
+
+                        if ($_SESSION["id"]!='32'){
+                        // conditon si le id != session[id_pro] ===> reserver 
                         echo '
                         <br>
                         <br>
@@ -48,8 +51,19 @@
                             <a class="cnx-sub" href="index.php?page=">Supprimer</a>
                         </div>
                         ';
-                }   
-                    else{
+                        }   
+                        else{
+                            echo '  
+                            <br>
+                            <br>
+                            <div class="salasghira2 btnajoutsalle2">
+                                <a class="cnx-sub" href="index.php?page=calendar">Reserver</a>
+                            </div>
+                            <br>
+                            ';
+                    
+                        }
+                    }else{
                     echo '  
                     <br>
                     <br>
@@ -58,8 +72,10 @@
                     </div>
                     <br>
                     ';
-                }}
-                else{
+                
+                    
+                    }
+                }else{
                         // alert("Connectez vous avant de reserver une salle.");
                     echo '  <br>
                             <br>
@@ -68,7 +84,7 @@
                                 </div>
                                 <br>
                             ';
-                    }
+                }
                 
                     
                 
