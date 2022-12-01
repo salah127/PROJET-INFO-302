@@ -18,55 +18,7 @@
                         <a class="button1" href="index.php?page=home">
                             <!-- <img src="logo.png" type="image/png"></img> -->
                             <style>
-                            action {
-                                width: 200px;
-                                height: 80px;
-                                box-shadow: 16px 14px 20px #0000008c;
-                                border-radius: 10px;
-                                position: relative;
-                                overflow: hidden;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                font-size: 16px;
-                            }
-
-                            action::before {
-                                content: "";
-                                background-image: conic-gradient(#ff0052 20deg,
-                                        transparent 120deg);
-                                width: 250%;
-                                height: 250%;
-                                position: absolute;
-                                /* -webkit-animation: rotate 2s linear infinite; */
-                                animation: rotate 2s linear infinite;
-                            }
-
-                            action::after {
-                                content: 'LeBonChoix';
-                                width: 190px;
-                                height: 70px;
-                                background: #101010;
-                                position: absolute;
-                                border-radius: 10px;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                color: #ff0052;
-                                font-size: larger;
-                                letter-spacing: 5px;
-                                box-shadow: inset 20px 20px 20px #0000008c;
-                            }
-
-                            @keyframes rotate {
-                                0% {
-                                    transform: rotate(0deg);
-                                }
-
-                                100% {
-                                    transform: rotate(-360deg);
-                                }
-                            }
+                            
                             </style>
                             <action></action>
                         </a>
