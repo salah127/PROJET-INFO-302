@@ -10,7 +10,6 @@ body {
 header {
     font-family: "Lucida Console", "Courier New", Monospace;
     background: #181818;
-    border-radius: 16px;
     position: relative;
     height: 15%;
 }
@@ -19,18 +18,15 @@ header table {
     font-family: "Lucida Console", "Courier New", Monospace;
     display: flex;
     position: relative;
-    text-align: center;
 }
 
 .menu {
     font-family: "Lucida Console", "Courier New", Monospace;
-    display: inherit;
-    position: relative;
-    justify-content: center;
+    display: flex;
+    position: absolute;
     align-items: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    top: -3px;
+    top: 4px;
+    height: 50px;
 }
 
 .logo {
@@ -90,6 +86,7 @@ ul {
 li {
     font-family: "Lucida Console", "Courier New", Monospace;
     padding: 0px;
+    list-style-type: none;
 }
 
 .button {
@@ -120,7 +117,6 @@ li {
 #menu-inscrp {
     font-family: "Lucida Console", "Courier New", Monospace;
     list-style: none;
-    width: 50%;
 }
 
 #menu-inscrp ul {
@@ -141,20 +137,17 @@ li {
     transition: all .5s;
     border-radius: 16px;
     margin: 1%;
-    background-color: w181818}
+    background-color: #181818;
+}
 
 #menu-inscrp a {
     font-family: "Lucida Console", "Courier New", Monospace;
     text-align: center;
     color: #ff0052;
     display: table;
-    padding: 10px;
     font-size: 12px;
     text-decoration: none;
     cursor: pointer;
-    border-radius: 16px;
-    width: 50%;
-    margin: 10px;
 }
 
 #menu-inscrp ul li a,
@@ -211,58 +204,17 @@ footer {
     color: rgb(0, 0, 0);
     margin: 1%;
     height: 5%;
-}
-
-.BigListe {
-    font-family: "Lucida Console", "Courier New", Monospace;
-    display: flex;
-    align-items: center;
-    width: -moz-available;
-}
-
-.CreRank {
-    font-family: "Lucida Console", "Courier New", Monospace;
-    display: flex;
-    width: 50%;
-}
-
-.ModCnxSup {
-    font-family: "Lucida Console", "Courier New", Monospace;
-    display: flex;
-}
-
-.MenuInscrp {
-    font-family: "Lucida Console", "Courier New", Monospace;
-    display: flex;
-}
-
-.account {
-    font-family: "Lucida Console", "Courier New", Monospace;
-    display: flex;
-    nav-right: 250px;
-    width: 50%;
-    margin-inline-start: 200px;
-}
-
-.service {
-    font-family: "Lucida Console", "Courier New", Monospace;
-    display: flex;
-    nav-right: 250px;
-    width: 50%;
-}
-
-.tab {
+}.tab {
     font-family: "Lucida Console", "Courier New", Monospace;
     list-style: none;
     position: relative;
     border-radius: 16px;
-    width: 100%;
 }
 
 .batima {
     font-family: "Lucida Console", "Courier New", Monospace;
     background-color: #181818;
-    color: #181818;
+    color: white;
     font-weight: bold;
     width: 50%;
     border-radius: 16px;
@@ -368,7 +320,7 @@ footer {
     text-align: center;
     border-radius: 16px;
     background-color: #181818;
-    border:solid 2px #181818;
+    border:solid 2px white;
 }
 
 .btnajoutsalle2 {
@@ -471,8 +423,8 @@ strong {
 
 .prof {
     font-family: "Lucida Console", "Courier New", Monospace;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     box-shadow: 1px 1px 20px #ff0052;
     border-radius: 180px;
     position: relative;
@@ -483,7 +435,7 @@ strong {
     color: #ff0052;
     text-decoration: none;
     text-transform: uppercase;
-    right: -150px;
+    left: 225%;
 }
 
 .prof::before {
