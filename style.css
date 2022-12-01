@@ -331,7 +331,8 @@ footer {
 
 .batima2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #181818;
+    /* background-color: #181818; */
+    background: url(https://images.unsplash.com/photo-1565103382118-c65707fc2a9c?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTY2NzM4NzA&ixlib=rb-1.2.1&q=80);
     color: #ff0052;
     font-weight: bold;
     border-radius: 16px;
@@ -594,7 +595,7 @@ action::after {
     color: #ff0052;
     font-size: larger;
     box-shadow: inset 20px 20px 20px #0000008c;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 @keyframes rotate {
@@ -605,4 +606,73 @@ action::after {
     100% {
         transform: rotate(-360deg);
     }
+}
+
+
+
+
+
+.timetable {
+  display: grid;
+  position : relative;
+}
+
+/* (B) BLANK & HEADER CELLS */
+.cell {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #efefef;
+}
+.head {
+  font-weight: 700;
+  justify-content: center;
+  color: #333;
+  background: #f9f9f9;
+}
+
+/* (C) ENTRY CELLS */
+.entry {
+  position: absolute;
+  right: 0; left: 0; top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* (X) DOES NOT MATTER */
+/* PAGE & BODY */
+* {
+  font-family: arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(https://images.unsplash.com/photo-1565103382118-c65707fc2a9c?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTY2NzM4NzA&ixlib=rb-1.2.1&q=80);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
+/* WIDGET */
+.widget-wrap {
+  width: 1200px;
+  font-size: 10px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* FOOTER */
+
+#code-boxx a {
+  display: inline-block;
+  border: 0;
+  padding: 5px;
+  text-decoration: none;
+  background: #b90a0a;
+  color: #fff;
 }
