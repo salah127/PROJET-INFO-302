@@ -131,7 +131,8 @@
                                                     <li ><a class="button" href ="index.php?connecte=false">Deconnexion</a></li>
                                                 </ul>
                                             </li>
-                                        </ul>';
+                                        </ul>
+                                        ';
                                         if ($_SESSION["role"]=='internaute'){
                                             echo '
                                             <ul class="service" id="menu-inscrp">
@@ -143,9 +144,7 @@
                                                 </ul>
                                             </li>
                                             </ul>
-                                            <ul>
-                                                <li><a class="prof" href ="index.php?page=profil"><nav>'. $_SESSION['username'][0] . '</nav></a><nav class = "nav">'. $_SESSION['role'] . ':'. $_SESSION['point'] . '</nav></li>
-                                            </ul>';
+                                            ';
                                         }
                                         else{
                                             echo '
@@ -158,12 +157,16 @@
                                                 </ul>
                                                 
                                             </li>
-                                            </ul>
-                                            <ul>
-                                                <ul>
-                                                    <li ><a class="prof" href ="index.php?page=profil"><nav>'. $_SESSION['username'][0] . '</nav></a><nav class = "nav">' . $_SESSION['role'] . '</nav></li>
-                                                </ul>';
+                                            </ul>';
                                         }
+                                        echo'<ul class="account" id="menu-inscrp">
+                                            <li><a href="#" ><nav>'. $_SESSION['username'][0] . '</nav></a>
+                                                <ul>
+                                                <li><a class="prof" href ="index.php?page=profil">aaaaaaa</a></li>
+                                                
+                                                </ul>
+                                            </li>
+                                        </ul>';
                                     }
                                     else{
                                         if (isset($_SESSION["connecte"])) var_dump($_SESSION["connecte"]);
