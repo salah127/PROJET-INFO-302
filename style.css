@@ -4,12 +4,12 @@ body {
     height: 100%;
     scroll-behavior: smooth;
     position: relative;
-    background-color: #181818;
+    background-color: white;
 }
 
 header {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background: #181818;
+    background: white;
     border-radius: 16px;
     position: relative;
     height: 15%;
@@ -35,7 +35,7 @@ header table {
 
 .logo {
     font-family: "Lucida Console", "Courier New", Monospace;
-    order: solid 3px #181818;
+    order: solid 3px white;
     color: white;
     transition: 0.3s;
     display: flex;
@@ -54,7 +54,7 @@ html body header table tbody tr td h1.logo a.button1 img {
     height: 100%;
     width: 100%;
     position: absolute;
-    border: solid 2px #181818;
+    border: solid 2px white;
     border-radius: 16px;
     left: 5%;
     top: -18.25px;
@@ -74,7 +74,7 @@ html body header table tbody tr td h1.logo a.button1 img {
     text-align: center;
     color: #ff0052;
     padding: 10px;
-    font-size: 16px;
+    font-size: 12px;
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
@@ -97,7 +97,7 @@ li {
     text-align: center;
     color: #ff0052;
     padding: 10px;
-    font-size: 16px;
+    font-size: 12px;
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
@@ -108,9 +108,9 @@ li {
 .button:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
     background-color: #ff0052;
-    color: #181818;
+    color: white;
     text-align: center;
-    font-size: 16px;
+    font-size: 12px;
     opacity: 0.6;
     text-decoration: none;
     cursor: pointer;
@@ -149,7 +149,7 @@ li {
     color: #ff0052;
     display: table;
     padding: 10px;
-    font-size: 16px;
+    font-size: 12px;
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
@@ -160,7 +160,7 @@ li {
 #menu-inscrp ul li a,
 #menu-inscrp li:hover li a {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #181818;
+    background-color: white;
     margin: 1%;
     width: 84%;
     color: #ff0052;
@@ -170,9 +170,9 @@ li {
 #menu-inscrp ul li:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
     background-color: #ff0052;
-    color: #181818;
+    color: white;
     text-align: center;
-    font-size: 16px;
+    font-size: 12px;
     opacity: 0.6;
     text-decoration: none;
     cursor: pointer;
@@ -207,7 +207,7 @@ footer {
     top: 150%;
     text-align: center;
     padding-top: 3px;
-    border-top: 3px solid #181818;
+    border-top: 3px solid white;
     color: rgb(0, 0, 0);
     margin: 1%;
     height: 5%;
@@ -261,12 +261,12 @@ footer {
 
 .batima {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #181818;
+    background-color: white;
     color: white;
     font-weight: bold;
     width: 50%;
     border-radius: 16px;
-    border: solid 3px #181818;
+    border: solid 3px white;
     margin-left: 25%;
     margin-right: 25%;
 }
@@ -284,7 +284,7 @@ footer {
 
 .salasghira {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: #181818;
+    color: white;
     font-weight: bold;
     width: 50%;
     position: relative;
@@ -304,8 +304,8 @@ footer {
 
 .cnx-sub {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px #181818;
-    color: #181818;
+    border: solid 3px white;
+    color: white;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
@@ -315,14 +315,14 @@ footer {
 
 .cnx-sub2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px #181818;
-    color: #181818;
+    border: solid 3px white;
+    color: white;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: #181818;
+    background-color: white;
     margin-left: 15%;
     margin-right: 15%;
 }
@@ -336,7 +336,7 @@ footer {
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: #181818;
+    background-color: white;
 }
 
 .cnx-sub2:hover {
@@ -348,13 +348,13 @@ footer {
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: #181818;
+    background-color: white;
 }
 
 .inputtype {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: #181818;
-    border: solid 2px #181818;
+    color: white;
+    border: solid 2px white;
     border-radius: 16px;
     text-align: center;
 }
@@ -367,19 +367,19 @@ footer {
     margin: 3%;
     text-align: center;
     border-radius: 16px;
-    background-color: #181818;
+    background-color: white;
     border:solid 2px white;
 }
 
 .btnajoutsalle2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: #181818;
+    color: white;
     font-weight: bold;
 }
 
 .batima2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #181818;
+    background-color: white;
     color: #ff0052;
     font-weight: bold;
     border-radius: 16px;
@@ -398,7 +398,7 @@ html body fieldset.batima2 form table.tab tbody tr td.tab {
 
 .salasghira2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: #181818;
+    color: white;
     font-weight: bold;
     width: 100%;
     position: relative;
@@ -406,11 +406,11 @@ html body fieldset.batima2 form table.tab tbody tr td.tab {
 }
 
 h2 {
-    color: #181818;
+    color: white;
 }
 
 label {
-    color: #181818;
+    color: white;
 }
 
 strong {
@@ -427,7 +427,7 @@ strong {
     position: relative;
     height: 150px;
     width: 100%;
-    background: #181818;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -442,7 +442,7 @@ strong {
     color: white;
     height: 275px;
     width: 275px;
-    background: linear-gradient(90deg, #181818, #ff0052);
+    background: linear-gradient(90deg, white, #ff0052);
     position: absolute;
     z-index: 2;
     animation: rotate 3s linear infinite;
@@ -512,7 +512,7 @@ strong {
 .card2 {
     position: relative;
     height: 150px;
-    background: #181818;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -527,7 +527,7 @@ strong {
     color: white;
     height: 200px;
     width: 350px;
-    background: linear-gradient(90deg, #181818, #ff0052);
+    background: linear-gradient(90deg, white, #ff0052);
     position: absolute;
     z-index: 2;
     animation: rotate 3s linear infinite;
@@ -557,7 +557,7 @@ strong {
 .card3 {
     position: relative;
     height: 150px;
-    background: #181818;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -572,7 +572,7 @@ strong {
     color: white;
     height: 200px;
     width: 350px;
-    background: linear-gradient(90deg, #181818, #ff0052);
+    background: linear-gradient(90deg, white, #ff0052);
     position: absolute;
     z-index: 2;
     animation: rotate 3s linear infinite;
@@ -602,5 +602,55 @@ strong {
 @media only screen and (max-width: 768px) {
     header, html, body {
         width: 100%;
+    }
+}
+
+action {
+    width: 100px;
+    height: 50px;
+    box-shadow: 16px 14px 20px #0000008c;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+action::before {
+    content: "";
+    background-image: conic-gradient(#ff0052 20deg,
+            transparent 120deg);
+    width: 250%;
+    height: 250%;
+    position: absolute;
+    /* -webkit-animation: rotate 2s linear infinite; */
+    animation: rotate 2s linear infinite;
+}
+
+action::after {
+    content: 'Le Bon Choix';
+    width: 90px;
+    height: 42px;
+    background: #101010;
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff0052;
+    font-size: larger;
+    box-shadow: inset 20px 20px 20px #0000008c;
+    text-transform: uppercase;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
     }
 }
