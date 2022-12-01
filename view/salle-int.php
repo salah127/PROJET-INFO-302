@@ -1,6 +1,6 @@
 <fieldset class='batima2'>
     <legend class='titleliste'>
-        <h2> Batiment <?php echo '<nav>'. $_SESSION['Nom']. '</nav> '; ?> <strong> > </strong> Salle
+        <h2> Batiment <?php echo '<nav>'. $_SESSION['nom_bat']. '</nav> '; ?> <strong> > </strong> Salle
             <?php echo '<nav>'. $_GET['numero']. '</nav> '; ?></h2>
     </legend>
     <form action="." method="post">
@@ -28,7 +28,7 @@
                 </td>
             </tr>
             <?php
-                 $_SESSION['numero'] = $_GET['numero'];
+                //  $_SESSION['numero'] = $_GET['numero'];
                 afficher_salle($_GET['numero']);
             ?>
             <br>

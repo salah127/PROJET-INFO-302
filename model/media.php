@@ -260,6 +260,16 @@ function home(){
 					<li>'. $row["niveau"] .'</li> 
 			    </td>
 
+				</td>
+				<td class=tab>
+					<li>'. $row["nom_bat"] .'</li> 
+			    </td>
+				<td class=tab>
+					<li>
+						<a class="button" href ="index.php?page=salle-int&numero='.$row["numero"].'"> Afficher </a>
+					</li> 
+			    </td>
+
 			<tr>
 			';
 	}
@@ -269,15 +279,15 @@ function home(){
 }
 
 
-function afficher_salle($num){
+function afficher_home(){
 	global $c;
-	$sql = "SELECT numero, Capacité, niveau, photo, nom_bat FROM salle WHERE numero = '$num'";
+	$sql = "SELECT * FROM salle ORDER BY time_ajout";
 	$resultat = mysqli_query($c, $sql);
 	$row = mysqli_fetch_assoc($resultat);
 	if ($row == NULL){
 		echo 'Il ya aucunne salle';
 	} else{
-		salle($num);
+		home();
 	}
 }
 

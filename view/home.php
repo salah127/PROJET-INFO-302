@@ -26,10 +26,15 @@
                         <strong>Niveau requis</strong>
                     </li>
                 </td>
+                <td class=tab>
+                    <li>
+                        <strong>Nom batiment</strong>
+                    </li>
+                </td>
             </tr>
             <?php
-                $_SESSION['numero'] = $_GET['numero'];
-                home();
+                
+                afficher_home();
             ?>
             <br>
             <br>
