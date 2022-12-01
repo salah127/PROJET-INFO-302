@@ -61,7 +61,7 @@
                             <br>
                             <br>
                             <div class="salasghira2 btnajoutsalle2">
-                                <a class="cnx-sub" href="index.php?page=calendar">Reserver</a>
+                                <input type = "submit" class="cnx-sub" value = "resever">
                             </div>
                             <br>
                             ';
@@ -72,7 +72,6 @@
                     <br>
                     <br>
                     <div class="salasghira2 btnajoutsalle2">
-                        <a class="cnx-sub" href="index.php?page=calendar">Reserver</a>
                         <input type = "submit" class="cnx-sub" value = "resever">
                     </div>
                     <br>

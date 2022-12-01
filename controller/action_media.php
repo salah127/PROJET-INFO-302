@@ -85,6 +85,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "reserver") {
 
    // var_dump($_SESSION['id_salle']);
    // var_dump($_SESSION['id'][0]);
-   reserver( $_SESSION['id_salle'], $_SESSION['id'][0] );
+   // reserver( $_SESSION['id_salle'], $_SESSION['id'][0] );
+   header("Location: ./?page=Calendar");
    // echo "<p>votre bat a été supprimé.</p>";s
 }
