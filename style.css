@@ -68,7 +68,7 @@ html body header table tbody tr td h1.logo a.button1 img {
 .button1 {
     font-family: "Lucida Console", "Courier New", Monospace;
     text-align: center;
-    color: blue;
+    color: white;
     padding: 10px;
     font-size: 12px;
     text-decoration: none;
@@ -92,7 +92,7 @@ li {
 .button {
     font-family: "Lucida Console", "Courier New", Monospace;
     text-align: center;
-    color: blue;
+    color: white;
     padding: 10px;
     font-size: 12px;
     text-decoration: none;
@@ -103,16 +103,10 @@ li {
 }
 
 .button:hover {
-    font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #181818;
-    color: red;
-    border: solid 0.1rem red;
-    text-align: center;
-    font-size: 12px;
+    background-color: white;
+    color: #181818;
+    border: solid 0.1rem white;
     opacity: 0.6;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 16px;
 }
 
 #menu-inscrp {
@@ -144,7 +138,7 @@ li {
 #menu-inscrp a {
     font-family: "Lucida Console", "Courier New", Monospace;
     text-align: center;
-    color: red;
+    color: white;
     display: table;
     font-size: 12px;
     text-decoration: none;
@@ -157,14 +151,14 @@ li {
     background-color: #181818;
     margin: 1%;
     width: 84%;
-    color: blue;
+    color: white;
     border-radius: 16px;
 }
 
 #menu-inscrp ul li:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
     background-color: #181818;
-    color: red;
+    color: white;
     text-align: center;
     font-size: 12px;
     opacity: 0.6;
@@ -472,4 +466,46 @@ action::after {
     100% {
         transform: rotate(-360deg);
     }
+}
+
+.supprof{
+    margin: 200px;
+    display: flex;
+    position: relative;
+}
+.supprof1{
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    position: relative;
+    margin: 5px;
+    border: solid 2px green;
+    border-radius: 16px;
+}
+.supprof2{
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    position: relative;
+    margin: 5px;
+    border: solid 2px red;
+    border-radius: 16px;
+}
+.supprof1:hover{
+    color: #181818;
+    border: solid 2px #181818;
+    background-color: green;
+}
+.supprof2:hover{
+    color: #181818;
+    border: solid 2px #181818;
+    background-color: red;
 }
