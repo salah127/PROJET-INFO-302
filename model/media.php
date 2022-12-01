@@ -131,7 +131,7 @@ function salles($nom){
 			    </td>
 				<td class=tab>
 					<li>
-						<a class="button" href ="index.php?page=salle-pro&numero='.$row["numero"].'"> Afficher </a>
+						<a class="button" href ="index.php?page=salle&numero='.$row["numero"].'"> Afficher </a>
 					</li> 
 			    </td>
 
@@ -266,7 +266,7 @@ function home(){
 			    </td>
 				<td class=tab>
 					<li>
-						<a class="button" href ="index.php?page=salle-int&numero='.$row["numero"].'"> Afficher </a>
+						<a class="button" href ="index.php?page=salle&numero='.$row["numero"].'"> Afficher </a>
 					</li> 
 			    </td>
 

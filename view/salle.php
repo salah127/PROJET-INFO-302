@@ -31,16 +31,33 @@
             <?php
                 $_SESSION['numero'] = $_GET['numero'];
                 afficher_salle($_GET['numero']);
+
+
+
+                if ($_SESSION["role"]=='internaute'){
+                    echo '
+                    <br>
+            <br>
+            <div class="salasghira2 btnajoutsalle2">
+                <a class="cnx-sub" href="index.php?page=">Reserver</a>
+            </div>
+            <br>
+                    ';
+                }
+                else{
+                    echo '
+                    <br>
+                    <br>
+                    <div class="salasghira2 btnajoutsalle2">
+                        <a class="cnx-sub" href="index.php?page=">Modifier</a>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="salasghira2 btnajoutsalle2">
+                        <a class="cnx-sub" href="index.php?page=">Supprimer</a>
+                    </div>
+';
+                }
             ?>
-            <br>
-            <br>
-            <div class="salasghira2 btnajoutsalle2">
-                <a class="cnx-sub" href="index.php?page=">Modifier</a>
-            </div>
-            <br>
-            <br>
-            <div class="salasghira2 btnajoutsalle2">
-                <a class="cnx-sub" href="index.php?page=">Supprimer</a>
-            </div>
     </form>
 </fieldset>
