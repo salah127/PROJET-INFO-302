@@ -1,29 +1,28 @@
-
 <fieldset class='batima2'>
     <legend class='titleliste'>
         <h2>Mes batiments</h2>
     </legend>
     <form action="." method="post">
 
-	<table class=tab>
-		<tr>
-            <td class=tab>
-				<li > 
-					<strong>Nom</strong>
-				</li>
-			</td>
-			<td class=tab>
-			<li > 
-			<strong>Adresse</strong>
-		</li>
-			</td>
-			<td class=tab>
-			<li > 
-			<strong>Nembre de salle</strong>
-		</li>
-			</td>
-		</tr>
-        <?php 
+        <table class=tab>
+            <tr>
+                <td class=tab>
+                    <li>
+                        <div class='card2'><strong>Nom</strong></div>
+                    </li>
+                </td>
+                <td class=tab>
+                    <li>
+                        <div class='card2'><strong>Adresse</strong></div>
+                    </li>
+                </td>
+                <td class=tab>
+                    <li>
+                        <div class='card2'><strong>Nembre de salle</strong></div>
+                    </li>
+                </td>
+            </tr>
+            <?php 
             Afficher_bat($_SESSION['id'][0]);
         ?>
         </table>

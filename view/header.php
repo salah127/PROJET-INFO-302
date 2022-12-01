@@ -18,47 +18,6 @@
                         <a class="button1" href="index.php?page=home">
                             <!-- <img src="logo.png" type="image/png"></img> -->
                             <style>
-                            .prof {
-                                font-family: "Lucida Console", "Courier New", Monospace;
-                                width: 50px;
-                                height: 50px;
-                                box-shadow: 16px 14px 20px #0000008c;
-                                border-radius: 180px;
-                                position: relative;
-                                overflow: hidden;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                right: 75%;
-                                color: #ff0052;
-                                text-decoration: none;
-                                text-transform: uppercase;
-                            }
-
-                            .prof::before {
-                                background-image: conic-gradient(#ff0052 20deg,
-                                        transparent 120deg);
-                                width: 150%;
-                                height: 150%;
-                                position: absolute;
-                                animation: rotate 2s linear infinite;
-                            }
-
-                            .prof::after {
-                                width: 40px;
-                                height: 40px;
-                                background: #101010;
-                                position: absolute;
-                                border-radius: 10px;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                color: #ff0052;
-                                font-size: larger;
-                                letter-spacing: 5px;
-                                box-shadow: inset 20px 20px 20px #0000008c;
-                            }
-
                             action {
                                 width: 200px;
                                 height: 80px;
@@ -155,18 +114,10 @@
                                                     <li ><a class="button" href ="">Mes-Ajout</a></li>
                                                     <li ><a class="button" href ="">Favoris</a></li>
                                                 </ul>
-                                                
                                             </li>
                                             </ul>';
                                         }
-                                        echo'<ul class="account" id="menu-inscrp">
-                                            <li><a href="#" ><nav>'. $_SESSION['username'][0] . '</nav></a>
-                                                <ul>
-                                                <li><a class="prof" href ="index.php?page=profil">aaaaaaa</a></li>
-                                                
-                                                </ul>
-                                            </li>
-                                        </ul>';
+                                        echo '<li><a class="prof" href ="index.php?page=profil"></a></li>';
                                     }
                                     else{
                                         if (isset($_SESSION["connecte"])) var_dump($_SESSION["connecte"]);

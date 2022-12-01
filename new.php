@@ -1,3 +1,4 @@
+<style>
 html,
 body {
     font-family: "Lucida Console", "Courier New", Monospace;
@@ -5,19 +6,22 @@ body {
     scroll-behavior: smooth;
     position: relative;
     background-color: #181818;
+    width: 100%;
 }
 
 header {
     font-family: "Lucida Console", "Courier New", Monospace;
     background: #181818;
+    width: 100%;
     border-radius: 16px;
     position: relative;
-    height: 15%;
+    height: 25%;
     box-shadow: 1px 1px 15px #ff0052;
 }
 
 header table {
     font-family: "Lucida Console", "Courier New", Monospace;
+    width: 100%;
     display: flex;
     position: relative;
     text-align: center;
@@ -47,8 +51,7 @@ header table {
     height: 60px;
     width: 200px;
     margin-right: -100px;
-    top: -37px;
-    right: 15px;
+    top: -26px;
 }
 
 html body header table tbody tr td h1.logo a.button1 img {
@@ -72,15 +75,16 @@ html body header table tbody tr td h1.logo a.button1 img {
 
 .button1 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    text-align: center;
     color: #ff0052;
-    padding: 10px;
-    font-size: 16px;
+    padding: 16px 32px;
+    width: 50%;
+    text-align: center;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
-    width: 50%;
-    margin: 10px;
 }
 
 ul {
@@ -104,18 +108,23 @@ li {
     border-radius: 16px;
     width: 50%;
     margin: 10px;
+    box-shadow: 16px 14px 20px #0000008c;
 }
 
 .button:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #ff0052;
-    color: #181818;
+    background-color: #181818;
+    border: solid 2px #181818;
+    color: white;
     text-align: center;
+    padding: 10px;
     font-size: 16px;
     opacity: 0.6;
+    transition: 0.3s;
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
+    margin: 10px;
 }
 
 #menu-inscrp {
@@ -142,7 +151,8 @@ li {
     transition: all .5s;
     border-radius: 16px;
     margin: 1%;
-    background-color: w181818}
+    background-color: white;
+}
 
 #menu-inscrp a {
     font-family: "Lucida Console", "Courier New", Monospace;
@@ -156,25 +166,27 @@ li {
     border-radius: 16px;
     width: 50%;
     margin: 10px;
+    box-shadow: 16px 14px 20px #0000008c;
 }
 
 #menu-inscrp ul li a,
 #menu-inscrp li:hover li a {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #181818;
+    background-color: #ffffff;
     margin: 1%;
-    width: 84%;
-    color: #ff0052;
+    width: 82%;
+    border: solid 3px #181818;
     border-radius: 16px;
 }
 
 #menu-inscrp ul li:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #ff0052;
-    color: #181818;
+    background-color: #181818;
+    color: white;
     text-align: center;
-    font-size: 16px;
     opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
@@ -204,14 +216,14 @@ ul li .nav {
 
 footer {
     font-family: "Lucida Console", "Courier New", Monospace;
-    position: absolute;
-    top: 150%;
+    position: fixed;
+    top: 95%;
     text-align: center;
     padding-top: 3px;
     border-top: 3px solid #181818;
+    width: 100%;
     color: rgb(0, 0, 0);
     margin: 1%;
-    height: 5%;
 }
 
 .BigListe {
@@ -262,7 +274,7 @@ footer {
 
 .batima {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #181818;
+    background-color: #ffffff;
     color: white;
     font-weight: bold;
     width: 50%;
@@ -312,7 +324,8 @@ footer {
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: w181818}
+    background-color: white;
+}
 
 .cnx-sub2 {
     font-family: "Lucida Console", "Courier New", Monospace;
@@ -323,7 +336,8 @@ footer {
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: w181818    margin-left: 15%;
+    background-color: white;
+    margin-left: 15%;
     margin-right: 15%;
 }
 
@@ -353,6 +367,7 @@ footer {
 
 .inputtype {
     font-family: "Lucida Console", "Courier New", Monospace;
+    width: 100%;
     color: #181818;
     border: solid 2px #181818;
     border-radius: 16px;
@@ -361,28 +376,34 @@ footer {
 
 .titleliste {
     font-family: "Lucida Console", "Courier New", Monospace;
+    border: solid 3px #181818;
+    color: #181818;
     font-weight: bold;
-    width: 25%;
+    width: 50%;
     position: relative;
     margin: 3%;
     text-align: center;
     border-radius: 16px;
-    background-color: #181818;
-    border:solid 2px white;
+    background-color: white;
 }
 
 .btnajoutsalle2 {
     font-family: "Lucida Console", "Courier New", Monospace;
     color: #181818;
     font-weight: bold;
+    width: 100%;
 }
 
 .batima2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #181818;
-    color: #ff0052;
+    background-color: white;
+    color: #f22222;
     font-weight: bold;
+    width: 75%;
     border-radius: 16px;
+    border: solid 3px #f22222;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
     padding-bottom: 3%;
 }
 
@@ -406,11 +427,11 @@ html body fieldset.batima2 form table.tab tbody tr td.tab {
 }
 
 h2 {
-    color: #181818;
+    color: black;
 }
 
 label {
-    color: #181818;
+    color: black;
 }
 
 strong {
@@ -427,7 +448,7 @@ strong {
     position: relative;
     height: 150px;
     width: 100%;
-    background: #181818;
+    background: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -442,10 +463,10 @@ strong {
     color: white;
     height: 275px;
     width: 275px;
-    background: linear-gradient(90deg, #181818, #ff0052);
+    background: linear-gradient(90deg, red, blue);
     position: absolute;
     z-index: 2;
-    animation: rotate 3s linear infinite;
+    animation: rotate 3.5s linear infinite;
 }
 
 @keyframes rotate {
@@ -462,7 +483,7 @@ strong {
     content: "";
     color: white;
     height: 140px;
-    width: 200px;
+    width: 150px;
     background: black;
     position: absolute;
     z-index: 2;
@@ -473,7 +494,7 @@ strong {
     font-family: "Lucida Console", "Courier New", Monospace;
     width: 50px;
     height: 50px;
-    box-shadow: 1px 1px 20px #ff0052;
+    box-shadow: 16px 14px 20px #ff0052;
     border-radius: 180px;
     position: relative;
     overflow: hidden;
@@ -483,7 +504,6 @@ strong {
     color: #ff0052;
     text-decoration: none;
     text-transform: uppercase;
-    right: -150px;
 }
 
 .prof::before {
@@ -507,94 +527,6 @@ strong {
     color: #ff0052;
     font-size: larger;
     letter-spacing: 5px;
+    box-shadow: inset 1px 1px 20px #ff0052;
 }
-
-.card2 {
-    position: relative;
-    height: 150px;
-    background: #181818;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 16px;
-    text-align: center;
-}
-
-.card2::before {
-    content: "";
-    color: white;
-    height: 200px;
-    width: 350px;
-    background: linear-gradient(90deg, #181818, #ff0052);
-    position: absolute;
-    z-index: 2;
-    animation: rotate 3s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotateZ(0deg);
-    }
-
-    to {
-        transform: rotateZ(360deg);
-    }
-}
-
-.card2::after {
-    content: "";
-    color: white;
-    height: 140px;
-    width: 310px;
-    background: black;
-    position: absolute;
-    z-index: 2;
-    border-radius: 16px;
-}
-
-.card3 {
-    position: relative;
-    height: 150px;
-    background: #181818;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 16px;
-    text-align: center;
-}
-
-.card3::before {
-    content: "";
-    color: white;
-    height: 200px;
-    width: 350px;
-    background: linear-gradient(90deg, #181818, #ff0052);
-    position: absolute;
-    z-index: 2;
-    animation: rotate 3s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotateZ(0deg);
-    }
-
-    to {
-        transform: rotateZ(360deg);
-    }
-}
-
-.card3::after {
-    content: "";
-    color: white;
-    height: 140px;
-    width: 310px;
-    background: black;
-    position: absolute;
-    z-index: 2;
-    border-radius: 16px;
-}
+</style>

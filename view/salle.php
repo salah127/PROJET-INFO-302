@@ -9,22 +9,22 @@
             <tr>
                 <td class=tab>
                     <li>
-                        <strong>Numero</strong>
+                        <div class='card3'><strong>Numero</strong></div>
                     </li>
                 </td>
                 <td class=tab>
                     <li>
-                        <strong>photo</strong>
+                        <div class='card3'><strong>photo</strong></div>
                     </li>
                 </td>
                 <td class=tab>
                     <li>
-                        <strong>Capacite</strong>
+                        <div class='card3'><strong>Capacite</strong></div>
                     </li>
                 </td>
                 <td class=tab>
                     <li>
-                        <strong>Niveau requis</strong>
+                        <div class='card3'><strong>Niveau requis</strong></div>
                     </li>
                 </td>
             </tr>

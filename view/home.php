@@ -3,32 +3,31 @@
         <h2> Home</h2>
     </legend>
     <form action="." method="post">
-
         <table class=tab>
             <tr>
                 <td class=tab>
                     <li>
-                        <strong>Numero</strong>
+                        <div class='card'><strong>Numero</strong></div>
                     </li>
                 </td>
                 <td class=tab>
                     <li>
-                        <strong>photo</strong>
+                        <div class='card'><strong>photo</strong></div>
                     </li>
                 </td>
                 <td class=tab>
                     <li>
-                        <strong>Capacite</strong>
+                        <div class='card'><strong>Capacite</strong></div>
                     </li>
                 </td>
                 <td class=tab>
                     <li>
-                        <strong>Niveau requis</strong>
+                        <div class='card'><strong>Niveau requis</strong></div>
                     </li>
                 </td>
                 <td class=tab>
                     <li>
-                        <strong>Nom batiment</strong>
+                        <div class='card'><strong>Nom batiment</strong></div>
                     </li>
                 </td>
             </tr>

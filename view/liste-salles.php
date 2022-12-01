@@ -10,17 +10,17 @@
 		<tr>
             <td class=tab>
 				<li > 
-					<strong>Numero</strong>
+					<div class='card2'><strong>Numero</strong></div>
 				</li>
 			</td>
 			<td class=tab>
 				<li> 
-					<strong>Capacite</strong>
+					<div class='card2'><strong>Capacite</strong></div>
 				</li>
 			</td>
 			<td class=tab>
 				<li> 
-					<strong>Niveau requis</strong>
+					<div class='card2'><strong>Niveau requis</strong></div>
 				</li>
 			</td>
 		</tr>
