@@ -384,7 +384,7 @@ strong {
     font-family: "Lucida Console", "Courier New", Monospace;
     width: 35px;
     height: 35px;
-    box-shadow: 1px 1px 20px red;
+    box-shadow: 1px 1px 20px #ff0052;
     border-radius: 180px;
     position: relative;
     overflow: hidden;
@@ -434,8 +434,8 @@ action {
 
 action::before {
     content: "";
-    background-image: conic-gradient(red 180deg,
-            blue 180deg);
+    background-image: conic-gradient(#ff0052 20deg,
+            transparent 120deg);
     width: 250%;
     height: 250%;
     position: absolute;
