@@ -1,94 +1,100 @@
+<div class="widget-wrap">
+  <h1>Calendrier</h1>
+  
+  <!-- GENERATE TIMETABLE HERE -->
+  <div id="demo"></div>
+  
+  <!-- (X) VISIT CODE-BOXX -->
+  <div >
+    Visit
+    <a href="https://code-boxx.com/simple-javascript-timetable/" target="_blank">
+      Code Boxx
+    </a> for more details.
+  </div>
+</div>
 
-<fieldset class='batima2'>
-    <legend class='titleliste'>
-        <h2> Calendar </h2>
-    </legend>
-    <form action="." method="post">
-    <input type="hidden" name="action" value="reserver">
 
+<script>
 
-<?php
-class Calendar {
+function timetable (instance) {
+  // (A) CSS
+  instance.target.classList.add("timetable");
+  if (instance.gridX != undefined) {
+    instance.gridX = `repeat(${instance.x.length+1}, 1fr)`;
+  }
+  instance.target.style.gridTemplateColumns = instance.gridX;
+  if (instance.gridY) {
+    instance.target.style.gridAutoRows = instance.gridY;
+  }
 
-    private $active_year, $active_month, $active_day;
-    private $events = [];
-
-    public function __construct($date = null) {
-        $this->active_year = $date != null ? date('Y', strtotime($date)) : date('Y');
-        $this->active_month = $date != null ? date('m', strtotime($date)) : date('m');
-        $this->active_day = $date != null ? date('d', strtotime($date)) : date('d');
+  // (B) GENERATE CELLS HELPER FUNCTION
+  let celler = (data, css) => {
+    let cell = document.createElement("div");
+    cell.className = css;
+    if (typeof data == "string") { cell.innerHTML = data; }
+    else {
+      cell.innerHTML = data.txt;
+      cell.style = `grid-column:${data.col};grid-row:${data.row};color:${data.color};background:${data.bg}`;
+      if (instance.gridY) { cell.style.height = instance.gridY; }
+      if (data.click) { cell.onclick = data.click; }
     }
+    instance.target.appendChild(cell);
+  };
 
-    public function add_event($txt, $date, $days = 1, $color = '') {
-        $color = $color ? ' ' . $color : $color;
-        $this->events[] = [$txt, $date, $days, $color];
-    }
+  // (C) FIRST ROW - EMPTY CELL | HEADER FOR X
+  celler("&nbsp;", "cell head");
+  for (let i of instance.x) { celler(i, "cell head"); }
 
-    public function __toString() {
-        $num_days = date('t', strtotime($this->active_day . '-' . $this->active_month . '-' . $this->active_year));
-        $num_days_last_month = date('j', strtotime('last day of previous month', strtotime($this->active_day . '-' . $this->active_month . '-' . $this->active_year)));
-        $days = [0 => 'Sun', 1 => 'Mon', 2 => 'Tue', 3 => 'Wed', 4 => 'Thu', 5 => 'Fri', 6 => 'Sat'];
-        $first_day_of_week = array_search(date('D', strtotime($this->active_year . '-' . $this->active_month . '-1')), $days);
-        $html = '<div class="calendar">';
-        $html .= '<div class="header">';
-        $html .= '<div class="month-year">';
-        $html .= date('F Y', strtotime($this->active_year . '-' . $this->active_month . '-' . $this->active_day));
-        $html .= '</div>';
-        $html .= '</div>';
-        $html .= '<div class="days">';
-        foreach ($days as $day) {
-            $html .= '
-                <div class="day_name">
-                    ' . $day . '
-                </div>
-            ';
-        }
-        for ($i = $first_day_of_week; $i > 0; $i--) {
-            $html .= '
-                <div class="day_num ignore">
-                    ' . ($num_days_last_month-$i+1) . '
-                </div>
-            ';
-        }
-        for ($i = 1; $i <= $num_days; $i++) {
-            $selected = '';
-            if ($i == $this->active_day) {
-                $selected = ' selected';
-            }
-            $html .= '<div class="day_num' . $selected . '">';
-            $html .= '<span>' . $i . '</span>';
-            foreach ($this->events as $event) {
-                for ($d = 0; $d <= ($event[2]-1); $d++) {
-                    if (date('y-m-d', strtotime($this->active_year . '-' . $this->active_month . '-' . $i . ' -' . $d . ' day')) == date('y-m-d', strtotime($event[1]))) {
-                        $html .= '<div class="event' . $event[3] . '">';
-                        $html .= $event[0];
-                        $html .= '</div>';
-                    }
-                }
-            }
-            $html .= '</div>';
-        }
-        for ($i = 1; $i <= (42-$num_days-max($first_day_of_week, 0)); $i++) {
-            $html .= '
-                <div class="day_num ignore">
-                    ' . $i . '
-                </div>
-            ';
-        }
-        $html .= '</div>';
-        $html .= '</div>';
-        return $html;
+  // (D) FOLLOWING ROWS - HEADER FOR Y | EMPTY CELLS
+  for (let i=0; i<instance.y.length; i++) {
+    celler(instance.y[i], "cell head");
+    for (let j=0; j<instance.x.length; j++) { celler("&nbsp;", "cell"); }
+  }
+
+  // (E) ENTRIES
+  for (let i of instance.data) { celler(i, "cell entry"); }
+}
+
+function heure(){
+    x=[];
+    for (let i=2; i<9; i++) {
+        x=x+[i];
     }
+    return x;
+
 
 }
 
-?>
-<?php
-$calendar = new Calendar();
-?>
+// (F) GENERATE TIMETABLE
+window.onload = () => {
+  timetable({
+    // (F1) REQUIRED
+    target: document.getElementById("demo"),
+    x: heure(),
+    y: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+    // data: [
+    //   {
+    //     txt: "Feed the Doge",
+    //     row: "2", col: "2/3",
+    //     color: "white", bg: "black",
+    //     click : () => { alert("Clicked!"); }
+    //   },
+    //   {
+    //     txt: "Walk the Doge",
+    //     row: "4", col: "3/4",
+    //     color: "#04ff00", bg: "#090099"
+    //   },
+    //   {
+    //     txt: "Play with Doge",
+    //     row: "6", col: "3",
+    //     color: "#fff", bg: "#aa18ad"
+    //   }
+    // ],
 
+    // (F2) OPTIONAL
+    gridX: "100px repeat(3, 1fr)",
+    gridY : "50px"
+  });
+};
 
-
-
-</form>
-</fieldset>
+</script>
