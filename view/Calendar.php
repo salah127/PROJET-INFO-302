@@ -19,13 +19,10 @@
 function timetable (instance) {
   // (A) CSS
   instance.target.classList.add("timetable");
-  if (instance.gridX != undefined) {
-    instance.gridX = `repeat(${instance.x.length+1}, 1fr)`;
-  }
+  instance.gridX = `repeat(${instance.x.length+1}, 1fr)`;
   instance.target.style.gridTemplateColumns = instance.gridX;
-  if (instance.gridY) {
-    instance.target.style.gridAutoRows = instance.gridY;
-  }
+//   instance.target.style.gridAutoRows = instance.gridY;
+
 
   // (B) GENERATE CELLS HELPER FUNCTION
   let celler = (data, css) => {
@@ -57,7 +54,7 @@ function timetable (instance) {
 
 function heure(){
     x=[];
-    for (let i=2; i<9; i++) {
+    for (let i=6; i<24; i++) {
         x=x+[i];
     }
     return x;
@@ -70,8 +67,8 @@ window.onload = () => {
   timetable({
     // (F1) REQUIRED
     target: document.getElementById("demo"),
-    x: heure(),
-    y: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+    y: heure(),
+    x: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
     // data: [
     //   {
     //     txt: "Feed the Doge",
@@ -92,8 +89,9 @@ window.onload = () => {
     // ],
 
     // (F2) OPTIONAL
-    gridX: "100px repeat(3, 1fr)",
-    gridY : "50px"
+
+    // gridX: "100px repeat(3, 1fr)",
+    // gridY : "50px"
   });
 };
 

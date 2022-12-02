@@ -1,10 +1,11 @@
 <?php
     $_SESSION['id_salle'] = $_GET['id_salle'];
+    // $_SESSION['nom_bat'] = $_GET['nom_bat'];
 ?>
 
 <fieldset class='batima2'>
     <legend class='titleliste'>
-        <h2> Batiment <?php echo '<nav>'. $_SESSION['Nom']. '</nav> '; ?> <strong> > </strong> Salle
+        <h2> Batiment <?php echo '<nav>'.  $_SESSION['nom_bat']. '</nav> '; ?> <strong> > </strong> Salle
             <?php echo '<nav>'. $_GET['id_salle']. '</nav> '; ?></h2>
     </legend>
     <form action="." method="post">
