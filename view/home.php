@@ -37,6 +37,17 @@
             ?>
             <br>
             <br>
+<<<<<<< HEAD
+            <div class="salasghira2 btnajoutsalle2">
+                <a class="cnx-sub supprof1" href="index.php?page=">Modifier</a>
+            </div>
+            <br>
+            <br>
+            <div class="salasghira2 btnajoutsalle2">
+                <a class="cnx-sub supprof2" href="index.php?page=">Supprimer</a>
+            </div>
+=======
 
+>>>>>>> 8f3d58dace569eb34287130de9eca302447f6e0c
     </form>
 </fieldset>
