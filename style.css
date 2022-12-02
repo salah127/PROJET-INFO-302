@@ -434,8 +434,8 @@ action {
 
 action::before {
     content: "";
-    background-image: conic-gradient(red 180deg,
-            blue 180deg);
+    background-image: conic-gradient(#ff0052 20deg,
+            transparent 80deg);
     width: 250%;
     height: 250%;
     position: absolute;
