@@ -19,7 +19,7 @@
 function timetable (instance) {
   // (A) CSS
   instance.target.classList.add("timetable");
-  if (instance.gridX == undefined) {
+  if (instance.gridX != undefined) {
     instance.gridX = `repeat(${instance.x.length+1}, 1fr)`;
   }
   instance.target.style.gridTemplateColumns = instance.gridX;
@@ -55,31 +55,41 @@ function timetable (instance) {
   for (let i of instance.data) { celler(i, "cell entry"); }
 }
 
+function heure(){
+    x=[];
+    for (let i=2; i<9; i++) {
+        x=x+[i];
+    }
+    return x;
+
+
+}
+
 // (F) GENERATE TIMETABLE
 window.onload = () => {
   timetable({
     // (F1) REQUIRED
     target: document.getElementById("demo"),
-    x: ["Morning", "Afternoon", "Night"],
+    x: heure(),
     y: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
-    data: [
-      {
-        txt: "Feed the Doge",
-        row: "2", col: "2/3",
-        color: "white", bg: "black",
-        click : () => { alert("Clicked!"); }
-      },
-      {
-        txt: "Walk the Doge",
-        row: "4", col: "3/4",
-        color: "#04ff00", bg: "#090099"
-      },
-      {
-        txt: "Play with Doge",
-        row: "6", col: "3",
-        color: "#fff", bg: "#aa18ad"
-      }
-    ],
+    // data: [
+    //   {
+    //     txt: "Feed the Doge",
+    //     row: "2", col: "2/3",
+    //     color: "white", bg: "black",
+    //     click : () => { alert("Clicked!"); }
+    //   },
+    //   {
+    //     txt: "Walk the Doge",
+    //     row: "4", col: "3/4",
+    //     color: "#04ff00", bg: "#090099"
+    //   },
+    //   {
+    //     txt: "Play with Doge",
+    //     row: "6", col: "3",
+    //     color: "#fff", bg: "#aa18ad"
+    //   }
+    // ],
 
     // (F2) OPTIONAL
     gridX: "100px repeat(3, 1fr)",
