@@ -5,8 +5,8 @@
 
 <fieldset class='batima2'>
     <legend class='titleliste'>
-        <h2> Batiment <?php echo '<nav>'.  $_SESSION['nom_bat']. '</nav> '; ?> <strong> > </strong> Salle
-            <?php echo '<nav>'. $_GET['id_salle']. '</nav> '; ?></h2>
+        <h2> <?php if ($_SESSION["role"]=='Pro'){ echo 'Batiment';  echo '<nav>'.  $_SESSION['Nom']. '</nav> ';} ?> <strong> > </strong> Salle
+            <?php echo '<nav>'. $_GET['id_salle'] . '</nav> '; ?></h2>
     </legend>
     <form action="." method="post">
     <input type="hidden" name="action" value="reserver">
