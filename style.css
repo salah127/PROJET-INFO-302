@@ -232,7 +232,7 @@ footer {
 
 .salasghira {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: #181818;
+    color: white;
     font-weight: bold;
     width: 50%;
     position: relative;
@@ -570,3 +570,7 @@ action::after {
     background: rgba(255, 255, 255, 0.8);
   }
   
+form {
+    color: white;
+    background-color: disabled;
+}

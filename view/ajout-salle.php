@@ -20,7 +20,7 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
                     <label for="idinsuser">Numero de la salle:</label>
                 </div>
                 <div class="salasghira">
-                    <input class="inputtype cnx-control" type="number" name="num" id="idinsuser"
+                    <input class="inputtype cnx-control" type="number" name="num'.$i.'" id="idinsuser"
                         placeholder="Numero...">
                 </div>
                 <br>
@@ -33,7 +33,7 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
                     <label for="idinsuser">Photos :</label>
                 </div>
                 <div class="salasghira">
-                    <input class="inputtype cnx-control btnajoutsalle2" type="file" name="Photo" id="ins-entr"
+                    <input class="inputtype cnx-control btnajoutsalle2" type="file" name="Photo'.$i.'" id="ins-entr"
                         placeholder="Photos...">
                 </div>
             </div>
@@ -43,7 +43,7 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
                     <label for="idinsuser">Capacité :</label>
                 </div>
                 <div class="salasghira">
-                    <input class="inputtype cnx-control" type="number" name="Capacité" id="inst-adr"
+                    <input class="inputtype cnx-control" type="number" name="Capacité'.$i.'" id="inst-adr"
                         placeholder="Capacité...">
                 </div>
                 <br>
@@ -54,7 +54,7 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
                     <label for="idinsuser"> Ressources :</label>
                 </div>
                 <div class="salasghira">
-                    <input class="inputtype cnx-control" type="text" name="Ressources" id="ins-num"
+                    <input class="inputtype cnx-control" type="text" name="Ressources'.$i.'" id="ins-num"
                         placeholder="Ressources">
 
                     <button onclick="myFunction()">Click me&</button>
@@ -75,7 +75,7 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
                     <label for="ins-mp">Niveau requis :</label>
                 </div>
                 <div class="salasghira">
-                    <input class="inputtype cnx-control" type="RANGE" name="niveau" id="ins-mp" placeholder="Niveau..."
+                    <input class="inputtype cnx-control" type="RANGE" name="niveau'.$i.'" id="ins-mp" placeholder="Niveau..."
                         min="0" max="400" step="100" list="nv">
                     <datalist id="nv">
                         <option label="0%">0</option>
@@ -95,7 +95,7 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
                     <label for="idinsuser">Description :</label>
                 </div>
                 <div class="salasghira">
-                    <input class="inputtype cnx-control" type="" name="Description" id="ins-email"
+                    <input class="inputtype cnx-control" type="" name="Description'.$i.'" id="ins-email"
                         placeholder="Description...">
                 </div>
                 <br>
@@ -106,7 +106,7 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
                     <label>Nembre d"organisateurs :</label>
                 </div>
                 <div class="salasghira">
-                    <input class="inputtype cnx-control" type="number" name="nb_org">
+                    <input class="inputtype cnx-control" type="number" name="nb_org'.$i.'">
                 </div>
                 <br><br>
             </div>

@@ -54,8 +54,10 @@ if (isset($_POST["action"]) && $_POST["action"] == "Ajout_salle") {
       //    $id = $_SESSION['id'][0];
       // }
 
+      for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
       // if (!existe_salle($_POST['num']), $_GET['nom_bat'])) {
-         creer_salle($_POST['num'],$_POST['Photo'] ,$_POST['Capacité'] ,$_POST['Ressources'] ,$_POST['niveau'] ,$_POST['Description'] ,$_POST['nb_org'] ,$_SESSION['Nom']);
+         creer_salle($_POST["num$i"],$_POST["Photo$i"] ,$_POST["Capacité$i"] ,$_POST["Ressources$i"] ,$_POST["niveau$i"] ,$_POST["Description$i"] ,$_POST["nb_org$i"] ,$_SESSION['Nom']);
+      }
          ajout_nb_salle($_SESSION['Nom']);
          // var_dump($_SESSION['nb_salle']);
          // if ($_SESSION['nb_salle']>0){
