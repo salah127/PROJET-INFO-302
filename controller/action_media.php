@@ -11,15 +11,16 @@ if (isset($_POST["action"]) && $_POST["action"] == "ajouter-bat") {
       if (!existe_bat($_POST['Nom'])) {
 
          $_SESSION['Nom'] = $_POST['Nom'];
-
-         creer_bat($_POST['Nom'], $_POST['adresse'], $_POST['nb_salle'], $_SESSION['id'][0]);
-      
+         if($_POST['nb_salle']>0){
+            $nb_salle=$_POST['nb_salle']-1;
+         }
+         creer_bat($_POST['Nom'], $_POST['adresse'], $nb_salle, $_SESSION['id'][0]);
          $_SESSION['nb_salle']=$_POST['nb_salle'];
          if ($_SESSION['nb_salle']>0){
-               header("Location: ./?page=ajout-salle");
+            header("Location: ./?page=ajout-salle");
          }else{
-         header("Location: ./?page=liste-bat");
-         echo 'vous avez creer un batiment';}
+            header("Location: ./?page=liste-bat");
+            echo 'vous avez creer un batiment';}
 
       }else{
          echo 'Batiment existe deja';

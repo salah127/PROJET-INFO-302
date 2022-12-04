@@ -31,6 +31,9 @@
         <input type="hidden" name="action" value="supp">
         <br>
         <div class="salasghira2 btnajoutsalle2">
+            <?php
+            $_SESSION['nb_salle'] = 1;
+            ?>
             <a class="cnx-sub" href="index.php?page=ajout-salle">Ajouter</a>
         </div>
         <br>
