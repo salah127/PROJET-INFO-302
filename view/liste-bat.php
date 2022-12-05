@@ -23,7 +23,31 @@
                 </td>
             </tr>
             <?php 
-            Afficher_bat($_SESSION['id'][0]);
+            $tab = batiments($_SESSION['id'][0]);
+            if ($tab == NULL){
+                echo ' Il ya aucun batiment';
+            } else{
+                while( $row = mysqli_fetch_assoc($tab)){
+                    echo'
+                        <tr>
+                            <td class=tab> 
+                                <li>' . $row["Nom"] . ' </li> 
+                            </td>
+                            <td class=tab>
+                                <li> '. $row["adresse"] . ' </li> 
+                            </td>
+                            <td class=tab>
+                                <li>'. $row["nb_salle"] .'</li> 
+                            </td>
+                            <td class=tab>
+                                <li>
+                                    <a class="button" href ="index.php?page=liste-salles&Nom='.$row["Nom"].'"> Afficher </a>
+                                </li> 
+                            </td>
+                        <tr>
+                        ';
+                }
+            }
         ?>
         </table>
         <br><br>

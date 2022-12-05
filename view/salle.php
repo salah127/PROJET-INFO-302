@@ -34,15 +34,42 @@
                 </td>
             </tr>
             <?php
-                // $_SESSION['id_pro'] = $_GET['id_salle'];
-                afficher_salle($_GET['id_salle']);
 
 
-                if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
+            $tab = salle($_GET['id_salle']);
+            if ($tab == NULL){
+                echo ' Il ya aucun batiment';
+            } else{
+                while( $row = mysqli_fetch_assoc($tab)){
+		
+                    echo'
+                        <tr>
+                            <td class=tab> 
+                                <li>' . $row["numero"] . ' </li> 
+                            </td>
+                            <td class=tab> 
+                                <li><img src = "data:image/jpg;base64,' . ($row['photo']) . '" width = "50px" height = "50px"/></li>
+                            </td>
+                            <td class=tab>
+                                <li> '. $row["Capacité"] . ' </li> 
+                            </td>
+                            <td class=tab>
+                                <li>'. $row["niveau"] .'</li> 
+                            </td>
+            
+                        <tr>
+                        ';
+                }
+            }
 
-                    if ($_SESSION["role"]=='Pro'){
 
-                        if ($_SESSION["id"]!='32'){
+
+
+            if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
+
+                if ($_SESSION["role"]=='Pro'){
+
+                    if ($_SESSION["id"]!='32'){
                         // conditon si le id != session[id_pro] ===> reserver 
                         echo '
                         <br>
@@ -56,8 +83,8 @@
                             <a class="cnx-sub" href="index.php?page=">Supprimer</a>
                         </div>
                         ';
-                        }   
-                        else{
+                    }   
+                    else{
                             echo '  
                             <br>
                             <br>
@@ -67,8 +94,8 @@
                             <br>
                             ';
                     
-                        }
-                    }else{
+                    }
+                }else{
                     echo '  
                     <br>
                     <br>
@@ -80,7 +107,7 @@
                 
                     
                     }
-                }else{
+            }else{
                         // alert("Connectez vous avant de reserver une salle.");
                     echo '  <br>
                             <br>

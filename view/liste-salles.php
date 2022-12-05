@@ -25,7 +25,32 @@
 			</td>
 		</tr>
         <?php 
-            afficher_salles($_GET['Nom']);
+            $tab = salles($_SESSION['Nom']);
+            if ($tab == NULL){
+                echo ' Il ya aucun batiment';
+            } else{
+                while( $row = mysqli_fetch_assoc($tab)){
+                    echo'
+                        <tr>
+                            <td class=tab> 
+                                <li>' . $row["numero"] . ' </li> 
+                            </td>
+                            <td class=tab>
+                                <li> '. $row["Capacité"] . ' </li> 
+                            </td>
+                            <td class=tab>
+                                <li>'. $row["niveau"] .'</li> 
+                            </td>
+                            <td class=tab>
+                                <li>
+                                    <a class="button" href ="index.php?page=salle&id_salle='.$row["id_salle"].'"> Afficher </a>
+                                </li> 
+                            </td>
+            
+                        <tr>
+                        ';
+                }
+            }
         ?>
         </table>
         <input type="hidden" name="action" value="supp">
