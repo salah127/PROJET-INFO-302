@@ -28,8 +28,9 @@ function timetable (instance) {
   let celler = (data, css) => {
     let cell = document.createElement("div");
     cell.className = css;
-    if (typeof data == "string") { cell.innerHTML = data; }
-    else {
+    if (typeof data == "string") {
+       cell.innerHTML = data; 
+    }else {
       cell.innerHTML = data.txt;
       cell.style = `grid-column:${data.col};grid-row:${data.row};color:${data.color};background:${data.bg}`;
       if (instance.gridY) { cell.style.height = instance.gridY; }

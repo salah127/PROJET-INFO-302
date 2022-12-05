@@ -1,5 +1,7 @@
 <?php
 
+use LDAP\Result;
+
 function existe_bat($nom){
 	global $c;
 	$sql = "select Nom FROM `batiment`";
@@ -104,75 +106,12 @@ function rec_nom($nom){
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
 function home(){
 	global $c;
 	$sql = " SELECT * FROM salle ORDER BY time_ajout ";
 	$resultat = mysqli_query($c, $sql);
-	
-	while( $row = mysqli_fetch_assoc($resultat)){
-		
-		echo'
-			<tr>
-
-				<td class=tab> 
-					<li>' . $row["numero"] . ' </li> 
-				</td>
-				<td class=tab> 
-					<li><img src = "data:image/jpg;base64,' . base64_encode($row['photo']) . '" width = "50px" height = "50px"/></li>
-				</td>
-				<td class=tab>
-					<li> '. $row["Capacité"] . ' </li> 
-				</td>
-				<td class=tab>
-					<li>'. $row["niveau"] .'</li> 
-			    </td>
-
-				</td>
-				<td class=tab>
-					<li>'. $row["nom_bat"] .'</li> 
-			    </td>
-				<td class=tab>
-					<li>
-						<a class="button" href ="index.php?page=salle&id_salle='.$row["id_salle"].'"> Afficher </a>
-					</li> 
-			    </td>
-
-			<tr>
-			';
-	}
-	echo'
-	</table>';
-
+	return $resultat;
 }
-
-
-function afficher_home(){
-	global $c;
-	$sql = "SELECT * FROM salle ORDER BY time_ajout";
-	$resultat = mysqli_query($c, $sql);
-	$row = mysqli_fetch_assoc($resultat);
-	if ($row == NULL){
-		echo 'Il ya aucunne salle';
-	} else{
-		home();
-	}
-}
-
-
-
-
-
-
 
 function reserver( $id_salle, $id_user ){
 	global $c;
