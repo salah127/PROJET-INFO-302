@@ -1,5 +1,6 @@
 <fieldset class='batima2'>
     <legend class='titleliste'>
+        <i class="fa fa-home"></i>
         <h2> Home</h2>
     </legend>
     <form action="." method="post">

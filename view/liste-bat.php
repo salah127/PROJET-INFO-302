@@ -28,6 +28,7 @@
         </table>
         <br><br>
         <div class="salasghira2 btnajoutsalle2">
+        <i class="fa fa-home"></i>
             <a class="cnx-sub" href="index.php?page=ajout-bat">+</a>
         </div>
     </form>

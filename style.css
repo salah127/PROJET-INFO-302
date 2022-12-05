@@ -4,7 +4,7 @@ body {
     height: 100%;
     scroll-behavior: smooth;
     position: relative;
-    background-color: #181818;
+    background-color: #575454;
 }
 
 header {
@@ -94,18 +94,26 @@ li {
     text-align: center;
     color: white;
     padding: 10px;
-    font-size: 12px;
+    font-size: 13px;
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
     width: 50%;
     margin: 10px;
+    background-image: linear-gradient(45deg,#ff0052, transparent);
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+    text-transform: uppercase;
 }
 
 .button:hover {
     background-color: white;
     color: #181818;
-    border: solid 0.1rem white;
+    border: solid 0.1rem #ff0052;
     opacity: 0.6;
 }
 
@@ -138,11 +146,19 @@ li {
 #menu-inscrp a {
     font-family: "Lucida Console", "Courier New", Monospace;
     text-align: center;
-    color: white;
+    color: #ff0052;
     display: table;
-    font-size: 12px;
+    font-size: 13px;
     text-decoration: none;
     cursor: pointer;
+    background-image: linear-gradient(45deg,#ff0052, transparent);
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+    text-transform: uppercase;
 }
 
 #menu-inscrp ul li a,
@@ -151,7 +167,7 @@ li {
     background-color: #181818;
     margin: 1%;
     width: 84%;
-    color: white;
+    color: #ff0052;
     border-radius: 16px;
 }
 
@@ -356,7 +372,7 @@ html body fieldset.batima2 form table.tab tbody tr td.tab {
 }
 
 h2 {
-  background-image: linear-gradient(45deg,red, blue);
+  background-image: linear-gradient(45deg,#ff0052, transparent);
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
   -webkit-background-clip: text;
@@ -371,7 +387,7 @@ label {
 }
 
 strong {
-    background-image: linear-gradient(45deg,red, blue);
+    background-image: linear-gradient(45deg,#ff0052, transparent);
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
   -webkit-background-clip: text;
@@ -391,33 +407,33 @@ strong {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: blue;
+    color: #ff0052;
     text-decoration: none;
     text-transform: uppercase;
     left: 225%;
 }
 
 .prof::before {
+    content: '';
     background-image: conic-gradient(white 20deg,
             transparent 120deg);
-    width: 150%;
-    height: 150%;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    animation: rotate 2s linear infinite;
+    animation: rotate 3s linear infinite;
 }
 
 .prof::after {
-    width: 40px;
-    height: 40px;
-    background: #101010;
+    content: '';
+    width: 25px;
+    height: 25px;
+    background: #ff0052;
     position: absolute;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: larger;
-    letter-spacing: 5px;
+    color: #ff0052;
 }
 action {
     width: 100px;
@@ -440,7 +456,7 @@ action::before {
     height: 250%;
     position: absolute;
     /* -webkit-animation: rotate 2s linear infinite; */
-    animation: rotate 1s linear infinite;
+    animation: rotate 5s linear infinite;
 }
 
 action::after {
@@ -453,10 +469,9 @@ action::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #ff0052;
     font-size: larger;
-    box-shadow: inset 20px 20px 20px #0000008c;
-    /* text-transform: uppercase; */
+    box-shadow: inset 20px 20px 20px #181818;
 }
 
 @keyframes rotate {
