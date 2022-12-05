@@ -4,20 +4,28 @@ body {
     height: 100%;
     scroll-behavior: smooth;
     position: relative;
-    background-color: #575454;
+    background-color: #181818;
 }
 
-header {
+body{
+    display: grid;
+    grid-gap: 5px;
+}
+
+.headiv {
     font-family: "Lucida Console", "Courier New", Monospace;
     background: #181818;
     position: relative;
-    height: 15%;
 }
 
-header table {
+.headt {
     font-family: "Lucida Console", "Courier New", Monospace;
     display: flex;
     position: relative;
+    background: #181818;
+    border: solid 1px white;
+    border-radius: 16px;
+    height: 60%;
 }
 
 .menu {
@@ -68,7 +76,7 @@ html body header table tbody tr td h1.logo a.button1 img {
 .button1 {
     font-family: "Lucida Console", "Courier New", Monospace;
     text-align: center;
-    color: white;
+    color: #ff0052;
     padding: 10px;
     font-size: 12px;
     text-decoration: none;
@@ -100,21 +108,11 @@ li {
     border-radius: 16px;
     width: 50%;
     margin: 10px;
-    background-image: linear-gradient(45deg,#ff0052, transparent);
-  /* Use the text as a mask for the background. */
-  /* This will show the gradient as a text color rather than element bg. */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
     text-transform: uppercase;
 }
 
 .button:hover {
-    background-color: white;
-    color: #181818;
-    border: solid 0.1rem #ff0052;
-    opacity: 0.6;
+    color: #ff0052;
 }
 
 #menu-inscrp {
@@ -145,20 +143,61 @@ li {
 
 #menu-inscrp a {
     font-family: "Lucida Console", "Courier New", Monospace;
-    text-align: center;
-    color: #ff0052;
+    text-align: left;
+    color: white;
     display: table;
     font-size: 13px;
     text-decoration: none;
     cursor: pointer;
-    background-image: linear-gradient(45deg,#ff0052, transparent);
-  /* Use the text as a mask for the background. */
-  /* This will show the gradient as a text color rather than element bg. */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
     text-transform: uppercase;
+}
+
+#menu-inscrp a:hover ~ .MenuInscrp {
+    z-index: 1;
+}
+
+.MenuInscrp:hover {
+    z-index: 1;
+}
+
+.MenuInscrp {
+    font-family: "Lucida Console", "Courier New", Monospace;
+    padding: 2px;
+    position: relative;
+    background: #181818;
+    text-align: left;
+    border: solid 3px #ff0052;
+    border-radius: 16px;
+    display: flex;
+    z-index: -1;
+    justify-content: center;
+    border-top-style: unset;
+}
+
+.MenuInscrp1{
+    right: 16.9%;
+}
+
+.tab2{
+    right: -8.5%;
+}
+
+/*
+#menu-inscrp:hover ~ .MenuInscrp {
+    padding: 1px;
+    position: absolute;
+    background: #181818;
+    border: solid 3px #ff0052;
+    border-radius: 16px;
+    display: grid;
+    grid-gap: 1px;
+    z-index: 1;
+    justify-content: center;
+    align-content: center;
+} */
+
+#menu-inscrp a:hover {
+    color: #ff0052;
 }
 
 #menu-inscrp ul li a,
@@ -167,8 +206,28 @@ li {
     background-color: #181818;
     margin: 1%;
     width: 84%;
-    color: #ff0052;
+    color: white;
     border-radius: 16px;
+}
+
+/*
+#menu-inscrp ul:hover {
+    position: absolute;
+    background: #181818;
+    border: solid 3px #ff0052;
+    border-radius: 16px;
+    display: grid;
+    grid-gap: 1px;
+    z-index: 1;
+    justify-content: center;
+    align-content: center;
+}
+*/
+
+#menu-inscrp ul li a,
+#menu-inscrp li:hover li a:hover {
+    color: #ff0052;
+    background: #181818;
 }
 
 #menu-inscrp ul li:hover {
@@ -177,7 +236,6 @@ li {
     color: white;
     text-align: center;
     font-size: 12px;
-    opacity: 0.6;
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
@@ -208,15 +266,18 @@ ul li .nav {
 
 footer {
     font-family: "Lucida Console", "Courier New", Monospace;
-    position: absolute;
-    top: 150%;
+    position: relative;
     text-align: center;
-    padding-top: 3px;
-    border-top: 3px solid #181818;
-    color: rgb(0, 0, 0);
-    margin: 1%;
-    height: 5%;
-}.tab {
+    border: solid 1px white;
+    background: #181818;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-top: 1px solid #c3c3c3;
+    justify-content: center;
+    border-radius: 16px;
+}
+
+.tab {
     font-family: "Lucida Console", "Courier New", Monospace;
     list-style: none;
     position: relative;
@@ -291,6 +352,10 @@ footer {
     margin-right: 15%;
 }
 
+.BigListe{
+    border: solid 1px red;
+}
+
 .cnx-sub:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
     border: solid 3px #181818;
@@ -343,12 +408,10 @@ footer {
 
 .batima2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    /* background-color: #181818; */
-    background: url(https://images.unsplash.com/photo-1565103382118-c65707fc2a9c?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTY2NzM4NzA&ixlib=rb-1.2.1&q=80);
-    color: #ff0052;
+    background-color: #181818;color: #ff0052;
     font-weight: bold;
     border-radius: 16px;
-    padding-bottom: 3%;
+    margin-top: -50px;
 }
 
 html body fieldset.batima2 form table.tab tbody tr td.tab {
@@ -372,13 +435,6 @@ html body fieldset.batima2 form table.tab tbody tr td.tab {
 }
 
 h2 {
-  background-image: linear-gradient(45deg,#ff0052, transparent);
-  /* Use the text as a mask for the background. */
-  /* This will show the gradient as a text color rather than element bg. */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
     text-transform: uppercase;
 }
 
@@ -387,13 +443,6 @@ label {
 }
 
 strong {
-    background-image: linear-gradient(45deg,#ff0052, transparent);
-  /* Use the text as a mask for the background. */
-  /* This will show the gradient as a text color rather than element bg. */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
     text-transform: uppercase;
 }
 .prof {
@@ -413,28 +462,6 @@ strong {
     left: 225%;
 }
 
-.prof::before {
-    content: '';
-    background-image: conic-gradient(white 20deg,
-            transparent 120deg);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    animation: rotate 3s linear infinite;
-}
-
-.prof::after {
-    content: '';
-    width: 25px;
-    height: 25px;
-    background: #ff0052;
-    position: absolute;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ff0052;
-}
 action {
     width: 100px;
     height: 50px;
