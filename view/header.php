@@ -21,12 +21,11 @@
                         </a>
                     </h1>
                 </td>
-                <td>
-                    <div class='BigListe'>
-                        <form action="." method="post" class="menu">
-                            <li><a class="button" href="index.php?page=">Recherche</a></li>
-                            <li><a class="button" href="index.php?page=ranking">Ranking</a></li>
-                            <?php
+                <td class='BigListe'>
+                    <form action="." method="post" class="menu">
+                        <li><a class="button" href="index.php?page=">Recherche</a></li>
+                        <li><a class="button" href="index.php?page=ranking">Ranking</a></li>
+                        <?php
                                 if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
                                     echo '
                                     <ul id="menu-inscrp">
@@ -68,19 +67,18 @@
                                     echo ' 
                                         <ul  id="menu-inscrp">
                                             <li><a href="#" >Inscription</a>
-                                                <ul class ="MenuInscrp">
+                                                <ul class ="MenuInscrp tab3">
                                                     <li><a href ="index.php?page=inscription">Internaute</a></li>
                                                     <li><a href="index.php?page=pro-insc">Proffesionnel</a></li>
                                                 </ul>       
                                             </li>     
                                         </ul>
                                         <ul >
-                                        <li ><a class="button" href ="index.php?page=connexion">Connexion</a></li>
+                                            <li ><a class="button" href ="index.php?page=connexion">Connexion</a></li>
                                         </ul>';
                                 }
                                 ?>
-                        </form>
-                    </div>
+                    </form>
                 </td>
             </tr>
         </table>
