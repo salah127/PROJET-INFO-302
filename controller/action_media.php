@@ -11,15 +11,16 @@ if (isset($_POST["action"]) && $_POST["action"] == "ajouter-bat") {
       if (!existe_bat($_POST['Nom'])) {
 
          $_SESSION['Nom'] = $_POST['Nom'];
-
-         creer_bat($_POST['Nom'], $_POST['adresse'], $_POST['nb_salle'], $_SESSION['id'][0]);
-      
+         if($_POST['nb_salle']>0){
+            $nb_salle=$_POST['nb_salle']-1;
+         }
+         creer_bat($_POST['Nom'], $_POST['adresse'], $nb_salle, $_SESSION['id'][0]);
          $_SESSION['nb_salle']=$_POST['nb_salle'];
          if ($_SESSION['nb_salle']>0){
-               header("Location: ./?page=ajout-salle");
+            header("Location: ./?page=ajout-salle");
          }else{
-         header("Location: ./?page=liste-bat");
-         echo 'vous avez creer un batiment';}
+            header("Location: ./?page=liste-bat");
+            echo 'vous avez creer un batiment';}
 
       }else{
          echo 'Batiment existe deja';
@@ -53,8 +54,10 @@ if (isset($_POST["action"]) && $_POST["action"] == "Ajout_salle") {
       //    $id = $_SESSION['id'][0];
       // }
 
+      for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
       // if (!existe_salle($_POST['num']), $_GET['nom_bat'])) {
-         creer_salle($_POST['num'],$_POST['Photo'] ,$_POST['Capacité'] ,$_POST['Ressources'] ,$_POST['niveau'] ,$_POST['Description'] ,$_POST['nb_org'] ,$_SESSION['Nom']);
+         creer_salle($_POST["num$i"],$_POST["Photo$i"] ,$_POST["Capacité$i"] ,$_POST["Ressources$i"] ,$_POST["niveau$i"] ,$_POST["Description$i"] ,$_POST["nb_org$i"] ,$_SESSION['Nom']);
+      }
          ajout_nb_salle($_SESSION['Nom']);
          // var_dump($_SESSION['nb_salle']);
          // if ($_SESSION['nb_salle']>0){

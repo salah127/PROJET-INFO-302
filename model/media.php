@@ -27,54 +27,12 @@ function creer_bat($nom, $adresse, $nb_salle, $id_pro){
 }
 
 
-function batt($id){
+function batiments($id){
 	global $c;
-	$sql = " SELECT Nom, adresse, nb_salle FROM batiment WHERE id_pro = ' $id '  ";
+	$sql = " SELECT * FROM batiment WHERE id_pro = ' $id ' ORDER BY `batiment`.`nb_salle` ASC";
 	$resultat = mysqli_query($c, $sql);
-
-	while( $row = mysqli_fetch_assoc($resultat)){
-		echo'
-			<tr>
-				<td class=tab> 
-					<li>' . $row["Nom"] . ' </li> 
-				</td>
-				<td class=tab>
-					<li> '. $row["adresse"] . ' </li> 
-				</td>
-				<td class=tab>
-					<li>'. $row["nb_salle"] .'</li> 
-			    </td>
-				<td class=tab>
-					<li>
-						<a class="button" href ="index.php?page=liste-salles&Nom='.$row["Nom"].'"> Afficher </a>
-					</li> 
-			    </td>
-			<tr>
-			';
-	}
-
+	return $resultat;
 }
-
-
-
-function afficher_bat($id){
-	global $c;
-	$sql = " SELECT Nom, adresse, nb_salle FROM batiment WHERE id_pro = '$id'  ";
-	$resultat = mysqli_query($c, $sql);
-	$row = mysqli_fetch_assoc($resultat);
-	if ($row == NULL){
-		echo ' Il ya aucun batiment';
-	} else{
-		batt($id);
-	}
-}
-
-
-
-
-
-
-
 
 function existe_salle($num, $nom){
 	global $c;
@@ -112,33 +70,12 @@ function creer_salle($num, $Photo, $Capacité, $Ressources, $niveau, $Descriptio
 	$sql = "INSERT INTO `salle` (`id_salle`, `numero`,`Photo`, `Capacité`, `Ressources`, `niveau`, `Description`, `nb_org`, `nom_bat`, `time_ajout` ) VALUES (NULL ,'$num', '$Photo', '$Capacité', '$Ressources', '$niveau', '$Description',' $nb_org', '$nom_bat', current_timestamp() );";
 	mysqli_query($c, $sql);
 }
+
 function salles($nom){
 	global $c;
-	$sql = " SELECT * FROM salle WHERE nom_bat = '$nom'  ";
+	$sql = " SELECT * FROM salle WHERE nom_bat = '$nom' ORDER BY `salle`.`numero` ASC ";
 	$resultat = mysqli_query($c, $sql);
-
-	while( $row = mysqli_fetch_assoc($resultat)){
-		echo'
-			<tr>
-				<td class=tab> 
-					<li>' . $row["numero"] . ' </li> 
-				</td>
-				<td class=tab>
-					<li> '. $row["Capacité"] . ' </li> 
-				</td>
-				<td class=tab>
-					<li>'. $row["niveau"] .'</li> 
-			    </td>
-				<td class=tab>
-					<li>
-						<a class="button" href ="index.php?page=salle&id_salle='.$row["id_salle"].'"> Afficher </a>
-					</li> 
-			    </td>
-
-			<tr>
-			';
-	}
-
+	return $resultat;
 }
 function supp_bat ($nom){
     global $c;
@@ -147,73 +84,12 @@ function supp_bat ($nom){
     mysqli_query($c,$sql);
     mysqli_query($c,$sql1);
 }
-
-function afficher_salles($nom){
-	global $c;
-	$sql = "SELECT * FROM salle WHERE nom_bat = '$nom'";
-	$resultat = mysqli_query($c, $sql);
-	$row = mysqli_fetch_assoc($resultat);
-	if ($row == NULL){
-		echo 'Il ya aucunne salle';
-	} else{
-		salles($nom);
-	}
-}
-
-
-
-
-
-
-
 function salle($id){
 	global $c;
 	$sql = " SELECT * FROM salle WHERE id_salle = '$id'  ";
 	$resultat = mysqli_query($c, $sql);
-	
-	while( $row = mysqli_fetch_assoc($resultat)){
-		
-		echo'
-			<tr>
-
-				<td class=tab> 
-					<li>' . $row["numero"] . ' </li> 
-				</td>
-				<td class=tab> 
-					<li><img src = "data:image/jpg;base64,' . base64_encode($row['photo']) . '" width = "50px" height = "50px"/></li>
-				</td>
-				<td class=tab>
-					<li> '. $row["Capacité"] . ' </li> 
-				</td>
-				<td class=tab>
-					<li>'. $row["niveau"] .'</li> 
-			    </td>
-
-			<tr>
-			';
-	}
-	echo'
-	</table>';
-
+	return $resultat;
 }
-
-
-function afficher_salle($id){
-	global $c;
-	$sql = "SELECT * FROM salle WHERE id_salle = '$id'";
-	$resultat = mysqli_query($c, $sql);
-	$row = mysqli_fetch_assoc($resultat);
-	if ($row == NULL){
-		echo 'Il ya aucunne salle';
-	} else{
-		salle($id);
-	}
-}
-
-
-
-
-
 
 
 function rec_nom($nom){
