@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <header>
-        <table>
+    <div class="headiv">
+        <table class="headt">
             <tr>
                 <td>
                     <h1 class="logo">
@@ -22,53 +22,50 @@
                     </h1>
                 </td>
                 <td>
-                    <li class='BigListe'>
+                    <div class='BigListe'>
                         <form action="." method="post" class="menu">
-                    <li><a class="button" href="index.php?page=">Recherche</a></li>
-                    <li><a class="button" href="index.php?page=ranking">Ranking</a></li>
-                    <?php
-                                    if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
+                            <li><a class="button" href="index.php?page=">Recherche</a></li>
+                            <li><a class="button" href="index.php?page=ranking">Ranking</a></li>
+                            <?php
+                                if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
+                                    echo '
+                                    <ul id="menu-inscrp">
+                                        <li><a href="#" >Parametre</a>
+                                            <ul class ="MenuInscrp MenuInscrp1">
+                                                <li ><a class="button" href ="index.php?page=profil">Profil</a></li>
+                                                <li ><a class="button" href ="index.php?page=aide">Aide</a></li>
+                                                <li ><a class="button" href ="index.php?connecte=false">Deconnexion</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    ';
+                                    if ($_SESSION["role"]=='internaute'){
                                         echo '
                                         <ul id="menu-inscrp">
-                                            <li><a href="#" >Parametre</a>
-                                                <ul class ="MenuInscrp">
-                                                    <li ><a class="button" href ="index.php?page=profil">Profil</a></li>
-                                                    <li ><a class="button" href ="index.php?page=aide">Aide</a></li>
-                                                    <li ><a class="button" href ="index.php?connecte=false">Deconnexion</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        ';
-                                        if ($_SESSION["role"]=='internaute'){
-                                            echo '
-                                            <ul id="menu-inscrp">
                                             <li><a href="#" >Service</a>
-                                                <ul>
+                                                <ul class ="MenuInscrp tab2">
                                                     <li ><a class="button" href ="">Reservation</a></li>
                                                     <li ><a class="button" href ="">Devenir-Pro</a></li>
                                                     <li ><a class="button" href ="">Favoris</a></li>
                                                 </ul>
                                             </li>
-                                            </ul>
-                                            ';
-                                        }
-                                        else{
-                                            echo '
-                                            <ul id="menu-inscrp">
+                                        </ul>
+                                        ';
+                                    }else{
+                                        echo '
+                                        <ul id="menu-inscrp">
                                             <li><a href="#" >Service</a>
-                                                <ul>
+                                                <ul class ="MenuInscrp tab2">
                                                     <li ><a class="button" href ="index.php?page=liste-bat">Ajouter</a></li>
                                                     <li ><a class="button" href ="">Mes-Ajout</a></li>
                                                     <li ><a class="button" href ="">Favoris</a></li>
                                                 </ul>
                                             </li>
-                                            </ul>';
-                                        }
-                                        echo '<li><a class="prof" href ="index.php?page=profil"></a></li>';
+                                        </ul>';
                                     }
-                                    else{
-                                        if (isset($_SESSION["connecte"])) var_dump($_SESSION["connecte"]);
-                                        echo ' 
+                                    echo '<li><a class="prof" href ="index.php?page=profil">'.$_SESSION['username'][0].'</a></li>';
+                                }else{
+                                    echo ' 
                                         <ul  id="menu-inscrp">
                                             <li><a href="#" >Inscription</a>
                                                 <ul class ="MenuInscrp">
@@ -80,12 +77,12 @@
                                         <ul >
                                         <li ><a class="button" href ="index.php?page=connexion">Connexion</a></li>
                                         </ul>';
-                                    }
+                                }
                                 ?>
-                    </form>
-                    </li>
+                        </form>
+                    </div>
                 </td>
             </tr>
         </table>
-    </header>
+    </div>
 </body>
