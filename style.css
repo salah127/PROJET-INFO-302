@@ -4,7 +4,7 @@ body {
     height: 100%;
     scroll-behavior: smooth;
     position: relative;
-    background-color: #171d23;
+    background-color: #181818;
 }
 
 body{
@@ -14,7 +14,7 @@ body{
 
 .headiv {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background: #171d23;
+    background: #181818;
     position: relative;
 }
 
@@ -22,7 +22,7 @@ body{
     font-family: "Lucida Console", "Courier New", Monospace;
     display: flex;
     position: relative;
-    background: #171d23;
+    background: #181818;
     border: solid 1px white;
     border-radius: 16px;
     height: 60%;
@@ -39,8 +39,8 @@ body{
 
 .logo {
     font-family: "Lucida Console", "Courier New", Monospace;
-    order: solid 3px #171d23;
-    color: #171d23;
+    order: solid 3px #181818;
+    color: #181818;
     transition: 0.3s;
     display: flex;
     text-decoration: none;
@@ -58,7 +58,7 @@ html body header table tbody tr td h1.logo a.button1 img {
     height: 100%;
     width: 100%;
     position: absolute;
-    border: solid 2px #171d23;
+    border: solid 2px #181818;
     border-radius: 16px;
     left: 5%;
     top: -18.25px;
@@ -138,7 +138,7 @@ li {
     transition: all .5s;
     border-radius: 16px;
     margin: 1%;
-    background-color: #171d23;
+    background-color: #181818;
 }
 
 #menu-inscrp a {
@@ -164,7 +164,7 @@ li {
     font-family: "Lucida Console", "Courier New", Monospace;
     padding: 2px;
     position: relative;
-    background: #171d23;
+    background: #181818;
     text-align: left;
     border: solid 3px #ff0052;
     border-radius: 16px;
@@ -190,7 +190,7 @@ li {
 #menu-inscrp:hover ~ .MenuInscrp {
     padding: 1px;
     position: absolute;
-    background: #171d23;
+    background: #181818;
     border: solid 3px #ff0052;
     border-radius: 16px;
     display: grid;
@@ -207,7 +207,7 @@ li {
 #menu-inscrp ul li a,
 #menu-inscrp li:hover li a {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #171d23;
+    background-color: #181818;
     margin: 1%;
     width: 84%;
     color: white;
@@ -217,7 +217,7 @@ li {
 /*
 #menu-inscrp ul:hover {
     position: absolute;
-    background: #171d23;
+    background: #181818;
     border: solid 3px #ff0052;
     border-radius: 16px;
     display: grid;
@@ -231,12 +231,12 @@ li {
 #menu-inscrp ul li a,
 #menu-inscrp li:hover li a:hover {
     color: #ff0052;
-    background: #171d23;
+    background: #181818;
 }
 
 #menu-inscrp ul li:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #171d23;
+    background-color: #181818;
     color: white;
     text-align: center;
     font-size: 12px;
@@ -249,7 +249,7 @@ li {
     font-family: "Lucida Console", "Courier New", Monospace;
     max-height: 100%;
     width: 100%;
-    background-color: #171d23;
+    background-color: #181818;
 }
 
 @keyframes rotate {
@@ -273,7 +273,7 @@ footer {
     position: relative;
     text-align: center;
     border: solid 1px white;
-    background: #171d23;
+    background: #181818;
     padding-top: 60px;
     padding-bottom: 60px;
     border-top: 1px solid #c3c3c3;
@@ -290,12 +290,12 @@ footer {
 
 .batima {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #171d23;
+    background-color: #181818;
     color: white;
     font-weight: bold;
     width: 50%;
     border-radius: 16px;
-    border: solid 3px #171d23;
+    border: solid 3px #181818;
     margin-left: 25%;
     margin-right: 25%;
 }
@@ -323,7 +323,7 @@ footer {
 
 .btnajoutsalle {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: #171d23;
+    color: #181818;
     font-weight: bold;
     width: 100%;
     position: relative;
@@ -333,8 +333,8 @@ footer {
 
 .cnx-sub {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px #171d23;
-    color: #171d23;
+    border: solid 3px #181818;
+    color: #181818;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
@@ -344,51 +344,51 @@ footer {
 
 .cnx-sub2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px #171d23;
-    color: #171d23;
+    border: solid 3px #181818;
+    color: #181818;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: #171d23;
+    background-color: #181818;
     margin-left: 15%;
     margin-right: 15%;
 }
 
 .BigListe{
-    right: 44%;
+    right: 42%;
     position: absolute;
 }
 
 .cnx-sub:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px #171d23;
-    color: #171d23;
+    border: solid 3px #181818;
+    color: #181818;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: #171d23;
+    background-color: #181818;
 }
 
 .cnx-sub2:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px #171d23;
-    color: #171d23;
+    border: solid 3px #181818;
+    color: #181818;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: #171d23;
+    background-color: #181818;
 }
 
 .inputtype {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: #171d23;
-    border: solid 2px #171d23;
+    color: #181818;
+    border: solid 2px #181818;
     border-radius: 16px;
     text-align: center;
 }
@@ -401,19 +401,19 @@ footer {
     margin: 3%;
     text-align: center;
     border-radius: 16px;
-    background-color: #171d23;
+    background-color: #181818;
     border:solid 2px white;
 }
 
 .btnajoutsalle2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: #171d23;
+    color: #181818;
     font-weight: bold;
 }
 
 .batima2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    background-color: #171d23;color: #ff0052;
+    background-color: #181818;color: #ff0052;
     font-weight: bold;
     border-radius: 16px;
     margin-top: -50px;
@@ -432,7 +432,7 @@ html body fieldset.batima2 form table.tab tbody tr td.tab {
 
 .salasghira2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    color: #171d23;
+    color: #181818;
     font-weight: bold;
     width: 100%;
     position: relative;
@@ -444,7 +444,7 @@ h2 {
 }
 
 label {
-    color: #171d23;
+    color: #181818;
 }
 
 strong {
@@ -503,7 +503,7 @@ action::after {
     align-items: center;
     color: #ff0052;
     font-size: larger;
-    box-shadow: inset 20px 20px 20px #171d23;
+    box-shadow: inset 20px 20px 20px #181818;
 }
 
 @keyframes rotate {
@@ -548,13 +548,13 @@ action::after {
     border-radius: 16px;
 }
 .supprof1:hover{
-    color: #171d23;
-    border: solid 2px #171d23;
+    color: #181818;
+    border: solid 2px #181818;
     background-color: green;
 }
 .supprof2:hover{
-    color: #171d23;
-    border: solid 2px #171d23;
+    color: #181818;
+    border: solid 2px #181818;
     background-color: red;
 }
 
