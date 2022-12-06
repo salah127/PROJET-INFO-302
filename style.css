@@ -333,19 +333,20 @@ footer {
 
 .cnx-sub {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px #181818;
-    color: #181818;
+    border: solid 3px white;
+    color: white;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
     text-align: center;
     border-radius: 16px;
-    background-color: w181818}
+    background-color: #181818;
+}
 
 .cnx-sub2 {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px #181818;
-    color: #181818;
+    border: solid 3px white;
+    color: white;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
@@ -363,8 +364,8 @@ footer {
 
 .cnx-sub:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px #181818;
-    color: #181818;
+    border: solid 3px #ff0052;
+    color: #ff0052;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
@@ -375,8 +376,8 @@ footer {
 
 .cnx-sub2:hover {
     font-family: "Lucida Console", "Courier New", Monospace;
-    border: solid 3px #181818;
-    color: #181818;
+    border: solid 3px #ff0052;
+    color: #ff0052;
     font-weight: bold;
     position: relative;
     padding: 1% 25%;
@@ -444,7 +445,43 @@ h2 {
 }
 
 label {
-    color: #181818;
+    color: white;
+    font-family: "Lucida Console", "Courier New", Monospace;
+}
+
+label:hover {
+    color: #ff0052;
+}
+
+.mom{
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 8vw;
+}
+
+#first{
+    width: 25%;
+    position: relative;
+}
+
+#second{
+    display: grid;
+    grid-gap: 1vw;
+}
+
+input{
+    position: relative;
+    background: #181818;
+    border: solid 1px white;
+    text-align: center;
+    color: white;
+}
+
+input:hover {
+    border: solid 1px #ff0052;
+    color: #ff0052;
 }
 
 strong {
