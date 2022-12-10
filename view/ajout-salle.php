@@ -4,8 +4,6 @@
 
 
 <fieldset class='batima'>
-    
-    <form action="." method="post">
     <?php
 
 for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
@@ -120,7 +118,7 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
 
 
 ?>
-
+<form action="." method="post">
             <div class="batsghir">
                 <div class="salasghira btnajoutsalle">
                     <input type="hidden" name="action" value="Ajout_salle">
