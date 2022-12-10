@@ -81,14 +81,38 @@ if (isset($_POST["action"]) && $_POST["action"] == "Ajout_salle") {
    
    }
 
+   //formulaire de suppression de sal
+
+if (isset($_POST["action"]) && $_POST["action"] == "sup-salle") {
+
+   $id = $_SESSION['id_salle']; // $id is now defined
+   supp_salle ($id);
+   // echo "<p>votre bat a été supprimé.</p>";s
+}
+
+
+
 
 //formulaire de reservation de salle
 
 if (isset($_POST["action"]) && $_POST["action"] == "reserver") {
-
-   // var_dump($_SESSION['id_salle']);
+   // header("Location: ./?page=calendrier");
    // var_dump($_SESSION['id'][0]);
-   // reserver( $_SESSION['id_salle'], $_SESSION['id'][0] );
-   header("Location: ./?page=Calendar");
+   $debut=$_SESSION["date"];
+   $fin="2020-01-02 11:12:11";
+   for ($i = 1; $i <= 7; $i++) {
+      if($_SESSION["date$i"]=1){
+         header("Location: ./?page=1");
+      }if($_SESSION["date$i"]=2){
+         header("Location: ./?page=2");
+      }
+      if($_SESSION["date$i"]=3){
+         header("Location: ./?page=3");
+      }
+    }
+  };
+
+   
+   // reserver( $_SESSION['id_salle'], $_SESSION['id'][0], $debut, $fin );
+   
    // echo "<p>votre bat a été supprimé.</p>";s
-}

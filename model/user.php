@@ -104,6 +104,14 @@ function recup_pts($pseu){
     return $point;
 }
 
+function getpseudo($id){
+	global $c;
+	$sql = "SELECT pseudo FROM users Where id='$id'";
+	$resultat = mysqli_query($c, $sql);
+    $row = mysqli_fetch_assoc($resultat);
+	return $row['pseudo'][0];
+}
+
 
 
 

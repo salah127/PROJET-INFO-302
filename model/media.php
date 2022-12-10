@@ -92,6 +92,13 @@ function salle($id){
 	$resultat = mysqli_query($c, $sql);
 	return $resultat;
 }
+function supp_salle ($id){
+    global $c;
+    $sql1 = "DELETE FROM salle WHERE id_salle = '$id'";
+    $sql = "DELETE FROM reservation WHERE id_salle='$id'";
+    mysqli_query($c,$sql);
+    mysqli_query($c,$sql1);
+}
 
 
 function rec_nom($nom){
@@ -113,12 +120,21 @@ function home(){
 	return $resultat;
 }
 
-function reserver( $id_salle, $id_user ){
+function reserver( $id_salle, $id_user,$debut, $fin, ){
 	global $c;
-	$sql = "INSERT INTO `reservation` (`id_res`, `id_salle`, `id_user`, `date_reservation` ) VALUES (NULL, '$id_salle', '$id_user', current_timestamp() );";
+	$sql = "INSERT INTO `reservation` (`id_res`, `id_salle`, `id_user`, `debut`, `fin`, `date_reservation` ) VALUES (NULL, '$id_salle', '$id_user', '$debut', '$fin', current_timestamp() );";
 	$result = mysqli_query($c, $sql);
 }
 
+
+
+
+function ranking(){
+	global $c;
+	$sql = " SELECT * FROM users ORDER BY point ";
+	$resultat = mysqli_query($c, $sql);
+	return $resultat;
+}
 
 
 

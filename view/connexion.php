@@ -3,7 +3,7 @@
         <h2>Connectez vous</h2>
     </legend>
     <form action="index.php" method="post">
-        <input type="hidden" name="action" value="connexion">
+        
         <div id="second">
             <div class="mom">
                 <div id="first">
@@ -22,6 +22,7 @@
             </div>
         </div>
         <br>
+        <input type="hidden" name="action" value="connexion">
         <input type="submit" class="cnx-sub" value="connexion">
     </form>
 </fieldset>

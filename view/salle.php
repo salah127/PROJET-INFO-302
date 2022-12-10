@@ -8,7 +8,6 @@
         <h2>   Salle <?php echo '<nav>'. $_GET['id_salle'] . '</nav> '; ?></h2>
     </legend>
     <form action="." method="post">
-    <input type="hidden" name="action" value="reserver">
         <table class=tab>
             <tr>
                 <td class=tab>
@@ -61,9 +60,10 @@
                 }
             }
 
-
-
-
+            ?>
+            </table>
+            <br>
+            <?php
             if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
 
                 if ($_SESSION["role"]=='Pro'){
@@ -79,8 +79,9 @@
                         <br>
                         <br>
                         <div class="salasghira2 btnajoutsalle2">
-                            <a class="cnx-sub" href="index.php?page=">Supprimer</a>
-                        </div>
+                            <input type="hidden" name="action" value="sup-salle">
+                            <input class="cnx-sub" type = "submit"  value = "Supprimer">
+                        </div> 
                         ';
                     }   
                     else{
@@ -99,7 +100,7 @@
                     <br>
                     <br>
                     <div class="salasghira2 btnajoutsalle2">
-                        <input type = "submit" class="cnx-sub" value = "resever">
+                        <a class="cnx-sub" href="index.php?page=calendrier">resever</a>
                     </div>
                     <br>
                     ';
@@ -117,6 +118,5 @@
                             ';
                 }
             ?>
-        </table>
     </form>
 </fieldset>

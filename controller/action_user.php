@@ -9,7 +9,7 @@ if (isset($_GET["connecte"]) && $_GET["connecte"] == "false") {
     session_destroy();
     //$_SESSION['connecte'] = false;
     //var_dump($_SESSION);
-    header('location:.');
+    header("Location: ./?page=connexion");
 }
 
 
@@ -68,10 +68,8 @@ if (isset($_POST["action"])) {
                         // echo "<p>Bienvenu " . $_SESSION['id'][0].  "</p>";
                         // echo "<p>Bienvenu " . $_SESSION['id'] . "</p>";
                     }
-                } else {
-                    echo "err1 erreur sur le mot de passe ou pseudo";
-                    // echo "2 eme possibilité : erreur vous êtes déjà connecté en tant que : ";
-                    // var_dump($_SESSION);
+                } else {  
+                    header("Location: .");
                 }
             } else {
                 echo "erreur";
@@ -126,10 +124,13 @@ if (isset($_POST["action"])) {
 
 
 //formulaire de suppression de compte
-
-if (isset($_GET["id"])) {
-    $id = $_GET['id']; // $id is now defined
-    suppression($id);
-    echo "<p>votre compte a été supprimé.</p>";
-    header("Location: ./?connecte=false");
+if (isset($_POST["action"])) {
+    if ($_POST["action"] == "supp") {
+        if (isset($_GET["id"])) {
+            $id = $_GET['id']; // $id is now defined
+            suppression($id);
+            echo "<p>votre compte a été supprimé.</p>";
+            header("Location: ./?connecte=false");
+}
+}
 }
