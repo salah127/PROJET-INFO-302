@@ -1,165 +1,80 @@
-<style>
-    * {
-    box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
-  }
-  
-  html {
-    font-size: 62.5%;
-    
-  }
-  .day{
-    
-    /* flex-wrap :wrap; */
-    width: 1000px;
-  }
+<!doctype html>
+<html>
 
-  <?php for ($i = 1; $i <= 7; $i++) {$_SESSION["date$i'"]=$_POST["date$i"] ;} ?>
+<head>
+    <meta charset="utf-8">
+    <title>Vanilla Calendar</title>
+    <meta name="description" content="A simple Calendar in JS Vanilla">
+    <meta name="author" content="https://github.com/marssola/vanilla-calendar">
 
-</style>
-<fieldset  >
-    <legend class='titleliste'>
-        <h2><?php echo $_SESSION['id_salle'] ; ?></h2>
-    </legend>
-    <div  class='batima bat' >
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calendar</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
- 
-    <div class="container">
-      <div class="calendar">
-        <div class="month">
-          <i class="fas fa-angle-left prev"></i>
-          <div class="date">
-            <h1></h1>
-            <p></p>
-          </div>
-          <i class="fas fa-angle-right next"></i>
-        </div>
-        
-        <div class="weekdays">
-        <div>Temp</div>
-          
-          <div>LUN</div>
-          <div>MAR</div>
-          <div>MER</div>
-          <div>JEU</div>
-          <div>VEN</div>
-          <div>SAM</div>
-          <div>DIM</div>
-        </div>
-        
-        <div class="day">
-        <div class="days">
-        </div>
-        </div>
-        </div>
-        <p id="demo"></p>
+    <link rel="stylesheet" href="css/styleCal.css">
+    <link rel="stylesheet" href="css/vanilla-calendar-min.css">
+    <script src="js/vanilla-calendar-min.js"></script>
+</head>
 
-        
-      
-    </div>
-      
+<body>
+    <div class="content">
+        <div class="area-buttons">
+            <button class="info" name="pastDates">Disable past dates</button>
+            <br>
+            <input class="info calTest" name="jour" type="text" value=""> 
+            <!-- <button class="info" name="availableDates">Set available dates</button>
+                <button class="info" name="availableWeekDays">Set available weekdays</button> -->
+        </div>
+        <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
     </div>
 
-    <script src="script.js"></script>
-</div>
-</fieldset >
+    <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
 
-<script>
-const date = new Date();
-
-const renderCalendar = () => {
-  date.setDate(1);
-
-  const monthDays = document.querySelector(".days");
-
-  const lastDay = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDate();
-
-  const prevLastDay = new Date(
-    date.getFullYear(),
-    date.getMonth(),
-    0
-  ).getDate();
-
-  const firstDayIndex = date.getDay();
-
-  const lastDayIndex = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDay();
-
-  const nextDays = 7 - lastDayIndex - 1;
-
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  document.querySelector(".date h1").innerHTML = months[date.getMonth()];
-
-  document.querySelector(".date p").innerHTML = new Date().toDateString();
+    <a class="cnx-sub" href="index.php?page=home">resever</a>
 
 
-
-  let days = "";
-  
-//   for (let j = 9; j <= 19; j++) {
-//     days += '<td class="time">h00 </td>';
-  for (let i = 1; i <= 6; i++) {
-    days +='<input style="z-index:-0;"type="txt" id="date" name="date" value="<?php echo date('H:m'); ?>">';  
-    for (let j = 1; j <= 7; j++) {
-      if(j===1 || j===8|| j===15|| j===22|| j===29|| j===36){
-        days += ' <form class="time"> Adresse  </form> ';
+    <style>
+    .calTest {
+        border: solid 1px green;
+        width: 50px;
+        height: 20px;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        place-content: center;
+        color: blue;
     }
+    </style>
+
+
+    <script>
+    let pastDates = true,
+        availableDates = false,
+        availableWeekDays = false
+    let newDivTest = document.querySelector('.calTest')
+
+    let calendar = new VanillaCalendar({
+        selector: "#myCalendar",
+        months: ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre",
+            "Octobre", "Novembre", "Decembre"
+        ],
+        shortWeekday: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+        onSelect: (data, elem) => {
+            // console.log(data, elem);
+            // newDivTest.innerHTML = data.date[8] + data.date[9];
+            newDivTest.setAttribute('value', data.date[8] + data.date[9]);
+        }
+    })
+
+    let btnPastDates = document.querySelector('[name=pastDates]')
+    btnPastDates.addEventListener('click', () => {
+        pastDates = !pastDates
+        calendar.set({
+            pastDates: pastDates
+        })
+        btnPastDates.innerText = `${(pastDates ? 'Disable' : 'Enable')} past dates`
+    })
+
     
-    days += '<a  href="index.php?page=valid-res"><div>('+j+' : '+i+')</div></a>';
 
-}
+    </script>
 
-}
-days +='<input style="z-index:-0; width="10%"; "type="txt""type="txt" id="date" name="date" value="<?php echo date(' H:m'); ?>">'; 
+</body>
 
-    monthDays.innerHTML = days;
-
-};
-
-
-
-document.querySelector(".prev").addEventListener("click", () => {
-  date.setMonth(date.getMonth() - 1);
-  renderCalendar();
-});
-
-document.querySelector(".next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
-  renderCalendar();
-});
-
-renderCalendar();
-</script>
+</html>

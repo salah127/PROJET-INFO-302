@@ -39,7 +39,7 @@
                     echo'
                         <tr>
                             <td class=tab> 
-                                <li>' . $row["numero"] . ' </li> 
+                                <li>' . $_SESSION["jour_res"] . ' </li> 
                             </td>
                             <td class=tab> 
                                 <li><img src = "data:image/jpg;base64,' . ($row['photo']) . '" width = "50px" height = "50px"/></li>
@@ -60,7 +60,7 @@
             </table>
             <br><br>
 
-            <p> Voulez vous reserver cette salle entre <p><?php for ($i = 1; $i <= 7; $i++) {$_SESSION["date$i"];}?></p></p>
+            <p> Voulez vous reserver cette salle entre</p>
 
 			<br><br>
         <input type="submit" class="cnx-sub button" value="OUI">

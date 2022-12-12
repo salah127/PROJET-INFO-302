@@ -98,21 +98,10 @@ if (isset($_POST["action"]) && $_POST["action"] == "sup-salle") {
 if (isset($_POST["action"]) && $_POST["action"] == "reserver") {
    // header("Location: ./?page=calendrier");
    // var_dump($_SESSION['id'][0]);
-   $debut=$_SESSION["date"];
-   $fin="2020-01-02 11:12:11";
-   for ($i = 1; $i <= 7; $i++) {
-      if($_SESSION["date$i"]=1){
-         header("Location: ./?page=1");
-      }if($_SESSION["date$i"]=2){
-         header("Location: ./?page=2");
-      }
-      if($_SESSION["date$i"]=3){
-         header("Location: ./?page=3");
-      }
-    }
+   $jour=$_POST["jour"];
+   $jour_res= "2022-12-$jour";
+   reserver( $_SESSION['id_salle'], $_SESSION['id'][0], $jour_res);
+   header("Location: ./?page=home");
   };
-
-   
-   // reserver( $_SESSION['id_salle'], $_SESSION['id'][0], $debut, $fin );
    
    // echo "<p>votre bat a été supprimé.</p>";s

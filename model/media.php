@@ -120,9 +120,9 @@ function home(){
 	return $resultat;
 }
 
-function reserver( $id_salle, $id_user,$debut, $fin, ){
+function reserver( $id_salle, $id_user,$jour_res ){
 	global $c;
-	$sql = "INSERT INTO `reservation` (`id_res`, `id_salle`, `id_user`, `debut`, `fin`, `date_reservation` ) VALUES (NULL, '$id_salle', '$id_user', '$debut', '$fin', current_timestamp() );";
+	$sql = "INSERT INTO `reservation`(`id_res`, `id_salle`, `id_user`, `jour_res`, `date_reservation`) VALUES (NULL, '$id_salle', '$id_user', '$jour_res', current_timestamp() );";
 	$result = mysqli_query($c, $sql);
 }
 
