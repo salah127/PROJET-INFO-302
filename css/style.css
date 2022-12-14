@@ -3,8 +3,8 @@ body {
     height: 100%;
     scroll-behavior: smooth;
     position: relative;
-    background-color: #181818;
-    
+     background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(238,140,172,1) 50%, rgba(255,255,255,1) 100%); 
 }
 
 body{
@@ -164,11 +164,9 @@ li {
     border: solid 3px #ff0052;
     border-radius: 16px;
     display: flex;
-    z-index: -1;
+    z-index: -10;
     justify-content: center;
     border-top-style: unset;
-    
-    
 }
 
 
@@ -578,4 +576,112 @@ action::after {
     display: flex;
     align-items: center;
     place-content: center;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* * {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #f7f8fc;
+    font-family: "Roboto", sans-serif;
+    color: #10182f;
+} */
+
+.container {
+    display: flex;
+    width: 75%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    place-content:center;
+    align-items:center;
+    transform:translate(17%,0%);
+    border:solid 1px greenyellow;
+}
+
+.card {
+    margin:20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    flex: 1 1 25%;
+    place-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+}
+.card:hover > .card-body {
+    min-height: 250px;
+}
+
+.card-header img {
+    border-radius: 10px;
+    width: 100%;
+    height: 150px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+    height: 30px;
+    place-content: center;
+}
+
+.tag {
+    background: #cccccc;
+    border-radius: 50px;
+    font-size: 12px;
+    margin: 0px;
+    color: #fff;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative; 
+}
+
+.tag-teal {
+    background-color: #47bcd4;
+}
+
+.tag-purple {
+    background-color: #5e76bf;
+}
+
+.tag-pink {
+    background-color: #cd5b9f;
+}
+
+.card-body p {
+    font-size: 13px;
+    margin: 0 0 40px;
+}
+
+.user {
+    display: flex;
+    margin-top: auto;
+}
+
+.user img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.user-info h5 {
+    margin: 0;
+}
+
+.user-info small {
+    color: #545d7a;
 }

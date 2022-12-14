@@ -61,7 +61,7 @@
                             </td>
                             <td class=tab>
                                 <li>
-                                    <a class="button" href ="index.php?page=prof-other&id='.$row["id"].'"> Afficher </a>
+                                    <a class="button" href ="index.php?page=profil&id='.$row["id"].'"> Afficher </a>
                                 </li> 
                             </td>
             

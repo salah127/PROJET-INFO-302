@@ -1,80 +1,85 @@
-<!doctype html>
-<html>
+<?php
 
-<head>
-    <meta charset="utf-8">
-    <title>Vanilla Calendar</title>
-    <meta name="description" content="A simple Calendar in JS Vanilla">
-    <meta name="author" content="https://github.com/marssola/vanilla-calendar">
-
-    <link rel="stylesheet" href="css/styleCal.css">
-    <link rel="stylesheet" href="css/vanilla-calendar-min.css">
-    <script src="js/vanilla-calendar-min.js"></script>
-</head>
-
-<body>
-    <div class="content">
-        <div class="area-buttons">
-            <button class="info" name="pastDates">Disable past dates</button>
-            <br>
-            <input class="info calTest" name="jour" type="text" value=""> 
-            <!-- <button class="info" name="availableDates">Set available dates</button>
-                <button class="info" name="availableWeekDays">Set available weekdays</button> -->
-        </div>
-        <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
-    </div>
-
-    <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
-
-    <a class="cnx-sub" href="index.php?page=home">resever</a>
+?>
 
 
-    <style>
-    .calTest {
-        border: solid 1px green;
-        width: 50px;
-        height: 20px;
-        display: flex;
-        position: absolute;
-        align-items: center;
-        place-content: center;
-        color: blue;
-    }
-    </style>
+<table id="recap">
+    <tr>
+        <td style="background:#FF8888;width:15px;height:15px;"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td style="background:#88FF88;width:15px;height:15px;"></td>
+        <td>Disponible</td>
+    </tr>
+</table>
 
 
-    <script>
-    let pastDates = true,
-        availableDates = false,
-        availableWeekDays = false
-    let newDivTest = document.querySelector('.calTest')
 
-    let calendar = new VanillaCalendar({
-        selector: "#myCalendar",
-        months: ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre",
-            "Octobre", "Novembre", "Decembre"
-        ],
-        shortWeekday: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
-        onSelect: (data, elem) => {
-            // console.log(data, elem);
-            // newDivTest.innerHTML = data.date[8] + data.date[9];
-            newDivTest.setAttribute('value', data.date[8] + data.date[9]);
-        }
-    })
+<table style="border:1px solid black;border-collapse:collapse;box-shadow: 10px 10px 5px #888888;">
+    <caption style="font-size:18px;"><a href="?page=calendrier&id_salle=198&annee=<?php echo $annee-1; ?>"
+            style="font-size:50%;vertical-align:middle;text-decoration:none;"><?php echo $annee-1; ?></a>
+        <?php echo $annee; ?> <a href="?page=calendrier&id_salle=198&annee=<?php echo $annee+1; ?>"
+            style="font-size:50%;vertical-align:middle;text-decoration:none;"><?php echo $annee+1; ?></a></caption>
+    <tr style="border-right:1px solid black;">
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Janvier</th>
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Février</th>
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Mars</th>
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Avril</th>
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Mai</th>
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Juin</th>
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Juillet</th>
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Août</th>
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Septembre</th>
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Octobre</th>
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Novembre</th>
+        <th style="<?php echo $StyleTh; ?>background:#FF33A7">Décembre</th>
+    </tr>
+    <tr>
 
-    let btnPastDates = document.querySelector('[name=pastDates]')
-    btnPastDates.addEventListener('click', () => {
-        pastDates = !pastDates
-        calendar.set({
-            pastDates: pastDates
-        })
-        btnPastDates.innerText = `${(pastDates ? 'Disable' : 'Enable')} past dates`
-    })
+        <?php
+		for($mois=1;$mois<=12;$mois++) {
+			for($jour=1;$jour<=$NbrDeJour[$mois];$jour++){
+				if($jour==1){
+					echo '<td style="vertical-align:top;border-right:1px solid black;">
+							<center><table style="width:100%;border-collapse:collapse;">';
+							$Jr=$PremierJourDuMois[$mois];
+				}
+			$JourReserve=0;
+			$date = $annee."-".$mois."-".$jour ;
+			if(exist_date($date,$_SESSION['id_salle'],$_SESSION['id'][0])>0)$JourReserve=1;
+			?>
+    <tr>
 
-    
+        <td
+            style="<?php echo ($JourReserve==1) &&  $_SESSION['id_salle']==rech_res($annee."-".$mois."-".$jour,$_SESSION['id_salle'],$_SESSION['id'][0]) ? "background:#FF8888;":"background:#88FF88;"; ?>border-bottom:1px solid #eee;">
+            <?php echo $JourReserve; echo $_SESSION['id_salle'];?></td>
+            
+        <td
+            style="<?php echo ($JourReserve==1) &&  $$_SESSION['id_salle']==rech_res($annee."-".$mois."-".$jour,$_SESSION['id_salle'],$_SESSION['id'][0]) ? "background:#FF8888;" : "background:#88FF88;"; ?>border-bottom:1px solid #eee;width:20%;">
+            <?php echo $jour; ?></td>
+        <?php 
+				if($Jr>5){
+					$Jr=0;
+				} else {
+					$Jr++;
+				} ?>
+        <td
+            style="<?php echo ($JourReserve==1) &&  $_SESSION['id_salle']==rech_res($annee."-".$mois."-".$jour,$_SESSION['id_salle'],$_SESSION['id'][0])?"background:#FF8888;":"background:#88FF88;"; ?>border-bottom:1px solid #eee;">
+            <a
+                href="?jour=<?php echo $jour; ?>&amp;mois=<?php echo $mois; ?>&amp;annee=<?php echo $annee; ?>&amp;choix=<?php echo (($JourReserve==1) &&  $_SESSION['id_salle']==rech_res($annee."-".$mois."-".$jour,$_SESSION['id_salle'],$_SESSION['id'][0]))?0:1; ?>"><img
+                    src="<?php echo ($JourReserve==1) &&  $_SESSION['id_salle']==rech_res($annee."-".$mois."-".$jour,$_SESSION['id_salle'],$_SESSION['id'][0]) ?"image/1.png":"image/0.png";?>" alt="Action" style="width:13px;"
+                    title="<?php echo ($JourReserve==1) &&  $_SESSION['id_salle']==rech_res($annee."-".$mois."-".$jour,$_SESSION['id_salle'],$_SESSION['id'][0])?"Réservé":"Disponible"; ?>" /></a>
+        </td>
+    </tr>
+    <?php
+				if($jour==$NbrDeJour[$mois]){
+					echo '</table></center>
+						</td>';
+				}
+			}
+		}
+		?>
+    </tr>
 
-    </script>
-
-</body>
-
-</html>
+</table>

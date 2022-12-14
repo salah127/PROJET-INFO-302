@@ -3,7 +3,7 @@
         <h2>   Salle <?php echo '<nav>'. $_SESSION['id_salle'] . '</nav> '; ?></h2>
     </legend>
     <form action="." method="post">
-    <input type="hidden" name="action" value="reserver">
+    
         <table class=tab>
             <tr>
                 <td class=tab>
@@ -39,7 +39,7 @@
                     echo'
                         <tr>
                             <td class=tab> 
-                                <li>' . $_SESSION["jour_res"] . ' </li> 
+                                <li>' . $_SESSION['date_reservation'] . ' </li> 
                             </td>
                             <td class=tab> 
                                 <li><img src = "data:image/jpg;base64,' . ($row['photo']) . '" width = "50px" height = "50px"/></li>
@@ -60,9 +60,10 @@
             </table>
             <br><br>
 
-            <p> Voulez vous reserver cette salle entre</p>
+            <p> Voulez vous reserver cette salle entre</p> <script> valeur.value</script>
 
 			<br><br>
+            <input type="hidden" name="action" value="reserver">
         <input type="submit" class="cnx-sub button" value="OUI">
 		<br>
 		<br>

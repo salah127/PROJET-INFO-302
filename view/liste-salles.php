@@ -58,18 +58,19 @@
         <div class="salasghira2 btnajoutsalle2">
             <?php
             $_SESSION['nb_salle'] = 1;
+            $_SESSION['Ressources'] = "";
             ?>
             <a class="cnx-sub" href="index.php?page=ajout-salle">Ajouter</a>
         </div>
         <br>
         <br>
         <div class="salasghira2 btnajoutsalle2">
-            <a class="cnx-sub" href="index.php?page=">Modifier</a>
+            <a class="cnx-sub" href="index.php?page=" >Modifier</a>
         </div>
         <br>
         <br>
         <li>
-		<input class="button" type = "submit"  value = "Supp">
+		    <input class="cnx-sub" type = "submit"  value = "Supp">
 	    </li> 
 
         <!-- <div class="salasghira2 btnajoutsalle2">

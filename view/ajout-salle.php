@@ -1,8 +1,3 @@
-<?php 
-        // Afficher_bat($_SESSION['id'][0]);
-?>
-
-
 <fieldset class='batima'>
     <?php
 
@@ -52,18 +47,22 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
                     <label for="idinsuser"> Ressources :</label>
                 </div>
                 <div class="salasghira">
+
+                    <form action="index.php?page=ajout-salle" method="post">
                     <input class="inputtype cnx-control" type="text" name="Ressources'.$i.'" id="ins-num"
                         placeholder="Ressources">
+                        <input type="hidden" name="action" value="print">
+                        <input type="submit" value="Submit"></br>';
 
-                    <button onclick="myFunction()">Click me&</button>
-                    <p id="demo"></p>
+                        if (!empty($_SESSION["Ressources"])) {
+                                echo implode(",", $_SESSION['Ressources']);  echo " est ajouté"; 
 
-                    <script>
-                        function myFunction() {
-                            document.getElementById("demo").innerHTML = "Hello World";
-                            $("#demo").load(location.href+" #demo","Hello World");
-                        }
-                    </script>
+                         }
+                        echo '
+                        </br>
+                    </form>
+
+
                 </div>
                 <br>
             </div>
@@ -118,14 +117,25 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
 
 
 ?>
-<form action="." method="post">
-            <div class="batsghir">
-                <div class="salasghira btnajoutsalle">
-                    <input type="hidden" name="action" value="Ajout_salle">
-                    <input type="submit" class="cnx-sub" value="Ajouter">
-                </div>
+    <form action="." method="post">
+        <div class="batsghir">
+            <div class="salasghira btnajoutsalle">
+                <input type="hidden" name="action" value="Ajout_salle">
+                <input type="submit" class="cnx-sub" value="Ajouter">
             </div>
+        </div>
         </div>
 
     </form>
 </fieldset>
+
+
+
+
+<?php 
+// function myFunction() {
+//     $i =1;
+//     $_SESSION["ressource$i"]= $_POST["ressource"];
+//     $i++;
+// }
+?>

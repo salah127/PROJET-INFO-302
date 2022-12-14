@@ -1,73 +1,30 @@
-<fieldset class='batima2'>
-    <legend class='titleliste'>
-        <i class="fa fa-home"></i>
-        <h2> Home</h2>
-    </legend>
-    <form action="." method="post">
-        <table class=tab>
-            <tr>
-                <td class=tab>
-                    <li>
-                        <div class='card'><strong>Numero</strong></div>
-                    </li>
-                </td>
-                <td class=tab>
-                    <li>
-                        <div class='card'><strong>photo</strong></div>
-                    </li>
-                </td>
-                <td class=tab>
-                    <li>
-                        <div class='card'><strong>Capacite</strong></div>
-                    </li>
-                </td>
-                <td class=tab>
-                    <li>
-                        <div class='card'><strong>Niveau requis</strong></div>
-                    </li>
-                </td>
-                <td class=tab>
-                    <li>
-                        <div class='card'><strong>Nom batiment</strong></div>
-                    </li>
-                </td>
-            </tr>
-            <?php
+<form action="." method="post">
+    <div class="container">
+        <?php
                 $tab = home();
                 while( $row = mysqli_fetch_assoc($tab)){
-		
-                    echo'
-                        <tr>
-            
-                            <td class=tab> 
-                                <li>' . $row["numero"] . ' </li> 
-                            </td>
-                            <td class=tab> 
-                                <li><img src = "data:image/jpg;base64,' . base64_encode($row['photo']) . '" width = "50px" height = "50px"/></li>
-                            </td>
-                            <td class=tab>
-                                <li> '. $row["Capacité"] . ' </li> 
-                            </td>
-                            <td class=tab>
-                                <li>'. $row["niveau"] .'</li> 
-                            </td>
-            
-                            </td>
-                            <td class=tab>
-                                <li>'. $row["nom_bat"] .'</li> 
-                            </td>
-                            <td class=tab>
-                                <li>
-                                    <a class="button" href ="index.php?page=salle&id_salle='.$row["id_salle"].'"> Afficher </a>
-                                </li> 
-                            </td>
-            
-                        <tr>
-                        ';
+                    echo '
+                        <div class="card">
+                            <a href ="?page=salle&id_salle='.$row["id_salle"].'">
+                            <div class="card-header">
+                                <span class="tag tag-teal">'. $row["nom_bat"] .'</span>
+                                <img src="image/' . $row["photo"] . '" width = "50px" height = "50px" />
+                            </div>
+                            <div class="card-body">
+                                <h4>' . $row["numero"] . ' </h4> 
+                                <p> '. $row["Description"] . ' </p>
+                                <div class="user">
+                                    <a class="prof" href ="index.php?page=profil">'.$_SESSION['username'][0].'</a>
+                                    <div class="user-info">
+                                        <h5>'.$row["niveau"].'</h5>
+                                        <small>'.$row["time_ajout"].'</small>
+                                    </div>
+                                </div>  
+                            </div>
+                            </a>
+                        </div>
+                    ';
                 }
-                echo'
-                </table>';
             ?>
-
-    </form>
-</fieldset>
+    </div>
+</form>

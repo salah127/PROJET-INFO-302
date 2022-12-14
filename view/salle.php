@@ -46,7 +46,7 @@
                                 <li>' . $row["numero"] . ' </li> 
                             </td>
                             <td class=tab> 
-                                <li><img src = "data:image/jpg;base64,' . ($row['photo']) . '" width = "50px" height = "50px"/></li>
+                            <li><img src="image/' . $row["photo"] . '" width = "50px" height = "50px" /></div></li>
                             </td>
                             <td class=tab>
                                 <li> '. $row["Capacité"] . ' </li> 
@@ -100,7 +100,9 @@
                     <br>
                     <br>
                     <div class="salasghira2 btnajoutsalle2">
-                        <a class="cnx-sub" href="index.php?page=calendrier">resever</a>
+                        <a class="cnx-sub" href="?page=calendrier&id_salle='.$_SESSION['id_salle'].'">resever</a>
+                        <br><br><br><br>
+                        <a class="cnx-sub" href="index.php?page=calendrier">ajouter des ressources</a>
                     </div>
                     <br>
                     ';

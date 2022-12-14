@@ -4,7 +4,7 @@
     </legend>
     <form action="." method="post">
         <div class="batdiv">
-            <input type="hidden" name="action" value="ajouter-bat">
+            
             <div class="batsghir">
                 <div class="salasghira btnajoutsalle">
                     <label>Nom :</label>
@@ -31,6 +31,7 @@
             </div>
             <div class="batsghir">
                 <div class="salasghira btnajoutsalle">
+                <input type="hidden" name="action" value="ajouter-bat">
                     <input type="submit" value="Ajouter" class="cnx-sub2">
                 </div>
             </div>

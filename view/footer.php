@@ -3,13 +3,6 @@
 &copy; JARI
 
 <div class="container">
-			<div class="row">
-				<div class="col-12 logo">
-					<a class="" href="https://www.LeBonChoix.com/">
-						<img src="https://www.LeBonChoix.com/images/logo/logo-alt.svg" alt="Logo LeBonChoix" title="Logo LeBonChoix">
-					</a>
-				</div>
-			</div>
 			<div class="row mt-5">
 									<div class="col-6 col-md-12 links">
 						<a href="https://www.LeBonChoix.com/faq">FAQ</a>

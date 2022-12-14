@@ -73,6 +73,14 @@ function creer_salle($num, $Photo, $Capacité, $Ressources, $niveau, $Descriptio
 	mysqli_query($c, $sql);
 }
 
+
+function ajout_ressources($nom,$ajouter_par){
+	global $c;
+	$sql = "INSERT INTO `ressources` (`id_ressource`,`nom`, `ajouter_par`, `time_ajout` ) VALUES (NULL,'$nom','$ajouter_par',current_timestamp() );";
+	mysqli_query($c, $sql);
+}
+
+
 function salles($nom){
 	global $c;
 	$sql = " SELECT * FROM salle WHERE nom_bat = '$nom' ORDER BY `salle`.`numero` ASC ";
@@ -120,11 +128,38 @@ function home(){
 	return $resultat;
 }
 
-function reserver( $id_salle, $id_user,$jour_res ){
+
+
+function reserver( $date, $id_salle,$id_user){
 	global $c;
-	$sql = "INSERT INTO `reservation`(`id_res`, `id_salle`, `id_user`, `jour_res`, `date_reservation`) VALUES (NULL, '$id_salle', '$id_user', '$jour_res', current_timestamp() );";
+	$sql = "INSERT INTO calendrier (`id`, `date`, `id_salle`, `id_user` ) VALUES (NULL, '$date', '$id_salle', '$id_user')";
 	$result = mysqli_query($c, $sql);
 }
+
+
+function supp_res($date,$id){
+	global $c;
+	$sql = "DELETE FROM calendrier WHERE date='$date' AND id_salle= '$id'  ";
+	mysqli_query($c, $sql);
+}
+
+function rech_res($date,$id_salle,$id){
+	global $c;
+	$sql = "SELECT id_salle FROM calendrier WHERE date= '$date' AND id_salle='$id_salle' AND id_user='$id'";
+	$resultat = mysqli_query($c, $sql);
+    $row = mysqli_fetch_assoc($resultat);
+	return $row['id_salle'];
+}
+
+function exist_date($date,$id_salle,$id){
+	global $c;
+	$sql = "SELECT * FROM calendrier WHERE  date='$date' AND id_salle='$id_salle' AND id_user='$id'";
+	$resultat = mysqli_query($c, $sql);
+	$row = mysqli_num_rows($resultat);
+	return $row;
+}
+
+
 
 
 

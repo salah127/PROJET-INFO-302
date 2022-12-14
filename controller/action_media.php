@@ -43,8 +43,12 @@ if (isset($_POST["action"]) && $_POST["action"] == "supp") {
    // echo "<p>votre bat a été supprimé.</p>";s
 }
 
+//formulaire de ajout de ressource
 
-
+if (isset($_POST["action"]) && $_POST["action"] == "print") {
+   $values = array($_SESSION["ressources"],$_POST['Ressources1']);
+   $_SESSION['Ressources'] = $values;
+}
 
 //formulaire d'ajout de salles
 
@@ -81,7 +85,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "Ajout_salle") {
    
    }
 
-   //formulaire de suppression de sal
+//formulaire de suppression de sal
 
 if (isset($_POST["action"]) && $_POST["action"] == "sup-salle") {
 
@@ -94,14 +98,34 @@ if (isset($_POST["action"]) && $_POST["action"] == "sup-salle") {
 
 
 //formulaire de reservation de salle
+$jours = array(1=>"Lundi",2=>"Mardi",3=>"Mercredi",4=>"Jeudi",5=>"Vendredi",6=>"Samedi",0=>"Dimanche");
+if(isset($_GET['annee']) AND preg_match("#^[0-9]{4}$#",$_GET['annee'])){//si on souhaite afficher une autre année, on l'affiche si elle est correcte
+    $annee=$_GET['annee'];
+} else {
+    $annee=date("Y");//si non, on affiche l'année actuelle
+}
+$NbrDeJour=[];
+for($mois=1;$mois<=12;$mois++) {
+    $NbrDeJour[$mois]=date("t",mktime(1,1,1,$mois,2,$annee));
+    $PremierJourDuMois[$mois]=date("w",mktime(5,1,1,$mois,1,$annee));
+}
 
-if (isset($_POST["action"]) && $_POST["action"] == "reserver") {
-   // header("Location: ./?page=calendrier");
-   // var_dump($_SESSION['id'][0]);
-   $jour=$_POST["jour"];
-   $jour_res= "2022-12-$jour";
-   reserver( $_SESSION['id_salle'], $_SESSION['id'][0], $jour_res);
-   header("Location: ./?page=home");
-  };
-   
-   // echo "<p>votre bat a été supprimé.</p>";s
+
+	if(
+	isset($_GET['jour']) AND preg_match("#^[0-9]{1,2}$#",$_GET['jour']) AND
+	isset($_GET['mois']) AND preg_match("#^[0-9]{1,2}$#",$_GET['mois']) AND
+	isset($_GET['choix']) AND preg_match("#^(0|1)$#",$_GET['choix'])) {
+		if($_GET['choix']==1){
+         $date= $annee."-".$_GET['mois']."-".$_GET['jour'];
+			if(reserver( $date, $_SESSION['id_salle'],$_SESSION['id'][0])) {
+				echo "Jour mise en \"réservé\" avec succès !";
+			} 
+		}else {
+         $date= $annee."-".$_GET['mois']."-".$_GET['jour'];
+		   if(supp_res($date,$_SESSION['id_salle'])) {
+				echo "Journée mise en \"disponible\" avec succès !";
+			} 
+		}
+	}
+
+$StyleTh="text-shadow: 1px 1px 1px #000;color:white;width:75px;border-right:1px solid black;border-bottom:1px solid black;";
