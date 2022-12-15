@@ -1,6 +1,7 @@
 <?php
     $_SESSION['id_salle'] = $_GET['id_salle'];
 ?>
+<<<<<<< HEAD
 
 <fieldset class='batima2'>
     <legend class='titleliste'>
@@ -30,9 +31,12 @@
                     </li>
                 </td>
             </tr>
+=======
+<div class="containerSalle">
+    <form action="." method="post">
+        <div class="cardSalle">
+>>>>>>> 40d0bdf516e6c6a34671e2e98cf68b881d99aa32
             <?php
-
-
             $tab = salle($_GET['id_salle']);
             if ($tab == NULL){
                 echo ' Il ya aucun batiment';
@@ -40,29 +44,27 @@
                 while( $row = mysqli_fetch_assoc($tab)){
 		
                     echo'
-                        <tr>
-                            <td class=tab> 
-                                <li>' . $row["numero"] . ' </li> 
-                            </td>
-                            <td class=tab> 
-                            <li><img src="image/' . $row["photo"] . '" width = "50px" height = "50px" /></div></li>
-                            </td>
-                            <td class=tab>
-                                <li> '. $row["Capacité"] . ' </li> 
-                            </td>
-                            <td class=tab>
-                                <li>'. $row["niveau"] .'</li> 
-                            </td>
-            
-                        <tr>
+                        <h2> Salle: '. $_GET['id_salle'] .'</h2>
+                        <div class="card-top">
+                        <div class="card-headerSalle">
+                            <img src="image/' . $row["photo"] . '" width = "50px" height = "50px" />
+                        </div>
+                        <div class="card-bodySalle">
+                            <div class="hnaSalle">
+                                <div class="h4">Numero: ' . $row["numero"] . '</div>  
+                                <div class="h4">Capacite: '. $row["Capacité"] . '</div>  
+                                <div class="h4">Niveau requis: '. $row["niveau"] .'</div>   
+                                <div class="h4">Ressources: ' . $row["Ressources"] . '</div>  
+                                <div class="h4">Description: '. $row["Description"] . '</div>  
+                                <div class="h4">Nombre d\'organisateurs: '. $row["nb_org"] .'</div>   
+                                <div class="h4">Nom du Batiment: ' . $row["nom_bat"] . '</div>  
+                                <div class="h4">La Salle a été ajouté le: '. $row["time_ajout"] . '</div>  
+                            </div>
+                        </div>
+                        </div>
                         ';
                 }
             }
-
-            ?>
-            </table>
-            <br>
-            <?php
             if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
 
                 if ($_SESSION["role"]=='Pro'){
@@ -70,32 +72,34 @@
                     if ($_SESSION["id"]!='32'){
                         // conditon si le id != session[id_pro] ===> reserver 
                         echo '
-                        <br>
-                        <br>
-                        <div class="salasghira2 btnajoutsalle2">
-                            <a class="cnx-sub" href="index.php?page=">Modifier</a>
-                        </div>
-                        <br>
-                        <br>
-                        <div class="salasghira2 btnajoutsalle2">
-                            <input type="hidden" name="action" value="sup-salle">
-                            <input class="cnx-sub" type = "submit"  value = "Supprimer">
-                        </div> 
+                            <div class="btnSalleDiv">
+                                <a class="btnSalle" href="index.php?page=">Modifier</a>
+                            </div>
+                            <div class="btnSalleDiv">
+                                <input type="hidden" name="action" value="sup-salle">
+                                <input class="btnSalle" type = "submit"  value = "Supprimer">
+                            </div>
                         ';
                     }   
                     else{
                             echo '  
+<<<<<<< HEAD
                             <br>
                             <br>
                             <div class="salasghira2 btnajoutsalle2">
                                 <a class="cnx-sub"  href="?page=calendrier&id_salle='.$_SESSION['id_salle'].'">Resever</a>
                             </div>
                             <br>
+=======
+                            <div class="btnSalleDiv">
+                                <input type = "submit" class="btnSalle" value = "resever">
+                            </div>   
+>>>>>>> 40d0bdf516e6c6a34671e2e98cf68b881d99aa32
                             ';
-                    
                     }
                 }else{
                     echo '  
+<<<<<<< HEAD
                     <br>
                     <br>
                     <div class="salasghira2 btnajoutsalle2">
@@ -121,22 +125,29 @@
                         <br><br><br><br>
                         <a class="cnx-sub"  href="index.php?page=ajout-ressource">Ajouter des ressources</a>
                         
+=======
+                    <div class="btnSalleDiv">
+                        <a class="btnSalle" href="?page=calendrier&id_salle='.$_SESSION['id_salle'].'">resever</a>
+                        <a class="btnSalle" href="index.php?page=calendrier">ajouter des ressources</a>
+>>>>>>> 40d0bdf516e6c6a34671e2e98cf68b881d99aa32
                     </div>
-                    <br>
                     ';
-                
-                    
                     }
             }else{
                         // alert("Connectez vous avant de reserver une salle.");
-                    echo '  <br>
-                            <br>
-                                <div class="salasghira2 btnajoutsalle2">
-                                    <a class="cnx-sub" href="index.php?page=connexion">Se connecter pour reserver</a>
+                    echo '  
+                                <div class="btnSalleDiv">
+                                    <a class="btnSalle" href="index.php?page=connexion">Se connecter pour reserver</a>
                                 </div>
-                                <br>
                             ';
                 }
             ?>
+<<<<<<< HEAD
     
 </fieldset>
+=======
+        </div>
+    </form>
+    </fieldset>
+</div>
+>>>>>>> 40d0bdf516e6c6a34671e2e98cf68b881d99aa32
