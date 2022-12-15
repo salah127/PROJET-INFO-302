@@ -11,15 +11,12 @@
                                 <img src="image/' . $row["photo"] . '" width = "50px" height = "50px" />
                             </div>
                             <div class="card-body">
-                                <h4>' . $row["numero"] . ' </h4> 
-                                <p> '. $row["Description"] . ' </p>
-                                <div class="user">
-                                    <a class="prof" href ="index.php?page=profil">'.$_SESSION['username'][0].'</a>
-                                    <div class="user-info">
-                                        <h5>'.$row["niveau"].'</h5>
-                                        <small>'.$row["time_ajout"].'</small>
-                                    </div>
-                                </div>  
+                                <div class="hna">
+                                    <h4>Salle N°: ' . $row["numero"] . '</h4> 
+                                </div>
+                                <div class="hna">
+                                    <p class="pcard"> <a href="index.php?page=salle&id_salle=' . $row["id_salle"] . '">Plus</a> </p> 
+                                </div>
                             </div>
                             </a>
                         </div>
