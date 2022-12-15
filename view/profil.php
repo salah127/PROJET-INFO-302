@@ -1,13 +1,20 @@
 <form action="." method="post">
-    <div class="supprof">
+    <div class="momclass">
         <!-- <li><a class="supprof2" href="index.php?page=supprimer">Supprimer</a></li> -->
-        <ul><li><a class="prof prof2" href ="Location: ."><?php echo getpseudo($_GET["id"]);?></a></li>
-
-        <input type="hidden" name="action" value="supp">
-        <input class="supprof2" type="submit" value="Supprimer">
-        <li><a class="supprof1"
-                <?php if ($_SESSION["role"]=='internaute'){ echo'href="index.php?page=modifier"' ;} else{echo'href ="index.php?page=pro-modif"';}  ?>>Modifer</a>
-        </li>
-        </ul>
+        <div class="firstclass">
+            <div class="secondclass">
+                <a class="thirdclass" href="Location: .">
+                    <?php echo getpseudo($_GET["id"]);?>
+                </a>
+            </div>
+            <div class="secondclass">
+                <input type="hidden" name="action" value="supp">
+                <input type="submit" value="Supprimer">
+            </div>
+            <div class="secondclass">
+                <a class="thirdclass"
+                    <?php if ($_SESSION["role"]=='internaute'){ echo'href="index.php?page=modifier"' ;} else{echo'href ="index.php?page=pro-modif"';}  ?>>Modifer</a>
+            </div>
+        </div>
     </div>
 </form>
