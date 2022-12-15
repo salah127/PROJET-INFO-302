@@ -1,78 +1,48 @@
-<fieldset class='batima2'>
-    <legend class='titleliste'>
-        <i class="fa fa-home"></i>
-        <h2> Rankin</h2>
-    </legend>
-
-    <form >
-        <table class=tab>
-            <tr>
-                <td class=tab>
-                    <li>
-                        <div class='card'><strong>Rank</strong></div>
-                    </li>
-                </td>
-                <td class=tab>
-                    <li>
-                        <div class='card'><strong>Pseudo</strong></div>
-                    </li>
-                </td>
-                <td class=tab>
-                    <li>
-                        <div class='card'><strong>point</strong></div>
-                    </li>
-                </td>
-                <td class=tab>
-                    <li>
-                        <div class='card'><strong>id</strong></div>
-                    </li>
-                </td>
-                <td class=tab>
-                    <li>
-                        <div class='card'><strong>pts Perdu</strong></div>
-                    </li>
-                </td>
-                
-                
-            </tr>
+<div class='containerRank'>
+    <div class='cardHeaderRank'>
+        <h2>Rank</h2>
+    </div>
+    <div class='cardRank'>
+        <form>
+            <div class=cardBodyRank>
+                <div class="cardBodyInnerLil">
+                    <strong>Rank</strong>
+                </div>
+                <div class="cardBodyInnerLil">
+                    <strong>Pseudo</strong>
+                </div>
+                <div class="cardBodyInnerLil">
+                    <strong>point</strong>
+                </div>
+                <div class="cardBodyInnerLil">
+                    <strong>id</strong>
+                </div>
+                <div class="cardBodyInnerLil">
+                    <strong>pts Perdu</strong>
+                </div>
+            </div>
             <?php
-                $tab = ranking();
+                $cardBodyInner = ranking();
                 $i = 1;
-                while( $row = mysqli_fetch_assoc($tab)){
+                while( $row = mysqli_fetch_assoc($cardBodyInner)){
                    if($row["role"]!='Pro'){ 
                     echo'
-                        <tr>
-            
-                            <td class=tab> 
-                                <li>' .$i. ' </li> 
-                            </td>
-                            <td class=tab> 
-                                <li>' . $row["pseudo"] . ' </li> 
-                            </td>
-                            <td class=tab>
-                                <li> '. $row["point"] . ' </li> 
-                            </td>
-                            <td class=tab>
-                                <li>'. $row["id"] . ' </li> 
-                            </td>
-                            </td>
-                            <td class=tab>
-                                <li>'. $row["point"] . ' </li> 
-                            </td>
-                            <td class=tab>
-                                <li>
-                                    <a class="button" href ="index.php?page=profil&id='.$row["id"].'"> Afficher </a>
-                                </li> 
-                            </td>
-            
-                        <tr>
+                    <a class="button" href ="index.php?page=profil&id='.$row["id"].'">
+                        <div class="hajazayda">
+                            <div class="cardBodyInnerLil2">' .$i. ' </div>  
+                            <div class="cardBodyInnerLil2">' . $row["pseudo"] . ' </div> 
+                            <div class="cardBodyInnerLil2"> '. $row["point"] . ' </div> 
+                            <div class="cardBodyInnerLil2">'. $row["id"] . ' </div> 
+                            <div class="cardBodyInnerLil2">'. $row["point"] . ' </div> 
+                        </div>
+                    </a>
                         ';
                         $i++;
                     }
                 }
                 echo'
-                </table>';
+                </div>';
             ?>
-
-    </form>
-</fieldset>
+        </form>
+    </div>
+</div>

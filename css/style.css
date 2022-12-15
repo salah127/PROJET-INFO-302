@@ -465,9 +465,7 @@ strong {
     font-size: 250%;
     box-shadow: 1px 1px 20px #53e3a6;
     border-radius: 180px;
-    left: 225%;
- 
-
+    transform: translate(-350%,0%)
 }
 
 action {
@@ -520,9 +518,13 @@ action::after {
 }
 
 .supprof{
-    margin: 200px;
     display: flex;
+    place-content: center;
+    align-content: center;
     position: relative;
+    border: solid 1px red;
+    /*! transform: translate(50%,0%); */
+    width: 100%;
 }
 .supprof1{
     color: black;
@@ -800,4 +802,266 @@ a{
     flex-direction: row-reverse;
     justify-content:space-between;
     flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.containerCnx{
+    display: flex;
+    place-content: center;
+    align-content: center;
+    width:100%;
+    flex-direction: column;
+    padding:5px;
+}
+.cardCnx{
+    display: flex;
+    place-content: center;
+    align-content: center;
+    width:100%;
+    flex-direction: column;
+    position: relative;
+    margin:5px 0px;
+}
+.cardCnx-header{
+    display: flex;
+    place-content: center;
+    align-content: center;
+    width:41.5%;
+    background: #53e3a6;
+    position: relative;
+    color: black;
+    margin:10px 0px;
+    border-radius:10px;
+    transform: translate(71%,0%)
+}
+.cardCnx-body{
+    display: flex;
+    place-content: center;
+    align-content: center;
+    width:100%;
+    color:black;
+    position: relative;
+    margin:10px 0px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.cnxlabels{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    place-content:center;
+    align-items:center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+.labelss{
+    border:solid 1px #53e3a6;
+    border-radius: 10px;
+    font-size: 14px;
+    margin:5px 5px;
+    overflow: hidden;
+    flex: 1 1 35%;
+    place-content: center;
+    align-items: center;
+    display: flex;
+    width:110px;
+    color: black;
+    height: 50px;
+}
+.cnxlabelss{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    place-content:center;
+    align-items:center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+.cnxbtns{
+    border:solid 1px #53e3a6;
+    border-radius: 10px;
+    font-size: 14px;
+    margin:5px 5px;
+    overflow: hidden;
+    flex: 1 1 100%;
+    place-content: center;
+    align-items: center;
+    display: flex;
+    width:110px;
+    color: black;
+    height: 50px;
+}
+.btnbtn{
+    background: white;
+    color: black;
+    width:100%;
+    height: 100%;
+    place-content: center;
+    align-items: center;
+    display: flex;
+}
+.btnbtn:hover{
+    background: #53e3a6;
+    color: white;
+}
+#idpseudocnx{
+    color:#53e3a6;
+    background: white;
+    width: 100%;
+    height: 100%;
+    place-content: center;
+    align-items: center;
+    display: flex;
+}
+#idcnx{
+    color:black;
+    background: white;
+    width: 100%;
+    height: 100%;
+    place-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.containerRank{
+    display: flex;
+    place-content: center;
+    align-content: center;
+    width:100%;
+    flex-direction: column;
+    padding:5px;
+}
+.cardRank{
+    display: flex;
+    place-content: center;
+    align-content: center;
+    width:100%;
+    flex-direction: column;
+    position: relative;
+    margin:5px 0px;
+}
+.cardHeaderRank{
+    display: flex;
+    place-content: center;
+    align-content: center;
+    width:100%;
+    background: #53e3a6;
+    position: relative;
+    color: black;
+    margin:10px 0px;
+    border-radius:10px;
+}
+.cardBodyRank{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    place-content:center;
+    align-items:center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+.hajazayda{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    place-content:center;
+    align-items:center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+.cardBodyInnerLil{
+    border:solid 1px #53e3a6;
+    background: #53e3a6;
+    border-radius: 10px;
+    font-size: 14px;
+    margin:5px 5px;
+    overflow: hidden;
+    flex: 1 1 15%;
+    place-content: center;
+    align-items: center;
+    display: flex;
+    width:110px;
+    color: white;
+    height: 50px;
+}
+.cardBodyInnerLil2{
+    border-radius: 10px;
+    font-size: 14px;
+    margin:5px 5px;
+    overflow: hidden;
+    flex: 1 1 15%;
+    place-content: center;
+    align-items: center;
+    display: flex;
+    width:110px;
+    color: black;
+    height: 50px;
+}
+.hajazayda{
+    border:solid 1px #53e3a6;
+    width: 100%;
+}
+.hajazayda:hover {
+    background: #53e3a6;
+    color: white;
+}
+.hajazayda:hover > .cardBodyInnerLil2 {
+    color: white;
+}
+a.button:nth-child(2) > div:nth-child(1){
+    background-color: gold;
+}
+a.button:nth-child(3) > div:nth-child(1){
+    background-color: silver;
+}
+a.button:nth-child(4) > div:nth-child(1){
+    background-color: #CD7F32;
 }
