@@ -79,8 +79,12 @@ function ajout_ressources($nom,$quentite,$qualite,$ajouter_par,$id_salle){
 	$sql = "INSERT INTO `ressources` (`id_ressource`,`nom`,`quentite`,`qualite`, `ajouter_par`, `id_salle`, `time_ajout` ) VALUES (NULL,'$nom','$quentite','$qualite','$ajouter_par','$id_salle',current_timestamp() );";
 	mysqli_query($c, $sql);
 }
-
-
+function ressources($id_salle){
+	global $c;
+	$sql = " SELECT * FROM ressources WHERE id_salle = '$id_salle' ";
+	$resultat = mysqli_query($c,$sql);
+	return $resultat;
+}
 function salles($nom){
 	global $c;
 	$sql = " SELECT * FROM salle WHERE nom_bat = '$nom' ORDER BY `salle`.`numero` ASC ";

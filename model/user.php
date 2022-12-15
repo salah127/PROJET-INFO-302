@@ -159,10 +159,17 @@ function modification_pro ($id, $pseudo, $mail, $entreprise , $adresse, $num, $p
 
 function suppression ($id){
     global $c;
-    $sql1 = "DELETE FROM batiment WHERE id_pro='$id'";
     $sql = "DELETE FROM users WHERE id='$id'";
-    mysqli_query($c,$sql1);
+    $sql3 = "DELETE FROM calendrier WHERE id='$id'";
+    $sql1 = "DELETE FROM batiment WHERE id_pro = '$id'";
+
+    $sql5 = "DELETE FROM organisateurs WHERE id_user = '$id'";
+    $sql6 = "DELETE FROM ressources WHERE ajouter_par='$id'";
     mysqli_query($c,$sql);
+    mysqli_query($c,$sql3);
+    mysqli_query($c,$sql1);
+    mysqli_query($c,$sql5);
+    mysqli_query($c,$sql6);
 }
 
 function ajout_pts ($id,$pts,$nb){

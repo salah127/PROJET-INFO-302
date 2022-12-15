@@ -126,13 +126,9 @@ if (isset($_POST["action"])) {
 
 
 //formulaire de suppression de compte
-if (isset($_POST["action"])) {
-    if ($_POST["action"] == "supp") {
-        if (isset($_GET["id"])) {
-            $id = $_GET['id']; // $id is now defined
-            suppression($id);
-            echo "<p>votre compte a été supprimé.</p>";
-            header("Location: ./?connecte=false");
-}
-}
+if (isset($_POST["action"]) && ($_POST["action"] == "sup_user")) {
+    $id = $_SESSION['id'][0]; // $id is now defined
+    suppression($id);
+    echo "<p>votre compte a été supprimé.</p>";
+    header("Location: ./?connecte=false");
 }

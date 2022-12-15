@@ -1,59 +1,41 @@
-<fieldset class='batima2'>
-    <legend class='titleliste'>
-        <h2>Mes batiments</h2>
-    </legend>
-    <form action="." method="post">
-
-        <table class=tab>
-            <tr>
-                <td class=tab>
-                    <li>
-                        <div class='card2'><strong>Nom</strong></div>
-                    </li>
-                </td>
-                <td class=tab>
-                    <li>
-                        <div class='card2'><strong>Adresse</strong></div>
-                    </li>
-                </td>
-                <td class=tab>
-                    <li>
-                        <div class='card2'><strong>Nembre de salle</strong></div>
-                    </li>
-                </td>
-            </tr>
-            <?php 
+<div class='containerBat'>
+    <div class='cardHeaderBat'>
+        <h2>Mes Batiments</h2>
+    </div>
+    <div class='cardBat'>
+        <form>
+            <div class=cardBodyBat>
+                <div class="cardBodyLil">
+                    <strong>Nom</strong>
+                </div>
+                <div class="cardBodyLil">
+                    <strong>Adresse</strong>
+                </div>
+                <div class="cardBodyLil">
+                    <strong>Nembre de salle</strong>
+                </div>
+                <?php 
             $tab = batiments($_SESSION['id'][0]);
             if ($tab == NULL){
                 echo ' Il ya aucun batiment';
             } else{
                 while( $row = mysqli_fetch_assoc($tab)){
-                    echo'
-                        <tr>
-                            <td class=tab> 
-                                <li>' . $row["Nom"] . ' </li> 
-                            </td>
-                            <td class=tab>
-                                <li> '. $row["adresse"] . ' </li> 
-                            </td>
-                            <td class=tab>
-                                <li>'. $row["nb_salle"] .'</li> 
-                            </td>
-                            <td class=tab>
-                                <li>
-                                    <a class="button" href ="index.php?page=liste-salles&Nom='.$row["Nom"].'"> Afficher </a>
-                                </li> 
-                            </td>
-                        <tr>
+                    echo' 
+                    <a class="button" href ="index.php?page=liste-salles&Nom='.$row["Nom"].'">
+                        <div class="hajanotzayda">
+                            <div class="cardBodyLil2">' . $row["Nom"] . '</div> 
+                            <div class="cardBodyLil2">'. $row["adresse"] . '</div> 
+                            <div class="cardBodyLil2">'. $row["nb_salle"] .'</div> 
+                        </div>
+                    </a>
                         ';
                 }
             }
         ?>
-        </table>
-        <br><br>
-        <div class="salasghira2 btnajoutsalle2">
-        <i class="fa fa-home"></i>
-            <a class="cnx-sub" href="index.php?page=ajout-bat">+</a>
-        </div>
-    </form>
-</fieldset>
+                <div class="btnSalleDiv">
+                    <a class="btnSalle" href="index.php?page=ajout-bat">+</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
