@@ -14,7 +14,6 @@
                                 <h4>' . $row["numero"] . ' </h4> 
                                 <p> '. $row["Description"] . ' </p>
                                 <div class="user">
-                                    <a class="prof" href ="index.php?page=profil">'.$_SESSION['username'][0].'</a>
                                     <div class="user-info">
                                         <h5>'.$row["niveau"].'</h5>
                                         <small>'.$row["time_ajout"].'</small>
@@ -28,3 +27,4 @@
             ?>
     </div>
 </form>
+<!-- <a class="prof" href ="index.php?page=profil">'.$_SESSION['username'][0].'</a> -->

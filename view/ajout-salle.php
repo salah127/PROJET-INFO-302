@@ -42,30 +42,7 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
                 <br>
             </div>
             <br>
-            <div class="batsghir">
-                <div class="salasghira">
-                    <label for="idinsuser"> Ressources :</label>
-                </div>
-                <div class="salasghira">
-
-                    <form action="index.php?page=ajout-salle" method="post">
-                    <input class="inputtype cnx-control" type="text" name="Ressources'.$i.'" id="ins-num"
-                        placeholder="Ressources">
-                        <input type="hidden" name="action" value="print">
-                        <input type="submit" value="Submit"></br>';
-
-                        if (!empty($_SESSION["Ressources"])) {
-                                echo implode(",", $_SESSION['Ressources']);  echo " est ajouté"; 
-
-                         }
-                        echo '
-                        </br>
-                    </form>
-
-
-                </div>
-                <br>
-            </div>
+            
             <br>
             <div class="batsghir">
                 <div class="salasghira">

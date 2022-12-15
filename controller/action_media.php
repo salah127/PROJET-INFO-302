@@ -45,10 +45,23 @@ if (isset($_POST["action"]) && $_POST["action"] == "supp") {
 
 //formulaire de ajout de ressource
 
-if (isset($_POST["action"]) && $_POST["action"] == "print") {
-   $values = array($_SESSION["ressources"],$_POST['Ressources1']);
-   $_SESSION['Ressources'] = $values;
+if (isset($_POST["action"]) && $_POST["action"] == "ajout_ressource") {
+   ajout_ressources($_POST['Ressource'],$_POST['quentite'],$_POST['qualite'],$_SESSION['id'][0],$_SESSION['id_salle']);
+   $_SESSION['Ressources'] = $_POST['Ressource'];
+   if($_POST['qualite']<50) {
+      ajout_pts ($_SESSION['id'][0],$_SESSION['point'],20);
+      $_SESSION['point'] = recup_pts($_SESSION['id'][0]);
 }
+   else if($_POST['qualite']==50) {
+      ajout_pts ($_SESSION['id'][0],$_SESSION['point'],30);
+      $_SESSION['point'] = recup_pts($_SESSION['id'][0]);
+}
+   else  if($_POST['qualite']==100){
+      ajout_pts ($_SESSION['id'][0],$_SESSION['point'],50);
+      $_SESSION['point'] = recup_pts($_SESSION['id'][0]);
+}
+}
+
 
 //formulaire d'ajout de salles
 
@@ -95,7 +108,35 @@ if (isset($_POST["action"]) && $_POST["action"] == "sup-salle") {
 }
 
 
+//formulaire devenir organisateur de sal
 
+if (isset($_POST["action"]) && $_POST["action"] == "organisateur") {
+   if (exist_org($_SESSION['id'][0],$_SESSION['id_salle'])==0){
+      $nb_org=recup_nb_org ($_SESSION['id_salle']);
+      if ($nb_org!=0){
+         organisateur($_SESSION['id'][0],$_SESSION['id_salle']);
+         down_nb_org($_SESSION['id_salle'],$nb_org);
+         ajout_pts ($_SESSION['id'][0],$_SESSION['point'],60);
+         $_SESSION['point'] = recup_pts($_SESSION['id'][0]);
+         echo "<script>alert(\"Vous etes devenu organisateur de cette salle.\")</script>";
+      }else{
+         echo "<script>alert(\"Il y a aucunne place pour vous.\")</script>";}
+   }else{
+      
+      echo "<script>alert(\"Vous etes deja organisateur de cette salle.\")</script>";
+   }
+}
+
+//formulaire pour dimissioné
+
+if (isset($_POST["action"]) && $_POST["action"] == "Dimissioné") {
+      $nb_org=recup_nb_org ($_SESSION['id_salle']);
+      dimissione($_SESSION['id'][0],$_SESSION['id_salle']);
+      up_nb_org($_SESSION['id_salle'],$nb_org);
+      ajout_pts ($_SESSION['id'][0],$_SESSION['point'],-100);
+      $_SESSION['point'] = recup_pts($_SESSION['id'][0]);
+      echo "<script>alert(\"Vous avez dimissioné.\")</script>";
+}
 
 //formulaire de reservation de salle
 $jours = array(1=>"Lundi",2=>"Mardi",3=>"Mercredi",4=>"Jeudi",5=>"Vendredi",6=>"Samedi",0=>"Dimanche");
@@ -115,17 +156,21 @@ for($mois=1;$mois<=12;$mois++) {
 	isset($_GET['jour']) AND preg_match("#^[0-9]{1,2}$#",$_GET['jour']) AND
 	isset($_GET['mois']) AND preg_match("#^[0-9]{1,2}$#",$_GET['mois']) AND
 	isset($_GET['choix']) AND preg_match("#^(0|1)$#",$_GET['choix'])) {
-		if($_GET['choix']==1){
-         $date= $annee."-".$_GET['mois']."-".$_GET['jour'];
-			if(reserver( $date, $_SESSION['id_salle'],$_SESSION['id'][0])) {
-				echo "Jour mise en \"réservé\" avec succès !";
-			} 
-		}else {
-         $date= $annee."-".$_GET['mois']."-".$_GET['jour'];
+		$date= $annee."-".$_GET['mois']."-".$_GET['jour'];
+      if($_GET['choix']==1){
+         if($date>date("Y-m-d")){
+			   if(reserver( $date, $_SESSION['id_salle'],$_SESSION['id'][0])) {
+				   echo "Jour mise en \"réservé\" avec succès !";
+			   }}
+         else{
+               echo 'Choisissez une bonne date';
+         }}
+		else if($_GET['choix']==0){
+
 		   if(supp_res($date,$_SESSION['id_salle'])) {
 				echo "Journée mise en \"disponible\" avec succès !";
 			} 
 		}
-	}
+   }
 
 $StyleTh="text-shadow: 1px 1px 1px #000;color:white;width:75px;border-right:1px solid black;border-bottom:1px solid black;";

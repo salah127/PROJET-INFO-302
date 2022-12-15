@@ -74,9 +74,9 @@ function creer_salle($num, $Photo, $Capacité, $Ressources, $niveau, $Descriptio
 }
 
 
-function ajout_ressources($nom,$ajouter_par){
+function ajout_ressources($nom,$quentite,$qualite,$ajouter_par,$id_salle){
 	global $c;
-	$sql = "INSERT INTO `ressources` (`id_ressource`,`nom`, `ajouter_par`, `time_ajout` ) VALUES (NULL,'$nom','$ajouter_par',current_timestamp() );";
+	$sql = "INSERT INTO `ressources` (`id_ressource`,`nom`,`quentite`,`qualite`, `ajouter_par`, `id_salle`, `time_ajout` ) VALUES (NULL,'$nom','$quentite','$qualite','$ajouter_par','$id_salle',current_timestamp() );";
 	mysqli_query($c, $sql);
 }
 
@@ -109,17 +109,7 @@ function supp_salle ($id){
 }
 
 
-function rec_nom($nom){
-	global $c;
-	$sql = "SELECT Nom FROM batiment WHERE nom_bat = '$nom'";
-	$resultat = mysqli_query($c, $sql);
-	$row = mysqli_fetch_assoc($resultat);
-	if ($row == NULL){
-		echo 'Il ya aucunne salle';
-	} else{
-		salles($nom);
-	}
-}
+
 
 function home(){
 	global $c;
@@ -159,7 +149,57 @@ function exist_date($date,$id_salle,$id){
 	return $row;
 }
 
+function exist($date,$id_salle,$id){
+	global $c;
+	$sql = "SELECT * FROM calendrier WHERE date='$date' AND id_salle='$id_salle' AND id_user!='$id'";
+	$resultat = mysqli_query($c, $sql);
+	$row = mysqli_num_rows($resultat);
+	return $row;
+}
 
+function organisateur($id_user,$id_salle){
+	global $c;
+	$sql = "INSERT INTO organisateurs ( `id_org`,`id_user`, `id_salle` ) VALUES (NULL, '$id_user', '$id_salle')";
+	$result = mysqli_query($c, $sql);
+}
+function exist_org($id_user,$id_salle){
+	global $c;
+	$sql = "SELECT * FROM organisateurs WHERE  id_user='$id_user' AND id_salle='$id_salle' ";
+	$resultat = mysqli_query($c, $sql);
+	$row = mysqli_num_rows($resultat);
+	return $row;
+}
+
+
+function up_nb_org ($id_salle,$nb){
+    global $c;
+    $sql = "UPDATE calendrier SET nb_org = '$nb'+1 WHERE  id_salle=$id_salle";
+    $resultat = mysqli_query($c, $sql);
+
+}
+function down_nb_org ($id_salle,$nb){
+    global $c;
+    $sql = "UPDATE calendrier SET nb_org = '$nb'-1 WHERE  id_salle=$id_salle";
+    $resultat = mysqli_query($c, $sql);
+
+}
+
+function recup_nb_org ($id_salle){
+    global $c;
+    $sql = "SELECT nb_org FROM salle WHERE id_salle='$id_salle' ";
+    $resultat = mysqli_query($c, $sql);
+	$row = mysqli_fetch_assoc($resultat);
+	return $row['nb_org'];
+}
+
+
+
+function dimissione($id_user,$id_salle){
+    global $c;
+    $sql = "DELETE FROM organisateurs WHERE id_user = '$id_user' AND id_salle='$id_salle'";
+    mysqli_query($c,$sql);
+
+}
 
 
 

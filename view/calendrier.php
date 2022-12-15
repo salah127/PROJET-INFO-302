@@ -6,7 +6,7 @@
 <table id="recap">
     <tr>
         <td style="background:#FF8888;width:15px;height:15px;"></td>
-        <td></td>
+        <td>Reservé</td>
     </tr>
     <tr>
         <td style="background:#88FF88;width:15px;height:15px;"></td>
@@ -53,7 +53,7 @@
 
         <td
             style="<?php echo ($JourReserve==1) &&  $_SESSION['id_salle']==rech_res($annee."-".$mois."-".$jour,$_SESSION['id_salle'],$_SESSION['id'][0]) ? "background:#FF8888;":"background:#88FF88;"; ?>border-bottom:1px solid #eee;">
-            <?php echo $JourReserve; echo $_SESSION['id_salle'];?></td>
+            <?php echo $jours[$Jr];?></td>
             
         <td
             style="<?php echo ($JourReserve==1) &&  $$_SESSION['id_salle']==rech_res($annee."-".$mois."-".$jour,$_SESSION['id_salle'],$_SESSION['id'][0]) ? "background:#FF8888;" : "background:#88FF88;"; ?>border-bottom:1px solid #eee;width:20%;">

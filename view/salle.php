@@ -1,13 +1,12 @@
 <?php
     $_SESSION['id_salle'] = $_GET['id_salle'];
-    // $_SESSION['nom_bat'] = $_GET['nom_bat'];
 ?>
 
 <fieldset class='batima2'>
     <legend class='titleliste'>
         <h2>   Salle <?php echo '<nav>'. $_GET['id_salle'] . '</nav> '; ?></h2>
     </legend>
-    <form action="." method="post">
+    
         <table class=tab>
             <tr>
                 <td class=tab>
@@ -89,7 +88,7 @@
                             <br>
                             <br>
                             <div class="salasghira2 btnajoutsalle2">
-                                <input type = "submit" class="cnx-sub" value = "resever">
+                                <a class="cnx-sub"  href="?page=calendrier&id_salle='.$_SESSION['id_salle'].'">Resever</a>
                             </div>
                             <br>
                             ';
@@ -100,9 +99,28 @@
                     <br>
                     <br>
                     <div class="salasghira2 btnajoutsalle2">
-                        <a class="cnx-sub" href="?page=calendrier&id_salle='.$_SESSION['id_salle'].'">resever</a>
+                        <a class="cnx-sub"  href="?page=calendrier&id_salle='.$_SESSION['id_salle'].'">Resever</a>
+                        <br><br><br><br>';
+                        if(exist_org($_SESSION["id"][0],$_SESSION["id_salle"])==0){
+                            echo'
+                            <form action="." method="post">
+                        <input type="hidden" name="action" value="organisateur">
+                        <input type="submit" class="cnx-sub" value="Devenir Organisateur">
+                        </form>';
+                        
+                        }else{
+                            echo'
+                            <form action="." method="post">
+                            <input type="hidden" name="action" value="Dimissioné">
+                            <input type="submit" class="cnx-sub" value="Dimissioné">
+                            </form>';
+
+                        }
+
+                        echo'
                         <br><br><br><br>
-                        <a class="cnx-sub" href="index.php?page=calendrier">ajouter des ressources</a>
+                        <a class="cnx-sub"  href="index.php?page=ajout-ressource">Ajouter des ressources</a>
+                        
                     </div>
                     <br>
                     ';
@@ -120,5 +138,5 @@
                             ';
                 }
             ?>
-    </form>
+    
 </fieldset>

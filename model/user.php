@@ -91,13 +91,13 @@ function recup_id($pseu){
     return $id;
 }
 
-function recup_pts($pseu){
+function recup_pts($id){
     global $c;
-    $sql = "select pseudo, point FROM `users`";
+    $sql = "select id, point FROM `users`";
     $resultat = mysqli_query($c,$sql);
     $role = "";
     while ($row = mysqli_fetch_assoc($resultat)){
-        if ($pseu == $row['pseudo']){
+        if ($id == $row['id']){
             $point = $row["point"];
         }
     }
@@ -163,6 +163,13 @@ function suppression ($id){
     $sql = "DELETE FROM users WHERE id='$id'";
     mysqli_query($c,$sql1);
     mysqli_query($c,$sql);
+}
+
+function ajout_pts ($id,$pts,$nb){
+    global $c;
+    $sql1 = "UPDATE users SET POINT = '$pts'+'$nb' WHERE id = '$id'";
+    mysqli_query($c,$sql1);
+
 }
 
 

@@ -62,7 +62,9 @@ if (isset($_POST["action"])) {
                     $_SESSION['connecte'] = true;
                     $_SESSION['role'] = recup_role($_POST['pseudo']);
                     // $_SESSION['id'] = recup_id($_POST['pseudo']);
-                    $_SESSION['point'] = recup_pts($_POST['pseudo']);
+                    if ($_SESSION['role']=='internaute') {
+                        $_SESSION['point'] = recup_pts($_POST['id'][0]);
+                    }
 
                     if (isset($_SESSION['username'])) {
                         // echo "<p>Bienvenu " . $_SESSION['id'][0].  "</p>";
