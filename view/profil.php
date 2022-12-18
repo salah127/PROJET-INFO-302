@@ -1,8 +1,7 @@
 <div class="momclass">
     <form action="." method="post">
-        <!-- <li><a class="supprof2" href="index.php?page=supprimer">Supprimer</a></li> -->
         <div class="firstclass">
-            <div class="secondclass">
+            <div class="prof" >
                 <a class="thirdclass" href="Location: .">
                     <?php echo getpseudo($_SESSION["id"][0]);?>
                 </a>

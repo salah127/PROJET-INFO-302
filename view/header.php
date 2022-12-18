@@ -16,14 +16,13 @@
                 <td>
                     <h1 class="logo">
                         <a class="button1" href="index.php?page=home">
-                            <!-- <img src="logo.png" type="image/png"></img> -->
                             <action></action>
                         </a>
                     </h1>
                 </td>
                 <td class='BigListe'>
                     <form action="." method="post" class="menu">
-                        <li><a class="button" href="index.php?page=">Recherche</a></li>
+                        <li><a class="button" href="index.php?page=recherche">Recherche</a></li>
                         <li><a class="button" href="index.php?page=ranking">Ranking</a></li>
                         <?php
                                 if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
@@ -43,7 +42,7 @@
                                         <ul id="menu-inscrp">
                                             <li><a href="#" >Service</a>
                                                 <ul class ="MenuInscrp tab2">
-                                                    <li ><a class="button" href ="">Reservation</a></li>
+                                                    <li ><a class="button" href ="?page=reservation">Reservation</a></li>
                                                     <li ><a class="button" href ="">Devenir-Pro</a></li>
                                                     <li ><a class="button" href ="">Favoris</a></li>
                                                 </ul>

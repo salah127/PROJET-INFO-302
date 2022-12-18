@@ -17,9 +17,9 @@
 
 
 <table style="border:1px solid black;border-collapse:collapse;box-shadow: 10px 10px 5px #888888;">
-    <caption style="font-size:18px;"><a href="?page=calendrier&id_salle=198&annee=<?php echo $annee-1; ?>"
+    <caption style="font-size:18px;"><a style="color:black;margin:20px;"href="?page=calendrier&id_salle=198&annee=<?php echo $annee-1; ?>"
             style="font-size:50%;vertical-align:middle;text-decoration:none;"><?php echo $annee-1; ?></a>
-        <?php echo $annee; ?> <a href="?page=calendrier&id_salle=198&annee=<?php echo $annee+1; ?>"
+        <?php echo $annee; ?> <a style="color:black;margin:20px;" href="?page=calendrier&id_salle=198&annee=<?php echo $annee+1; ?>"
             style="font-size:50%;vertical-align:middle;text-decoration:none;"><?php echo $annee+1; ?></a></caption>
     <tr style="border-right:1px solid black;">
         <th style="<?php echo $StyleTh; ?>background:#FF33A7">Janvier</th>

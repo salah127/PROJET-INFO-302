@@ -1,80 +1,72 @@
-<?php
-    $_SESSION['Nom'] = $_GET['Nom'];
-?>
-<fieldset class='batima2'>
-    <legend class='titleliste'>
-        <h2>batiment <?php echo '<nav>'. $_GET['Nom'] . '</nav> '; ?></h2>
-    </legend>
-    <form action="." method="post">
-	<table class=tab>
-		<tr>
-            <td class=tab>
-				<li > 
-					<div class='card2'><strong>Numero</strong></div>
-				</li>
-			</td>
-			<td class=tab>
-				<li> 
-					<div class='card2'><strong>Capacite</strong></div>
-				</li>
-			</td>
-			<td class=tab>
-				<li> 
-					<div class='card2'><strong>Niveau requis</strong></div>
-				</li>
-			</td>
-		</tr>
-        <?php 
-            $tab = salles($_SESSION['Nom']);
+
+
+
+<div class='containerBat'>
+    <div class='cardHeaderBat'>
+    <h2>batiment <?php echo '<nav>'. $_GET['Nom'] . '</nav> '; ?></h2>
+    </div>
+    <div class='cardBat'>
+        <form action="." method="post">
+            <div class=cardBodyBat>
+                <div class="cardBodyLil">
+                    <strong>Numero</strong>
+                </div>
+                <div class="cardBodyLil">
+                    <strong>Capacite</strong>
+                </div>
+                <div class="cardBodyLil">
+                    <strong>Niveau requis</strong>
+                </div>
+                <div class="cardBodyLil">
+                    <strong>Date d'ajout</strong>
+                </div>
+                <?php 
+            $tab = salles($_GET['Nom']);
             if ($tab == NULL){
                 echo ' Il ya aucun batiment';
             } else{
                 while( $row = mysqli_fetch_assoc($tab)){
-                    echo'
-                        <tr>
-                            <td class=tab> 
-                                <li>' . $row["numero"] . ' </li> 
-                            </td>
-                            <td class=tab>
-                                <li> '. $row["Capacité"] . ' </li> 
-                            </td>
-                            <td class=tab>
-                                <li>'. $row["niveau"] .'</li> 
-                            </td>
-                            <td class=tab>
-                                <li>
-                                    <a class="button" href ="index.php?page=salle&id_salle='.$row["id_salle"].'"> Afficher </a>
-                                </li> 
-                            </td>
-            
-                        <tr>
+                    echo' 
+                    <a class="button" href ="index.php?page=salle&id_salle='.$row["id_salle"].'">
+                        <div class="hajanotzayda">
+                            <div class="cardBodyLil2">' . $row["numero"] . '</div> 
+                            <div class="cardBodyLil2">'. $row["Capacité"] . '</div> 
+                            <div class="cardBodyLil2">'. $row["niveau"] .'</div> 
+                            <div class="cardBodyLil2">'. $row["time_ajout"] .'</div> 
+                        </div>
+                    </a>
                         ';
                 }
             }
         ?>
-        </table>
-        <input type="hidden" name="action" value="supp">
-        <br>
+                <div class="btnSalleDiv">
+                <br>
         <div class="salasghira2 btnajoutsalle2">
             <?php
             $_SESSION['nb_salle'] = 1;
-            $_SESSION['Ressources'] = "";
             ?>
+            <br>
+        <br>
             <a class="cnx-sub" href="index.php?page=ajout-salle">Ajouter</a>
         </div>
+        <br><br>
+        <br><br>
         <br>
         <br>
         <div class="salasghira2 btnajoutsalle2">
             <a class="cnx-sub" href="index.php?page=" >Modifier</a>
         </div>
-        <br>
+        <br><br>
         <br>
         <li>
-		    <input class="cnx-sub" type = "submit"  value = "Supp">
+            
+            <input class="btnSalle" type="hidden" name="action" value="sup_bat">
+		    <input class="cnx-sub" style="width:120px;height:60px;" type = "submit"  value = "Supprimer">
 	    </li> 
-
-        <!-- <div class="salasghira2 btnajoutsalle2">
-            <a class="cnx-sub" href="index.php?page=">Supprimer</a>
-        </div> -->
+                    
+                </div>
+            </div>
+        
+    </div>
     </form>
-</fieldset>
+</div>

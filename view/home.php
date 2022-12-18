@@ -1,3 +1,6 @@
+
+
+
 <form action="." method="post">
     <div class="container">
         <?php
@@ -25,4 +28,3 @@
             ?>
     </div>
 </form>
-<!-- <a class="prof" href ="index.php?page=profil">'.$_SESSION['username'][0].'</a> -->

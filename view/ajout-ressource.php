@@ -37,7 +37,7 @@
                     <datalist id="qal">
                         <option label="0%">0</option>
                         <option>50</option>
-                        <option>10</option>
+                        <option>100</option>
                     </datalist>
                 </div><br><br>
             </div>
@@ -45,7 +45,7 @@
                 <div class="salasghira btnajoutsalle">
 
                     <input type="hidden" name="action" value="ajout_ressource">
-                    <input type="submit" value="Submit" class="cnx-sub2"></br>';
+                    <input type="submit" value="Ajouter" class="cnx-sub2"></br>
                 </div>
             </div>
         </div>

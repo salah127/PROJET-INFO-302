@@ -58,18 +58,26 @@ function ajout_nb_salle($nom){
     $sql = "UPDATE batiment SET nb_salle = '$nb' WHERE Nom = '$nom'";
     $resultat = mysqli_query($c,$sql);
 }
-function creer_salle($num, $Photo, $Capacité, $Ressources, $niveau, $Description, $nb_org, $nom_bat){
+function dim_nb_salle($nom){
+    global $c;
+	$sql1 = "SELECT nb_salle FROM batiment WHERE  Nom = '$nom' ";
+	$res = mysqli_query($c,$sql1);
+	$row = mysqli_fetch_assoc($res);
+	$nb = $row['nb_salle']-1 ;
+    $sql = "UPDATE batiment SET nb_salle = '$nb' WHERE Nom = '$nom'";
+    $resultat = mysqli_query($c,$sql);
+}
+function creer_salle($num, $Photo, $Capacité, $niveau, $Description, $nb_org, $nom_bat){
 	global $c;
 	$num = mysqli_real_escape_string($c, $num);
 	$Photo = mysqli_real_escape_string($c, $Photo);
 	$Capacité = mysqli_real_escape_string($c, $Capacité);
-	$Ressources = mysqli_real_escape_string($c, $Ressources);
 	$niveau = mysqli_real_escape_string($c, $niveau);
 	$Description = mysqli_real_escape_string($c, $Description);
 	$nb_org = mysqli_real_escape_string($c, $nb_org);
 	$nom_bat = mysqli_real_escape_string($c, $nom_bat);
 
-	$sql = "INSERT INTO `salle` (`id_salle`, `numero`,`Photo`, `Capacité`, `Ressources`, `niveau`, `Description`, `nb_org`, `nom_bat`, `time_ajout` ) VALUES (NULL ,'$num', '$Photo', '$Capacité', '$Ressources', '$niveau', '$Description',' $nb_org', '$nom_bat', current_timestamp() );";
+	$sql = "INSERT INTO `salle` (`id_salle`, `numero`,`Photo`, `Capacité`, `niveau`, `Description`, `nb_org`, `nom_bat`, `time_ajout` ) VALUES (NULL ,'$num', '$Photo', '$Capacité', '$niveau', '$Description',' $nb_org', '$nom_bat', current_timestamp() )";
 	mysqli_query($c, $sql);
 }
 
@@ -95,8 +103,9 @@ function supp_bat ($nom){
     global $c;
     $sql1 = "DELETE FROM batiment WHERE Nom = '$nom'";
     $sql = "DELETE FROM salle WHERE nom_bat='$nom'";
+	mysqli_query($c,$sql1);
     mysqli_query($c,$sql);
-    mysqli_query($c,$sql1);
+    
 }
 function salle($id){
 	global $c;
@@ -107,11 +116,28 @@ function salle($id){
 function supp_salle ($id){
     global $c;
     $sql1 = "DELETE FROM salle WHERE id_salle = '$id'";
-    $sql = "DELETE FROM reservation WHERE id_salle='$id'";
+    $sql = "DELETE FROM calendrier WHERE id_salle='$id'";
     mysqli_query($c,$sql);
     mysqli_query($c,$sql1);
 }
 
+
+
+function affiche_reservation($id){
+	global $c;
+	$sql = " SELECT * FROM calendrier WHERE id_user = '$id' ";
+	$resultat = mysqli_query($c, $sql);
+	return $resultat;
+}
+
+function recup_num_salle ($id_salle){
+    global $c;
+    $sql = "SELECT numero FROM salle WHERE id_salle='$id_salle' ";
+    $resultat = mysqli_query($c, $sql);
+	$row = mysqli_fetch_assoc($resultat);
+	// return $row['numero'];
+
+}
 
 
 
@@ -196,6 +222,14 @@ function recup_nb_org ($id_salle){
 	return $row['nb_org'];
 }
 
+function recup_user ($nom){
+    global $c;
+    $sql = "SELECT id_pro FROM batiment WHERE nom_bat='$nom' ";
+    $resultat = mysqli_query($c, $sql);
+	$row = mysqli_fetch_assoc($resultat);
+	return $row['id_pro'];
+}
+
 
 
 function dimissione($id_user,$id_salle){
@@ -205,12 +239,22 @@ function dimissione($id_user,$id_salle){
 
 }
 
-
-
+function recup_niveau($id){
+    global $c;
+    $sql = "select id_salle, niveau FROM `salle`";
+    $resultat = mysqli_query($c,$sql);
+    $role = "";
+    while ($row = mysqli_fetch_assoc($resultat)){
+        if ($id == $row['id_salle']){
+            $niveau = $row["niveau"];
+        }
+    }
+    return $niveau;
+}
 
 function ranking(){
 	global $c;
-	$sql = " SELECT * FROM users ORDER BY point ";
+	$sql = " SELECT * FROM users ORDER BY point DESC";
 	$resultat = mysqli_query($c, $sql);
 	return $resultat;
 }
@@ -230,3 +274,5 @@ function ranking(){
 //     }
 //     return $nom;
 // }
+
+

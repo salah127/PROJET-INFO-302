@@ -1,54 +1,41 @@
-<fieldset class='batima'>
+<div class="containerCnx">
     <?php
 
 for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
     echo'
-    <legend>
+    <div class="cardCnx">
+        <div  class="cardCnx-header">
         <h2> Formulaire Salle '.$i.' </h2>
-    </legend>
-        <div class="batdiv">
-            <div class="batsghir">
-                
-                <div class="salasghira">
-                    <label for="idinsuser">Numero de la salle:</label>
-                </div>
-                <div class="salasghira">
-                    <input class="inputtype cnx-control" type="number" name="num'.$i.'" id="idinsuser"
-                        placeholder="Numero...">
-                </div>
-                <br>
-            </div>
-            <br>
+        </div>
+        <div class="cardCnx-body">
+            <form action="index.php" method="post">
+                <div class="cnxlabels">
+                    <div class="labelss">
+                        <label id="idcnx" for="idpseudocnx">Numero de la salle: :</label>
+                    </div>
+                    <div class="labelss">
+                        <input type="text" id="idpseudocnx" class="cnx-control" name="num'.$i.'"
+                            ">
+                    </div>
+                    <div class="labelss">
+                        <label id="idcnx" for="idpseudocnx">Photos :</label>
+                    </div>
+                    <div class="labelss">
+                        <input type="text" id="idpseudocnx" class="cnx-control" name="Photo'.$i.'
+                            ">
+                    </div>
+                    <div class="labelss">
+                        <label id="idcnx" for="idpseudocnx">Capacité :</label>
+                    </div>
+                    <div class="labelss">
+                        <input type="text" id="idpseudocnx" class="cnx-control" name="Capacité'.$i.'"
+                            ">
+                    </div>
+                    <div class="labelss">
+                        <label id="idcnx" for="idpseudocnx">niveau:</label>
+                    </div>
+                    <div class="labelss">
 
-            <br>
-            <div class="batsghir">
-                <div class="salasghira">
-                    <label for="idinsuser">Photos :</label>
-                </div>
-                <div class="salasghira">
-                    <input class="inputtype cnx-control btnajoutsalle2" type="file" name="Photo'.$i.'" id="ins-entr"
-                        placeholder="Photos...">
-                </div>
-            </div>
-            <br>
-            <div class="batsghir">
-                <div class="salasghira">
-                    <label for="idinsuser">Capacité :</label>
-                </div>
-                <div class="salasghira">
-                    <input class="inputtype cnx-control" type="number" name="Capacité'.$i.'" id="inst-adr"
-                        placeholder="Capacité...">
-                </div>
-                <br>
-            </div>
-            <br>
-            
-            <br>
-            <div class="batsghir">
-                <div class="salasghira">
-                    <label for="ins-mp">Niveau requis :</label>
-                </div>
-                <div class="salasghira">
                     <input class="inputtype cnx-control" type="RANGE" name="niveau'.$i.'" id="ins-mp" placeholder="Niveau..."
                         min="0" max="400" step="100" list="nv">
                     <datalist id="nv">
@@ -58,61 +45,41 @@ for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
                         <option>300</option>
                         <option>400</option>
                     </datalist>
-                </div><br><br><br>
-            </div>
-            <style>
+<br><br><br>
+                    </div>
+                    <div class="labelss">
+                        <label id="idcnx" for="idpseudocnx">Description:</label>
+                    </div>
+                    <div class="labelss">
+                        <input type="text" id="idpseudocnx" class="cnx-control" name="Description'.$i.'"
+                            ">
+                    </div>
+                    <div class="labelss">
+                        <label id="idcnx" for="idpseudocnx">nb_org:</label>
+                    </div>
+                    <div class="labelss">
+                        <input type="text" id="idpseudocnx" class="cnx-control" name="nb_org'.$i.'""
+                            ">
+                    </div>
 
-            </style>
-            <br>
-            <div class="batsghir">
-                <div class="salasghira">
-                    <label for="idinsuser">Description :</label>
-                </div>
-                <div class="salasghira">
-                    <input class="inputtype cnx-control" type="" name="Description'.$i.'" id="ins-email"
-                        placeholder="Description...">
-                </div>
-                <br>
-            </div>
-            <br>
-            <div class="batsghir">
-                <div class="salasghira">
-                    <label>Nembre d"organisateurs :</label>
-                </div>
-                <div class="salasghira">
-                    <input class="inputtype cnx-control" type="number" name="nb_org'.$i.'">
-                </div>
-                <br><br>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
+        
 
             ';
 }
 
 
 ?>
-    <form action="." method="post">
+<br><br><br>
+<br>
+    <form action="index.php" method="post">
         <div class="batsghir">
-            <div class="salasghira btnajoutsalle">
+            <div  class="salasghira btnajoutsalle">
                 <input type="hidden" name="action" value="Ajout_salle">
-                <input type="submit" class="cnx-sub" value="Ajouter">
+                <input  style="width:100px;background:#53e3a6;" type="submit" class="button" value="Ajouter">
             </div>
         </div>
+
+            </form>
         </div>
-
-    </form>
-</fieldset>
-
-
-
-
-<?php 
-// function myFunction() {
-//     $i =1;
-//     $_SESSION["ressource$i"]= $_POST["ressource"];
-//     $i++;
-// }
-?>
+    </div>
+</div>

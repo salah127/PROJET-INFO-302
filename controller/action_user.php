@@ -7,8 +7,7 @@ if (isset($_GET["connecte"]) && $_GET["connecte"] == "false") {
     unset($_SESSION['connecte']);
     unset($_SESSION['role']);
     session_destroy();
-    //$_SESSION['connecte'] = false;
-    //var_dump($_SESSION);
+
     header("Location: ./?page=connexion");
 }
 
@@ -25,7 +24,6 @@ if (isset($_POST["action"])) {
         if (isset($_POST['user']) && isset($_POST['email']) && isset($_POST['mdp'])) {
             if ($_POST['mdp'] != "" && $_POST['user'] != "" && $_POST['email'] != "") {
                 inscription($_POST["user"], $_POST["email"], $_POST["mdp"]);
-                //echo 'ok';
                 header("Location: ./?page=connexion");
             } else {
                 echo 'information incorect';
@@ -41,7 +39,6 @@ if (isset($_POST["action"])) {
         if (isset($_POST['use']) && isset($_POST['ema']) && isset($_POST['mdpp'])&& isset($_POST['entr'])&& isset($_POST['adr'])&& isset($_POST['num'])) {
             if ($_POST['mdpp'] != "" && $_POST['use'] != "" && $_POST['ema'] != "" && $_POST['entr'] != "" && $_POST['adr'] != "" && $_POST['num'] != "") {
                 inscription_pro($_POST["use"], $_POST["ema"], $_POST["mdpp"], $_POST["entr"], $_POST["adr"], $_POST["num"]);
-                //echo 'ok';
                 header("Location: ./?page=connexion");
             } else {
                 echo 'incorect';
@@ -61,14 +58,8 @@ if (isset($_POST["action"])) {
                     $_SESSION['username'] = $_POST['pseudo'];
                     $_SESSION['connecte'] = true;
                     $_SESSION['role'] = recup_role($_POST['pseudo']);
-                    // $_SESSION['id'] = recup_id($_POST['pseudo']);
                     if ($_SESSION['role']=='internaute') {
-                        $_SESSION['point'] = recup_pts($_POST['id'][0]);
-                    }
-
-                    if (isset($_SESSION['username'])) {
-                        // echo "<p>Bienvenu " . $_SESSION['id'][0].  "</p>";
-                        // echo "<p>Bienvenu " . $_SESSION['id'] . "</p>";
+                        $_SESSION['point'] = recup_pts($_SESSION['id'][0]);
                     }
                 } else {  
                     header("Location: .");

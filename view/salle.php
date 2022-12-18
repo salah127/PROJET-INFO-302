@@ -5,7 +5,7 @@
     <form action="." method="post">
         <div class="cardSalle">
             <?php
-            $tab = salles($_SESSION['Nom']);
+            $tab = salle($_GET['id_salle']);
             $tab1 = ressources($_GET['id_salle']);
             if ($tab == NULL){
                 echo ' Il ya aucun batiment';
@@ -41,8 +41,6 @@
 
                 if ($_SESSION["role"]=='Pro'){
 
-                    if ($_SESSION["id"]!='32'){
-                        // conditon si le id != session[id_pro] ===> reserver 
                         echo '
                             <div class="btnSalleDiv">
                                 <a class="btnSalle" href="index.php?page=">Modifier</a>
@@ -52,20 +50,20 @@
                                 <input class="btnSalle" type = "submit"  value = "Supprimer">
                             </div>
                         ';
-                    }   
-                    else{
-                            echo '  
-                            <div class="btnSalleDiv">
-                                <input type = "submit" class="btnSalle" value = "resever">
-                            </div>   
-                            ';
-                    }
                 }else{
                     echo '  
                     <div class="btnSalleDiv">
                         <a class="btnSalle" href="?page=calendrier&id_salle='.$_SESSION['id_salle'].'">resever</a>
-                        <a class="btnSalle" href="index.php?page=ajout-ressource">ajouter des ressources</a>
-                    </div>
+                        <a class="btnSalle" href="index.php?page=ajout-ressource">ajouter des ressources</a>';
+                    if(exist_org($_SESSION["id"][0],$_SESSION["id_salle"] )== 0){
+                        echo '<input type="hidden" name="action" value="organisateur">
+                        <input type="submit" class="btnSalle" value="Devevir Organisateur">';
+                    }
+                    else{
+                        echo '<input type="hidden" name="action" value="Dimissioné">
+                        <input type="submit" class="btnSalle" value="Dimissioné">';}
+                        
+                    echo '</div>
                     ';
                     }
             }else{

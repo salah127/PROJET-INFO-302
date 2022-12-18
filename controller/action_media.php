@@ -4,43 +4,38 @@
 
 if (isset($_POST["action"]) && $_POST["action"] == "ajouter-bat") {
    if ((isset($_POST['Nom']) && $_POST['Nom'] != "") || (isset($_POST['adresse']) && $_POST['adresse'] != "") || (isset($_POST['nb_salle']) && $_POST['nb_salle'] != "")) {
-      // if (isset($_SESSION['id'][0])) {
-      //    $id = $_SESSION['id'][0];
-      // }
 
       if (!existe_bat($_POST['Nom'])) {
-
-         $_SESSION['Nom'] = $_POST['Nom'];
-         if($_POST['nb_salle']>0){
-            $nb_salle=$_POST['nb_salle']-1;
-         }
-         creer_bat($_POST['Nom'], $_POST['adresse'], $nb_salle, $_SESSION['id'][0]);
-         $_SESSION['nb_salle']=$_POST['nb_salle'];
-         if ($_SESSION['nb_salle']>0){
-            header("Location: ./?page=ajout-salle");
+         if($_POST['Nom']<=0){
+            $_SESSION['Nom'] = 1;
          }else{
+            $_SESSION['Nom'] = $_POST['Nom'];
+            creer_bat($_POST['Nom'], $_POST['adresse'], $_SESSION['Nom'], $_SESSION['id'][0]);
+            $_SESSION['nb_salle']=$_POST['nb_salle'];}
+            if ($_SESSION['nb_salle']>0){
+
+            header("Location: ./?page=ajout-salle");
+            }else{
             header("Location: ./?page=liste-bat");
             echo 'vous avez creer un batiment';}
 
-      }else{
-         echo 'Batiment existe deja';
+         }else{
+            echo 'Batiment existe deja';
          } 
-   }else {
-         echo "info incorrect";
-         // header("Location: ./?page=ajout-bat");
+      }else {
+            echo "info incorrect";
       }
-   
    }
+   
+
 
 
 //formulaire de suppression de bat
 
-if (isset($_POST["action"]) && $_POST["action"] == "supp") {
+if (isset($_POST["action"]) && $_POST["action"] == "sup_bat") {
 
-   $nom = $_SESSION['Nom']; // $id is now defined
-   // var_dump($_SESSION['Nom']);
+   $nom = $_SESSION['Nom'];
    supp_bat($nom);
-   // echo "<p>votre bat a été supprimé.</p>";s
 }
 
 //formulaire de ajout de ressource
@@ -48,34 +43,45 @@ if (isset($_POST["action"]) && $_POST["action"] == "supp") {
 if (isset($_POST["action"]) && $_POST["action"] == "ajout_ressource") {
    ajout_ressources($_POST['Ressource'],$_POST['quentite'],$_POST['qualite'],$_SESSION['id'][0],$_SESSION['id_salle']);
    $_SESSION['Ressources'] = $_POST['Ressource'];
+   $salle = $_SESSION["id_salle"];
    if($_POST['qualite']<50) {
       ajout_pts ($_SESSION['id'][0],$_SESSION['point'],20);
       $_SESSION['point'] = recup_pts($_SESSION['id'][0]);
+      header("Location: ./?page=salle&id_salle=$salle");
 }
    else if($_POST['qualite']==50) {
       ajout_pts ($_SESSION['id'][0],$_SESSION['point'],30);
       $_SESSION['point'] = recup_pts($_SESSION['id'][0]);
+      header("Location: ./?page=salle&id_salle=$salle");
 }
    else  if($_POST['qualite']==100){
       ajout_pts ($_SESSION['id'][0],$_SESSION['point'],50);
       $_SESSION['point'] = recup_pts($_SESSION['id'][0]);
+      header("Location: ./?page=salle&id_salle=$salle");
 }
 }
+
+
+// formulaire de recherche
+if (isset($_POST["action"]) && ( $_POST["action"] == "rech")) {
+      $recherche = isset($_POST['recherche']) ? $_POST['recherche'] : '';
+      header("location:./?page=rechercher&id_salle=".$recherche);
+   }
+
 
 
 //formulaire d'ajout de salles
 
 if (isset($_POST["action"]) && $_POST["action"] == "Ajout_salle") {
-   // if ((isset($_POST['num']) && $_POST['num'] != "") &&  (isset($_POST['Photo']) && $_POST['Photo'] != "") && (isset($_POST['Capacité']) && $_POST['Capacité'] != "") && (isset($_POST['Ressources']) && $_POST['Ressources'] != "") && (isset($_POST['niveau']) && $_POST['niveau'] != "") && (isset($_POST['Description']) && $_POST['Description'] != "")) {
+   // if ((isset($_POST['num']) && $_POST['num'] != "") &&  (isset($_POST['Photo']) && $_POST['Photo'] != "") && (isset($_POST['Capacité']) && $_POST['Capacité'] != "")  && (isset($_POST['niveau']) && $_POST['niveau'] != "") && (isset($_POST['Description']) && $_POST['Description'] != "")) {
       // if (isset($_SESSION['id'][0])) {
       //    $id = $_SESSION['id'][0];
       // }
-
       for ($i = 1; $i <= $_SESSION['nb_salle']; $i++) {
       // if (!existe_salle($_POST['num']), $_GET['nom_bat'])) {
-         creer_salle($_POST["num$i"],$_POST["Photo$i"] ,$_POST["Capacité$i"] ,$_POST["Ressources$i"] ,$_POST["niveau$i"] ,$_POST["Description$i"] ,$_POST["nb_org$i"] ,$_SESSION['Nom']);
-      }
+         creer_salle($_POST["num$i"],$_POST["Photo$i"] ,$_POST["Capacité$i"] ,$_POST["niveau$i"] ,$_POST["Description$i"] ,$_POST["nb_org$i"] ,$_SESSION['Nom']);
          ajout_nb_salle($_SESSION['Nom']);
+      }
          // var_dump($_SESSION['nb_salle']);
          // if ($_SESSION['nb_salle']>0){
          //    while ($_SESSION['nb_salle'] > 0) {
@@ -90,7 +96,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "Ajout_salle") {
          // }
       // }else{
       //    echo 'Salle existe deja';
-      //    } 
+         // } 
    // }else {
          // echo "info incorrect";
          // header("Location: ./?page=ajout-bat");
@@ -104,6 +110,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "sup-salle") {
 
    $id = $_SESSION['id_salle']; // $id is now defined
    supp_salle ($id);
+   dim_nb_salle($_SESSION['Nom']);
    // echo "<p>votre bat a été supprimé.</p>";s
 }
 
@@ -158,15 +165,18 @@ for($mois=1;$mois<=12;$mois++) {
 	isset($_GET['choix']) AND preg_match("#^(0|1)$#",$_GET['choix'])) {
 		$date= $annee."-".$_GET['mois']."-".$_GET['jour'];
       if($_GET['choix']==1){
-         if($date>date("Y-m-d")){
-			   if(reserver( $date, $_SESSION['id_salle'],$_SESSION['id'][0])) {
-				   echo "Jour mise en \"réservé\" avec succès !";
-			   }}
+         if($date>=date("Y-m-d")){
+            if(recup_pts($_SESSION['id'][0]) >= recup_niveau($_SESSION['id_salle'])){
+			      reserver( $date, $_SESSION['id_salle'],$_SESSION['id'][0]);
+               echo "<script>alert(\"Jour mise en reserve avec succès !.\")</script>";
+               }
+            else{
+               echo "<script>alert(\"  Ameliorer votre niveau !.\")</script>";
+            }}
          else{
-               echo 'Choisissez une bonne date';
+               echo "<script>alert(\"Choisissez une bonne date.\")</script>";
          }}
 		else if($_GET['choix']==0){
-
 		   if(supp_res($date,$_SESSION['id_salle'])) {
 				echo "Journée mise en \"disponible\" avec succès !";
 			} 
