@@ -7,41 +7,6 @@ include_once "controller/controller.php";
 include_once "view/view.php";
 
 
-
-
-
-//formulaire d'ajout de batiment
-
-if (isset($_POST["action"]) && $_POST["action"] == "ajouter-bat") {
-   if ((isset($_POST['Nom']) && $_POST['Nom'] != "") || (isset($_POST['adresse']) && $_POST['adresse'] != "") || (isset($_POST['nb_salle']) && $_POST['nb_salle'] != "")) {
-
-      if (!existe_bat($_POST['Nom'])) {
-         if($_POST['Nom']<=0){
-            $_SESSION['Nom'] = 1;
-         }else{
-            $_SESSION['Nom'] = $_POST['Nom'];
-            creer_bat($_POST['Nom'], $_POST['adresse'], $_SESSION['Nom'], $_SESSION['id'][0]);
-            $_SESSION['nb_salle']=$_POST['nb_salle'];}
-            if ($_SESSION['nb_salle']>0){
-
-            header("Location: ./?page=ajout-salle");
-            }else{
-            header("Location: ./?page=liste-bat");
-            echo 'vous avez creer un batiment';}
-
-         }else{
-            echo 'Batiment existe deja';
-         } 
-      }else {
-            echo "info incorrect";
-      }
-   }
-   
-
-
-
-//formulaire de suppression de bat
-
 if (isset($_POST["action"]) && $_POST["action"] == "sup_bat") {
 
    $nom = $_SESSION['Nom'];
